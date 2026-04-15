@@ -2,566 +2,357 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>加密行业热点早报 · 2026年4月15日</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>加密早报 · 2026年4月15日</title>
 <style>
-  :root {
-    --black: #000000;
-    --neo-black: #191919;
-    --white: #FFFFFF;
-    --neon: #BCFF2F;
-    --neon-dim: rgba(188,255,47,0.10);
-    --neon-mid: rgba(188,255,47,0.20);
-    --gray-1: #111111;
-    --gray-2: #1a1a1a;
-    --text-primary: #FFFFFF;
-    --text-secondary: #999999;
-    --text-dim: #666666;
-    --text-hint: #444444;
-    --border: rgba(255,255,255,0.06);
-    --border-hover: rgba(188,255,47,0.18);
-    --red: #FF4D4D;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: var(--black);
-    color: var(--text-primary);
-    font-family: 'Noto Sans SC', sans-serif;
+    background: #000;
+    color: #fff;
+    font-family: -apple-system, 'PingFang SC', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
     font-size: 14px;
     line-height: 1.6;
-    padding: 24px 16px 48px;
-  }
-  .container {
-    max-width: 780px;
+    max-width: 480px;
     margin: 0 auto;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+    -webkit-tap-highlight-color: transparent;
   }
-
-  /* ── HEADER ── */
   .header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1a1a1a;
+    padding: 14px 16px 12px;
     text-align: center;
-    padding: 40px 0 32px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 28px;
   }
-  .date-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--neon-dim);
-    border: 1px solid var(--border-hover);
-    border-radius: 20px;
-    padding: 5px 14px;
-    font-size: 12px;
-    color: var(--neon);
-    letter-spacing: 0.04em;
-    margin-bottom: 16px;
-  }
-  .dot {
-    width: 6px; height: 6px;
-    background: var(--neon);
-    border-radius: 50%;
-    animation: blink 1.6s infinite;
-  }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  h1 {
-    font-family: 'Noto Serif SC', serif;
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 8px;
-    letter-spacing: 0.02em;
-  }
-  .accent { color: var(--neon); }
-  .sub {
-    font-size: 12px;
-    color: var(--text-dim);
-    letter-spacing: 0.06em;
-    margin-bottom: 20px;
-  }
-  .source-bar {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 8px;
-  }
-  .source-tag {
-    background: var(--gray-1);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 3px 10px;
-    font-size: 11px;
-    color: var(--text-secondary);
-  }
-
-  /* ── BANNER ── */
-  .fomc-banner {
-    background: var(--neo-black);
-    border-left: 3px solid var(--red);
-    border-radius: 8px;
-    padding: 16px 20px;
-    margin-bottom: 28px;
-    display: flex;
-    gap: 14px;
-    align-items: flex-start;
-  }
-  .fomc-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
-  .fomc-banner h3 {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 4px;
-  }
-  .fomc-banner p {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.55;
-  }
-  .tag {
-    display: inline-block;
-    background: rgba(255,77,77,0.15);
-    color: var(--red);
-    border-radius: 3px;
-    padding: 1px 7px;
-    font-size: 11px;
-    font-weight: 500;
-    margin-right: 6px;
-  }
-
-  /* ── SECTION ── */
-  .section { margin-bottom: 32px; }
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 0 10px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 12px;
-  }
-  .section-icon { font-size: 18px; }
-  .section-title {
-    font-size: 15px;
-    font-weight: 600;
-    color: var(--white);
-    flex: 1;
-  }
-  .section-count {
-    background: var(--neon-dim);
-    border: 1px solid var(--border-hover);
-    color: var(--neon);
-    border-radius: 10px;
-    padding: 2px 10px;
-    font-size: 11px;
-  }
-
-  /* ── NEWS ITEM ── */
-  .news-item {
-    background: var(--gray-1);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-    margin-bottom: 10px;
-    transition: border-color 0.2s;
-  }
-  .news-item:hover { border-color: var(--border-hover); }
-  .priority {
-    display: inline-block;
-    border-radius: 3px;
-    padding: 2px 8px;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.04em;
-    margin-bottom: 8px;
-  }
-  .priority.high {
-    background: var(--neon-mid);
-    color: var(--neon);
-    border: 1px solid rgba(188,255,47,0.3);
-  }
-  .priority.mid {
-    background: rgba(153,153,153,0.12);
-    color: var(--text-secondary);
-    border: 1px solid rgba(153,153,153,0.2);
-  }
-  .priority.low {
-    background: rgba(68,68,68,0.3);
-    color: var(--text-hint);
-    border: 1px solid rgba(68,68,68,0.4);
-  }
-  .news-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--white);
-    margin-bottom: 6px;
-    line-height: 1.5;
-  }
-  .news-detail {
-    font-size: 13px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-  .news-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 8px;
-  }
-  .impact-tag {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: 2px 8px;
-    font-size: 11px;
-    color: var(--text-dim);
-  }
-  .news-source {
-    font-size: 11px;
-    color: var(--text-hint);
-    border-top: 1px solid var(--border);
-    padding-top: 8px;
-    margin-top: 4px;
-  }
-  .news-source a {
-    color: var(--text-dim);
-    text-decoration: none;
-  }
-  .news-source a:hover { color: var(--neon); }
-
-  /* ── DIVIDER ── */
-  .divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 32px 0 24px;
-  }
-
-  /* ── FOOTER ── */
-  .footer { padding: 8px 0 16px; text-align: center; }
-  .keywords {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-bottom: 14px;
-    line-height: 1.8;
-  }
-  .keywords strong { color: var(--neon); }
-  .disclaimer {
-    font-size: 11px;
-    color: var(--text-hint);
-    line-height: 1.7;
-    margin-bottom: 10px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .compiled {
-    font-size: 10px;
-    color: var(--text-hint);
-    letter-spacing: 0.1em;
-  }
+  .header-date { display: inline-block; background: #111; border: 1px solid #222; border-radius: 20px; padding: 3px 10px; font-size: 11px; color: #888; margin-bottom: 6px; }
+  .header-title { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; line-height: 1.2; }
+  .header-title .green { color: #BCFF2F; }
+  .header-sub { font-size: 11px; color: #555; margin-top: 4px; }
+  .source-pills { display: flex; gap: 6px; padding: 10px 16px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .source-pills::-webkit-scrollbar { display: none; }
+  .pill { flex-shrink: 0; background: #111; border: 1px solid #222; border-radius: 12px; padding: 4px 10px; font-size: 11px; color: #aaa; white-space: nowrap; }
+  .banner { margin: 0 16px 12px; background: #0d1a09; border: 1px solid #1a2a14; border-left: 3px solid #BCFF2F; border-radius: 8px; padding: 12px 14px; }
+  .banner-label { font-size: 10px; font-weight: 700; color: #BCFF2F; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase; }
+  .banner-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 6px; line-height: 1.4; }
+  .banner-body { font-size: 12px; color: #aaa; line-height: 1.5; }
+  .market-wrap { padding: 0 16px 12px; }
+  .market-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #111; border: 1px solid #1a1a1a; border-radius: 10px; overflow: hidden; }
+  .market-cell { background: #0c0c0c; padding: 10px 8px; text-align: center; }
+  .market-name { font-size: 11px; color: #666; margin-bottom: 3px; }
+  .market-price { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+  .market-change { font-size: 11px; font-weight: 600; }
+  .up { color: #BCFF2F; } .down { color: #FF3B3B; }
+  .section { margin: 0 0 4px; padding: 0 16px; }
+  .section-header { display: flex; align-items: center; gap: 8px; padding: 12px 0 8px; border-top: 1px solid #111; }
+  .section-icon { font-size: 16px; }
+  .section-title { font-size: 13px; font-weight: 700; color: #fff; flex: 1; }
+  .section-count { background: #BCFF2F; color: #000; border-radius: 10px; padding: 1px 7px; font-size: 10px; font-weight: 700; }
+  .news-item { padding: 10px 0; border-bottom: 1px solid #0f0f0f; }
+  .news-item:last-child { border-bottom: none; }
+  .news-item:active { background: #0a0a0a; }
+  .news-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; flex-wrap: wrap; }
+  .tag-priority { border-radius: 4px; padding: 1px 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; }
+  .tag-priority.high { background: rgba(255,59,59,0.15); color: #FF3B3B; border: 1px solid rgba(255,59,59,0.3); }
+  .tag-priority.mid  { background: rgba(255,214,0,0.1);  color: #FFD600; border: 1px solid rgba(255,214,0,0.25); }
+  .tag-priority.low  { background: rgba(255,255,255,0.05); color: #666; border: 1px solid #222; }
+  .news-title { font-size: 13px; font-weight: 600; color: #f0f0f0; line-height: 1.4; margin-bottom: 4px; }
+  .news-desc  { font-size: 12px; color: #777; line-height: 1.5; margin-bottom: 6px; }
+  .news-tags  { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 5px; }
+  .news-tag   { background: #111; border: 1px solid #1e1e1e; border-radius: 4px; padding: 1px 6px; font-size: 10px; color: #555; }
+  .news-source { font-size: 11px; color: #444; }
+  .news-source a { color: #BCFF2F; text-decoration: none; opacity: 0.8; }
+  .news-source a:hover { opacity: 1; }
+  .keywords-wrap { padding: 16px 16px 12px; border-top: 1px solid #111; margin-top: 8px; }
+  .keywords-title { font-size: 11px; color: #555; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 6px; }
+  .keyword { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 12px; padding: 3px 10px; font-size: 11px; color: #BCFF2F; }
+  .footer { padding: 12px 16px 20px; text-align: center; font-size: 10px; color: #333; line-height: 1.5; }
 </style>
 </head>
 <body>
-<div class="container">
 
-  <!-- ── HEADER ── -->
-  <div class="header">
-    <div class="date-badge">
-      <span class="dot"></span> 2026年4月15日 · 周三
-    </div>
-    <h1>加密行业热点<span class="accent">早报</span></h1>
-    <div class="sub">多源去重 · 分类评级 &nbsp;|&nbsp; 4月14日 20:00 — 4月15日 09:30</div>
-    <div class="source-bar">
-      <span class="source-tag">Odaily星球日报</span>
-      <span class="source-tag">BlockBeats</span>
-      <span class="source-tag">链捕手ChainCatcher</span>
-      <span class="source-tag">Foresight News</span>
-      <span class="source-tag">CoinDesk</span>
-    </div>
-  </div>
-
-  <!-- ── 重大事件横幅 ── -->
-  <div class="fomc-banner">
-    <div class="fomc-icon">🔴</div>
-    <div>
-      <h3><span class="tag">本周重磅</span>沃什联储主席确认听证会 · 4月21日（周一）</h3>
-      <p>美联储主席提名人凯文·沃什将于下周一出席参议院确认听证会。其财务披露显示持有大量加密资产（DeFi协议、ETH L2、BTC闪电网络初创公司），承诺就职后全部出售。市场将密切关注其货币政策立场与加密监管表态。</p>
-    </div>
-  </div>
-
-  <!-- ── 全球监管 ── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-icon">⚖️</span>
-      <span class="section-title">全球监管</span>
-      <span class="section-count">3 条</span>
-    </div>
-
-    <div class="news-item">
-      <div class="priority high">高价值</div>
-      <div class="news-title">高盛提交比特币 Premium Income ETF 申请，采用备兑看涨期权策略</div>
-      <div class="news-detail">4月14日，高盛向美国 SEC 提交初步招募说明书，拟推出首只比特币收益型 ETF。该基金将卖出相当于 40%–100% 比特币敞口的看涨期权以产生期权收益，面向寻求收益而非纯价格上涨的投资者。基金通过持有现货比特币 ETF 份额而非直接持有 BTC 来获得敞口，镜像贝莱德同类产品结构。提交生效后75天最快可上市，预计最早6月末。机构级加密收益产品竞争显著升温。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：月级</span>
-        <span class="impact-tag">ETF监管 · 机构采纳 · 市场结构</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.coindesk.com/business/2026/04/14/goldman-sachs-files-for-bitcoin-income-etf-in-crypto-push" target="_blank">CoinDesk</a> · <a href="https://www.chaincatcher.com/article/2258538" target="_blank">链捕手ChainCatcher</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority high">高价值</div>
-      <div class="news-title">香港首批稳定币牌照正式落地：汇丰银行与碇点金融获批，格局重塑</div>
-      <div class="news-detail">香港金融管理局于4月10日公布首批稳定币发行人牌照结果，汇丰银行与碇点金融科技两家机构获批，获批率仅5%（36份申请中取2）。汇丰计划2026年下半年推出港元稳定币，接入 PayMe 和汇丰香港 App；碇点将于第二季度分阶段发行"HKDAP"。此次发牌标志香港稳定币监管从立法进入实施阶段——并非简单加密化，而是银行信用与链上能力的制度整合。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：季度级</span>
-        <span class="impact-tag">合规监管 · 稳定币格局 · 亚太市场</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2258621" target="_blank">链捕手ChainCatcher（深度）</a> · <a href="https://www.chaincatcher.com/article/2258538" target="_blank">链捕手ChainCatcher（早报）</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority high">高价值</div>
-      <div class="news-title">美联储主席提名人沃什财务披露：大量持有 DeFi、ETH L2、BTC 闪电网络初创股权</div>
-      <div class="news-detail">凯文·沃什在提名听证前提交财务披露，显示其资产超1亿美元，包括 DeFi 协议、以太坊扩容网络（含 Blast 等 L2）、比特币闪电网络初创公司股权及预测市场投资。沃什同时是算法稳定币项目 Basis 早期投资人、加密指数基金管理公司 Bitwise 的顾问。承诺就职后出售全部加密持仓。确认听证会定于4月21日举行。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：季度级</span>
-        <span class="impact-tag">货币政策 · 监管预期 · 市场情绪</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.coindesk.com/policy/2026/04/14/the-next-fed-chair-has-a-crypto-portfolio-here-s-everything-that-s-in-it" target="_blank">CoinDesk（完整持仓列表）</a> · <a href="https://www.chaincatcher.com/article/2258538" target="_blank">链捕手ChainCatcher</a></div>
-    </div>
-  </div>
-
-  <!-- ── 传统金融 ── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-icon">🏦</span>
-      <span class="section-title">传统金融</span>
-      <span class="section-count">3 条</span>
-    </div>
-
-    <div class="news-item">
-      <div class="priority high">高价值</div>
-      <div class="news-title">Kraken 获德意志交易所 2 亿美元战略投资（占股1.5%），同步秘密提交美国 IPO 申请</div>
-      <div class="news-detail">德意志交易所集团（Deutsche Börse）宣布以 2 亿美元收购 Kraken 母公司 Payward 约 1.5% 股份，交易隐含估值 133 亿美元（低于2025年11月 200 亿美元私募估值）。双方将在交易、托管、结算、抵押品管理及代币化资产领域深度合作，打通传统金融基础设施与数字资产生态系统。Kraken 同步披露已秘密向 SEC 提交 IPO 申请，加密交易所上市潮持续推进。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：季度级</span>
-        <span class="impact-tag">TradFi融合 · IPO预期 · 机构入场</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476759" target="_blank">Odaily星球日报</a> · <a href="https://www.chaincatcher.com/article/2258538" target="_blank">链捕手ChainCatcher</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority mid">中优级</div>
-      <div class="news-title">美股收盘加密板块全线上涨，Robinhood（HOOD）涨幅超 10.35%</div>
-      <div class="news-detail">受伊朗局势缓和及市场风险偏好回升驱动，美股加密相关板块全线收涨。Robinhood 大涨逾10.35%，Coinbase（COIN）等主要加密股票跟涨，反映机构和散户对加密赛道信心修复。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：日级</span>
-        <span class="impact-tag">股市联动 · 风险偏好</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476765" target="_blank">Odaily星球日报</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority mid">中优级</div>
-      <div class="news-title">黄金回落至 4830 美元，原油跌近 2%，传统避险资产承压</div>
-      <div class="news-detail">随着伊朗战争风险溢价收缩，地缘避险逻辑弱化，黄金自历史高位回落至约4830美元/盎司，原油跌近2%。传统避险资产回落，资金或部分轮动至比特币等风险资产。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：日级</span>
-        <span class="impact-tag">宏观资产轮动 · 避险情绪</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476764" target="_blank">Odaily星球日报</a></div>
-    </div>
-  </div>
-
-  <!-- ── 全球事件 ── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-icon">🌍</span>
-      <span class="section-title">全球事件</span>
-      <span class="section-count">2 条</span>
-    </div>
-
-    <div class="news-item">
-      <div class="priority high">高价值</div>
-      <div class="news-title">特朗普称伊朗战事接近结束，风险资产全线反弹，原油一度大跌 4%</div>
-      <div class="news-detail">特朗普发表声明称美伊军事冲突"接近结束"，释放重大战争降级信号。原油价格应声大跌约4%，比特币随全球风险资产同步拉升。此前美军已于4月13日开始对伊朗实施海上封锁，此番停战信号转变迅速。地缘风险的阶段性缓和为加密市场短期走势提供上行支撑。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：周级</span>
-        <span class="impact-tag">地缘政治 · 宏观风险 · 市场情绪</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/341219" target="_blank">BlockBeats（特朗普声明）</a> · <a href="https://www.theblockbeats.info/flash/341197" target="_blank">BlockBeats（市场反应）</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority mid">中优级</div>
-      <div class="news-title">Tom Lee：战争对美国经济净效应为正，市场已开始为有利结果定价</div>
-      <div class="news-detail">BitMine 董事长 Tom Lee 表示，防卫开支具有经济刺激作用，战争对美国经济的净效应为正。他认为能源安全将成为关键投资主题，市场已率先为战争结束的有利结果进行定价，支持风险资产短期走强。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：周级</span>
-        <span class="impact-tag">宏观判断 · 市场情绪 · 能源</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/341217" target="_blank">BlockBeats</a> · <a href="https://www.chaincatcher.com/article/2258668" target="_blank">链捕手ChainCatcher</a></div>
-    </div>
-  </div>
-
-  <!-- ── 加密数据 ── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-icon">📈</span>
-      <span class="section-title">加密数据</span>
-      <span class="section-count">4 条</span>
-    </div>
-
-    <div class="news-item">
-      <div class="priority high">高价值</div>
-      <div class="news-title">过去24小时全网爆仓 4.37 亿美元，空单爆仓（2.41亿）超过多单（1.96亿）</div>
-      <div class="news-detail">截至4月15日09:30，全网24小时总爆仓规模达4.37亿美元，其中空单爆仓2.41亿美元，多单爆仓1.96亿美元。空头在反弹行情中承受主要压力，做空仓位遭集中清算。双向波动加剧，杠杆风险不可忽视。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：日级</span>
-        <span class="impact-tag">仓位数据 · 杠杆风险 · 市场结构</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2258673" target="_blank">链捕手ChainCatcher</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority mid">中优级</div>
-      <div class="news-title">加密市场整体反弹，但资金费率仍显示看跌情绪未消退</div>
-      <div class="news-detail">尽管加密资产价格整体反弹，但主要币种资金费率依然偏负或维持低位，显示市场情绪与价格走势存在背离。分析人士提示：若资金费率无法跟随价格转正，反弹持续性存疑，需警惕短期回调风险。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：日级</span>
-        <span class="impact-tag">资金费率 · 衍生品情绪 · 多空博弈</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/341218" target="_blank">BlockBeats</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority mid">中优级</div>
-      <div class="news-title">分析师：比特币价格反弹，但主要期限期权隐含波动率（IV）反而下降</div>
-      <div class="news-detail">随着美伊军事冲突风险逐渐平息，比特币期权市场隐含波动率（IV）出现下行。分析师认为，IV 下降意味着期权市场已开始消化此前的尾部风险，价格上涨与 IV 收缩并行，反映市场进入相对平稳的修复阶段。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：周级</span>
-        <span class="impact-tag">期权数据 · 波动率 · 地缘风险定价</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476686" target="_blank">Odaily星球日报</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority mid">中优级</div>
-      <div class="news-title">美国 XRP 现货 ETF 单日净流入 1119.82 万美元；SOL 现货 ETF 净流入 127 万美元</div>
-      <div class="news-detail">美国 XRP 现货 ETF 昨日单日总净流入 1119.82 万美元，表现强劲；美国 SOL 现货 ETF 净流入 127.30 万美元。山寨币现货 ETF 机构配置需求持续，XRP ETF 流入尤为突出，或与 Ripple 代币化国债试点进展相互强化。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：周级</span>
-        <span class="impact-tag">ETF流量 · 机构需求 · 山寨币</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476763" target="_blank">Odaily（XRP ETF）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/476766" target="_blank">Odaily（SOL ETF）</a></div>
-    </div>
-  </div>
-
-  <!-- ── 链上事件 ── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-icon">⛓️</span>
-      <span class="section-title">链上事件</span>
-      <span class="section-count">3 条</span>
-    </div>
-
-    <div class="news-item">
-      <div class="priority mid">中优级</div>
-      <div class="news-title">Ether.fi 承诺三年向 ETHGas 提供价值 30 亿美元以太坊作为验证者流动性</div>
-      <div class="news-detail">去中心化质押协议 Ether.fi 宣布将在未来三年内向 ETHGas 提供约 30 亿美元价值的质押以太坊，作为验证者流动性支持，旨在通过 MEV 捕获帮助验证者获得更高收益，强化以太坊质押生态。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：月级</span>
-        <span class="impact-tag">以太坊质押 · 流动性 · MEV</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2258650" target="_blank">链捕手ChainCatcher</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority mid">中优级</div>
-      <div class="news-title">Ripple 与韩国 Kyobo Life 启动代币化国债区块链结算试点</div>
-      <div class="news-detail">Ripple 与韩国 Kyobo Life（教保生命保险）宣布启动代币化国债区块链结算试点项目，验证代币化国债交易结构，重点测试24小时实时结算机制。标志传统金融机构与区块链结算基础设施融合持续推进，RWA 代币化落地加速。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：月级</span>
-        <span class="impact-tag">RWA代币化 · 机构合作 · 亚洲市场</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2258670" target="_blank">链捕手ChainCatcher</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority low">情绪噪音</div>
-      <div class="news-title">多头巨鲸累计平仓 1500 枚 BTC 与 9.5 万枚 ETH</div>
-      <div class="news-detail">链上数据显示，大额多头持仓账户在反弹行情中累计平仓约 1500 枚 BTC 及 9.5 万枚 ETH，获利了结信号出现。需关注大户撤出对市场上方流动性的潜在影响。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：日级</span>
-        <span class="impact-tag">链上动向 · 大户行为</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476760" target="_blank">Odaily星球日报</a></div>
-    </div>
-  </div>
-
-  <!-- ── 行业趋势 ── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-icon">🚀</span>
-      <span class="section-title">行业趋势</span>
-      <span class="section-count">2 条</span>
-    </div>
-
-    <div class="news-item">
-      <div class="priority high">高价值</div>
-      <div class="news-title">X 平台在美加推出 Cashtags 功能，支持加密与股票实时数据，并试点内嵌交易入口</div>
-      <div class="news-detail">X（原 Twitter）宣布在美国和加拿大正式推出 Cashtags 功能，用户可在推文中直接查看加密货币与股票的实时价格图表，并进入内嵌交易试点入口。这是社交媒体金融化的重要里程碑，打通了内容消费与资产交易之间的入口壁垒，或推动零售用户加密认知与交易行为的深度融合。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：季度级</span>
-        <span class="impact-tag">社交金融化 · 用户触达 · 加密入口</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476754" target="_blank">Odaily星球日报</a></div>
-    </div>
-
-    <div class="news-item">
-      <div class="priority high">高价值</div>
-      <div class="news-title">Coinbase 与币安同时寻求接入 Anthropic 受限 AI 安全模型 Mythos</div>
-      <div class="news-detail">据报道，Coinbase 和币安均在寻求获得 Anthropic 受限 AI 模型 Mythos 的访问权限，该模型专为高安全要求场景设计，有望加速数字威胁识别与防御能力。全球两大加密交易所同步竞争同一 AI 安全模型，标志加密行业 AI 军备竞赛已延伸至网络安全基础设施领域。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：季度级</span>
-        <span class="impact-tag">AI安全 · 交易所竞争 · 基础设施</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476772" target="_blank">Odaily星球日报</a> · <a href="https://www.chaincatcher.com/article/2258672" target="_blank">链捕手ChainCatcher</a></div>
-    </div>
-  </div>
-
-  <!-- ── 观点研报 ── -->
-  <div class="section">
-    <div class="section-header">
-      <span class="section-icon">🧠</span>
-      <span class="section-title">观点研报</span>
-      <span class="section-count">1 条</span>
-    </div>
-
-    <div class="news-item">
-      <div class="priority mid">中优级</div>
-      <div class="news-title">Anthropic 获 VC 最高 8000 亿美元估值投资意向，AI 基础设施军备竞赛升温</div>
-      <div class="news-detail">据报道，风投机构向 Anthropic 表达了最高 8000 亿美元估值的投资意向，若成真将刷新 AI 公司估值纪录。与此同时，Coinbase 和币安争相接入其 Mythos 模型，表明加密行业正在深度押注 AI 基础设施。AI 基础设施的超高估值也间接反映市场对企业级 AI 安全应用赛道的极度乐观。</div>
-      <div class="news-meta">
-        <span class="impact-tag">影响周期：月级</span>
-        <span class="impact-tag">AI估值 · 行业趋势 · 基础设施投资</span>
-      </div>
-      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476757" target="_blank">Odaily星球日报</a> · <a href="https://www.theblockbeats.info/flash/341200" target="_blank">BlockBeats</a></div>
-    </div>
-  </div>
-
-  <hr class="divider">
-
-  <!-- ── FOOTER ── -->
-  <div class="footer">
-    <div class="keywords">
-      📌 今日关键词：<strong>高盛BTC ETF</strong> · <strong>香港稳定币牌照</strong> · <strong>沃什听证会4/21</strong> · <strong>Kraken IPO</strong> · <strong>伊朗停战</strong>
-    </div>
-    <div class="disclaimer">
-      ⚠️ 本早报仅为信息整合，不构成任何投资建议。加密资产价格波动剧烈，投资有风险，决策需谨慎。所有资讯已尽力核实，如有疏漏敬请指正。
-    </div>
-    <div class="compiled">COMPILED BY CLAUDE · 2026/04/15 · OKX STYLE</div>
-  </div>
-
+<div class="header">
+  <div class="header-date">2026 · APR 15 · 星期三</div>
+  <div class="header-title">加密行业热点<span class="green">早报</span></div>
+  <div class="header-sub">抓取时间窗口：4月14日 20:00 — 4月15日 09:30</div>
 </div>
+
+<div class="source-pills">
+  <div class="pill">Odaily</div>
+  <div class="pill">BlockBeats</div>
+  <div class="pill">吴说区块链</div>
+  <div class="pill">链捕手</div>
+  <div class="pill">Foresight News</div>
+  <div class="pill">CoinDesk</div>
+</div>
+
+<div class="banner">
+  <div class="banner-label">🟢 地缘急速降温 · 市场全线爆发</div>
+  <div class="banner-title">特朗普宣布"伊朗战争已经结束" · 原油跌4% · BTC +6.05%破$76,000 · 加密股HOOD +10.35%</div>
+  <div class="banner-body">特朗普在Fox News专访中连发三项声明：①"伊朗战争已经结束"；②"伊朗非常想达成协议"；③万斯两天内将重返伊斯兰堡开启谈判。消息一出原油大跌约4%，BTC单夜反弹+6.05%至$76,000+，道指+0.66%、纳指+1.96%，加密板块全线爆发（HOOD +10.35%、CRCL +6.9%、COIN +5.66%）。全网1小时空头遭连环爆仓$5,812万；分析师预测BTC或将涨至$90,000。</div>
+</div>
+
+<div class="market-wrap">
+  <div class="market-grid">
+    <div class="market-cell">
+      <div class="market-name">BTC</div>
+      <div class="market-price">&gt;$76,000</div>
+      <div class="market-change up">▲ +6.05% 24h</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">ETH</div>
+      <div class="market-price">~$2,300+</div>
+      <div class="market-change up">▲ 同步上涨</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">原油</div>
+      <div class="market-price">~$99</div>
+      <div class="market-change down">▼ -4% 急跌</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">黄金</div>
+      <div class="market-price">$4,830</div>
+      <div class="market-change down">▼ 小幅回落</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">纳斯达克</div>
+      <div class="market-price">+1.96%</div>
+      <div class="market-change up">▲ 强势收涨</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">HOOD</div>
+      <div class="market-price">+10.35%</div>
+      <div class="market-change up">▲ 加密股领涨</div>
+    </div>
+  </div>
+</div>
+
+<!-- 全球事件 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🌍</span>
+    <span class="section-title">全球事件</span>
+    <span class="section-count">2</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">特朗普Fox News专访：宣布"伊朗战争已经结束"，称伊朗"非常想达成协议"；万斯两天内将重赴伊斯兰堡</div>
+    <div class="news-desc">特朗普接受Fox News专访（北京时间15日播出），发表三项关键声明：①明确表示"伊朗战争已经结束"；②"伊朗非常非常想达成协议，我认为和平非常接近了"；③副总统万斯将在约两天内重返伊斯兰堡主导谈判。WTI原油单日大跌约4%至$99附近，市场对霍尔木兹封锁解除的预期急速升温。Tom Lee同日指出，市场已开始为战争"有利结果"提前定价，防务支出增量抵消了油价冲击，战争对美国企业盈利的"净效应为正"。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">地缘 · 外交</span>
+      <span class="news-tag">伊朗战争结束信号</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476756" target="_blank">Odaily（战争已结束）</a> · <a href="https://www.theblockbeats.info/flash/341216" target="_blank">BlockBeats（伊朗想达成协议）</a> · <a href="https://www.theblockbeats.info/flash/341219" target="_blank">BlockBeats（接近结束·原油跌4%）</a> · <a href="https://www.theblockbeats.info/flash/341217" target="_blank">BlockBeats（Tom Lee净效益为正）</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">亚马逊116亿美元收购卫星集团Globalstar，挑战马斯克Starlink；日韩股市今早高开</div>
+    <div class="news-desc">亚马逊宣布以约116亿美元收购卫星通信集团Globalstar，建立独立低地球轨道卫星基础设施，与马斯克Starlink正面竞争，是"Kuiper项目"以外的重要战略补充。受特朗普战争降温表态提振，韩国KOSPI、日本日经225指数4月15日早盘均高开，亚太风险偏好延续修复态势。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">科技 · 太空竞争</span>
+      <span class="news-tag">亚马逊 · 卫星</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476700" target="_blank">Odaily（亚马逊收购Globalstar）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/476758" target="_blank">Odaily（日韩高开）</a></div>
+  </div>
+</div>
+
+<!-- 宏观数据 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">📊</span>
+    <span class="section-title">宏观数据</span>
+    <span class="section-count">2</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">美股加密板块全线暴涨：HOOD +10.35%领跑，CRCL +6.9%，COIN +5.66%；道指+0.66%，纳指+1.96%</div>
+    <div class="news-desc">4月14日美股收盘，受特朗普伊朗战争降温表态提振，加密板块全线爆发：Robinhood（HOOD）+10.35%领涨，Circle（CRCL）+6.9%，Coinbase（COIN）+5.66%，Strategy（MSTR）+3.82%，SBET +6.57%；道指+0.66%，标普500 +1.18%，纳斯达克+1.96%。美国XRP现货ETF单日净流入$1,119.82万，SOL现货ETF净流入$127.30万，为近期最强单日净流入之一。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">传统金融 · 加密股</span>
+      <span class="news-tag">ETF资金回流</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476765" target="_blank">Odaily（美股收盘）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/476763" target="_blank">Odaily（XRP ETF）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/476766" target="_blank">Odaily（SOL ETF）</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">原油跌近4%，黄金回落至$4,830；加密反弹但资金费率显示空头情绪尚未消退</div>
+    <div class="news-desc">原油跌近4%，黄金从高位回落至$4,830/盎司。加密市场随BTC大涨+6%整体反弹，但BlockBeats数据显示资金费率仍处于偏负区间，部分交易者认为特朗普表态更多是谈判策略而非真正停战，维持对冲头寸；BTC期权隐含波动率（IV）同步下行，反映市场已消化尾部风险，进入相对平稳修复阶段。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">宏观 · 市场情绪</span>
+      <span class="news-tag">原油 · 资金费率</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476764" target="_blank">Odaily（黄金原油）</a> · <a href="https://www.theblockbeats.info/flash/341218" target="_blank">BlockBeats（资金费率）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/476686" target="_blank">Odaily（期权IV）</a></div>
+  </div>
+</div>
+
+<!-- 全球监管 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">⚖️</span>
+    <span class="section-title">全球监管</span>
+    <span class="section-count">3</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">Kraken秘密提交美国IPO申请，最新估值约$133亿；Deutsche Börse承诺战略投资约$2亿</div>
+    <div class="news-desc">Kraken联席CEO确认已向SEC秘密提交IPO申请，最新估值约$133亿（较2025年11月高点$200亿有所下调）。德意志交易所承诺以约$2亿美元获取约1.5%完全摊薄股权，双方将在交易、托管、结算及代币化资产领域深度合作，打通传统金融基础设施与数字资产生态。Kraken若顺利上市，将成为Coinbase之后美股第二家主要中心化交易所。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">监管 · IPO · TradFi融合</span>
+      <span class="news-tag">Kraken</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476759" target="_blank">Odaily</a> · <a href="https://www.chaincatcher.com/article/2258538" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">香港首批稳定币牌照正式落地：汇丰银行与碇点金融获批，36份申请仅取2</div>
+    <div class="news-desc">香港金融管理局公布首批稳定币发行人牌照，汇丰银行与碇点金融科技获批（获批率约5%）。汇丰计划2026年下半年推出港元稳定币，接入PayMe和汇丰香港App；碇点将于第二季度分阶段发行"HKDAP"。此次发牌标志香港稳定币监管从立法进入实施阶段，是银行信用与链上能力的制度性整合，亚太合规格局重塑加速。</div>
+    <div class="news-tags">
+      <span class="news-tag">季度级影响</span>
+      <span class="news-tag">合规监管 · 稳定币</span>
+      <span class="news-tag">香港 · 亚太市场</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2258621" target="_blank">链捕手（深度）</a> · <a href="https://www.chaincatcher.com/article/2258538" target="_blank">链捕手（早报）</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">美联储主席提名人沃什财务披露持大量加密资产；确认听证会4月21日举行</div>
+    <div class="news-desc">凯文·沃什财务披露显示其资产超$1亿，包括DeFi协议、以太坊L2（含Blast等）、BTC闪电网络初创公司股权及预测市场投资，同时是Bitwise顾问，承诺就职后出售全部加密持仓。4月21日（周一）确认听证会将是下周最重要宏观观察窗口，市场密切关注其货币政策立场与加密监管表态。</div>
+    <div class="news-tags">
+      <span class="news-tag">季度级影响</span>
+      <span class="news-tag">货币政策 · 监管预期</span>
+      <span class="news-tag">美联储 · 沃什</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.coindesk.com/policy/2026/04/14/the-next-fed-chair-has-a-crypto-portfolio-here-s-everything-that-s-in-it" target="_blank">CoinDesk（完整持仓）</a> · <a href="https://www.chaincatcher.com/article/2258538" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+</div>
+
+<!-- 链上事件 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">⛓️</span>
+    <span class="section-title">链上事件</span>
+    <span class="section-count">4</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">全网1小时爆仓$6,914万（空单$5,812万），BTC空头爆仓$4,243万；多头巨鲸累计止盈获利$5,042万</div>
+    <div class="news-desc">4月14日22:00前后随BTC突破$76,000，全网1小时爆仓近$6,914万：空单$5,812万（占84%），多单$1,101万，BTC空头$4,243万，ETH空头$497万。同时，@EmberCN监测的多头巨鲸地址自14日至15日凌晨累计平仓约1,500枚BTC及9.5万枚ETH多单（约$3.39亿仓位），已实现盈利约$5,042万；仍持有约2.5万枚ETH多仓（约$5,798万）。Matrixport关联巨鲸同期完全平仓约$5,500万BTC多仓，获利约$439万。</div>
+    <div class="news-tags">
+      <span class="news-tag">周级影响</span>
+      <span class="news-tag">链上 · 清算 · 止盈</span>
+      <span class="news-tag">BTC · ETH</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476720" target="_blank">Odaily（全网爆仓）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/476760" target="_blank">Odaily（多头巨鲸止盈）</a> · <a href="https://www.theblockbeats.info/flash/341100" target="_blank">BlockBeats（Matrixport止盈）</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">BitMine分析师：比特币呈现"牛市特征"，短期持有者盈利比例回升，或涨至$90,000</div>
+    <div class="news-desc">BitMine旗下分析师发布报告指出，当前BTC走势已显现"牛市特征"：短期持有者盈利比例回升，链上交易量持续增加，机构资金净流入连续多日为正。分析师预测，若地缘局势进一步降温，BTC有望近期挑战$90,000关口。BTC当前已突破$76,000（+6.05%），技术面趋势转为正向。</div>
+    <div class="news-tags">
+      <span class="news-tag">周级影响</span>
+      <span class="news-tag">加密数据 · BTC</span>
+      <span class="news-tag">牛市信号</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/341202" target="_blank">BlockBeats</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">Ether.fi拟三年内通过ETHGas为DeFi提供$30亿ETH流动性，推动Gas经济闭环</div>
+    <div class="news-desc">以太坊流动性质押协议Ether.fi宣布，将在未来三年内通过ETHGas产品向DeFi生态提供总计约$30亿美元ETH流动性支持，目标形成"质押→流动性→Gas消耗"的闭环正向飞轮，允许用户将质押ETH直接用于支付链上Gas费，降低持有成本，提高ETH实用价值与流动效率。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">DeFi · ETH流动性</span>
+      <span class="news-tag">Ether.fi</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476755" target="_blank">Odaily</a> · <a href="https://www.chaincatcher.com/article/2258650" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">Ripple与韩国Kyobo Life启动代币化国债区块链结算试点，测试24小时实时结算</div>
+    <div class="news-desc">Ripple与韩国教保生命保险启动代币化国债区块链结算试点，重点验证24小时实时结算机制，标志传统金融机构与区块链结算基础设施融合持续推进。XRP现货ETF同日净流入$1,119.82万，机构对XRP生态的配置需求持续强化，RWA代币化落地加速。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">RWA代币化 · 机构合作</span>
+      <span class="news-tag">Ripple · 亚洲市场</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2258670" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+</div>
+
+<!-- 行业趋势 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🚀</span>
+    <span class="section-title">行业趋势</span>
+    <span class="section-count">3</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">Anthropic估值意向升至$800B（年化收入$300亿）；本周将推Claude Opus 4.7及AI网页设计工具，Adobe/Figma/Wix跌超2%</div>
+    <div class="news-desc">Anthropic近期收到多家风投最高$800B估值投资意向，年化收入已增长至约$300亿。市场传言本周将发布Claude Opus 4.7及面向无代码用户的AI网页设计工具，消息一出Adobe、Wix、Figma股价均跌超2%。同日Coinbase与币安均寻求接入Anthropic受限安全模型Mythos，加密行业AI军备竞赛延伸至网络安全基础设施领域，Claude Code Routines功能同步上线。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">AI · Anthropic</span>
+      <span class="news-tag">估值 · 产品 · 加密AI竞争</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476757" target="_blank">Odaily（估值$800B）</a> · <a href="https://www.theblockbeats.info/flash/341215" target="_blank">BlockBeats（Opus 4.7+设计工具）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/476772" target="_blank">Odaily（Coinbase/币安争接Mythos）</a> · <a href="https://www.theblockbeats.info/flash/341214" target="_blank">BlockBeats（Claude Code Routines）</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">X平台在美加推出Cashtags，支持加密与股票实时数据并试点内嵌交易入口</div>
+    <div class="news-desc">X（原Twitter）在美国和加拿大正式推出Cashtags功能，用户可在推文中直接查看加密货币与股票实时价格图表，并进入内嵌交易试点入口。这是社交媒体金融化的重要里程碑，打通了内容消费与资产交易之间的入口壁垒，或深度推动零售用户加密认知与交易行为融合。</div>
+    <div class="news-tags">
+      <span class="news-tag">季度级影响</span>
+      <span class="news-tag">社交金融化 · 用户触达</span>
+      <span class="news-tag">X · 加密入口</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/476754" target="_blank">Odaily星球日报</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">OpenAI推出GPT-5.4-Cyber网络安全模型；李飞飞World Labs开源Spark 2.0；谷歌上线桌面AI搜索</div>
+    <div class="news-desc">OpenAI发布GPT-5.4-Cyber专项模型，聚焦网络安全漏洞检测，与Anthropic Mythos形成直接竞争。李飞飞创立的World Labs正式开源3D世界模型Spark 2.0，可在浏览器内流式渲染超1亿个3D高斯溅射点，被视为空间智能领域重要里程碑。谷歌同日全球上线Windows桌面AI搜索应用（Alt+Space唤起），AI端侧竞争进一步加剧。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">AI · 产品竞争</span>
+      <span class="news-tag">OpenAI · 谷歌 · World Labs</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/341201" target="_blank">BlockBeats（OpenAI Cyber）</a> · <a href="https://www.theblockbeats.info/flash/341220" target="_blank">BlockBeats（World Labs Spark 2.0）</a> · <a href="https://www.theblockbeats.info/flash/341213" target="_blank">BlockBeats（谷歌桌面AI）</a></div>
+  </div>
+</div>
+
+<div class="keywords-wrap">
+  <div class="keywords-title">今日关键词</div>
+  <div class="keywords">
+    <span class="keyword">特朗普：伊朗战争已经结束</span>
+    <span class="keyword">万斯两天内重赴伊斯兰堡</span>
+    <span class="keyword">原油大跌4%</span>
+    <span class="keyword">BTC +6.05% 破$76,000</span>
+    <span class="keyword">全网空头爆仓$5,812万</span>
+    <span class="keyword">多头巨鲸获利$5,042万</span>
+    <span class="keyword">HOOD +10.35%</span>
+    <span class="keyword">XRP ETF净流入$1,119万</span>
+    <span class="keyword">Kraken秘密IPO $133亿</span>
+    <span class="keyword">香港稳定币牌照落地</span>
+    <span class="keyword">沃什听证会4月21日</span>
+    <span class="keyword">高盛BTC收益型ETF申请</span>
+    <span class="keyword">Anthropic估值$800B</span>
+    <span class="keyword">Claude Opus 4.7本周发布</span>
+    <span class="keyword">分析师：BTC或涨至$90,000</span>
+  </div>
+</div>
+
+<div class="footer">
+  OKX Research · 加密早报 · 2026.04.15<br>
+  数据来源：Odaily · BlockBeats · 链捕手 · Foresight News · CoinDesk · 吴说区块链<br>
+  本报告仅供信息参考，不构成任何投资建议。
+</div>
+
 </body>
 </html>
