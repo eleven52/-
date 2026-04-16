@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>加密行业热点早报 · 2026年4月16日</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #000;
+      color: #fff;
+      font-family: -apple-system, 'PingFang SC', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      max-width: 480px;
+      margin: 0 auto;
+      padding-bottom: env(safe-area-inset-bottom, 20px);
+      -webkit-tap-highlight-color: transparent;
+    }
+    /* Sticky Header */
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(0,0,0,0.9);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1a1a1a;
+      padding: 14px 16px 12px;
+      text-align: center;
+    }
+    .header-date {
+      display: inline-block;
+      background: #111; border: 1px solid #222; border-radius: 20px;
+      padding: 3px 10px; font-size: 11px; color: #888; margin-bottom: 6px;
+    }
+    .header-title { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; line-height: 1.2; }
+    .header-title .green { color: #BCFF2F; }
+    .header-sub { font-size: 11px; color: #555; margin-top: 4px; }
+    /* Source Pills */
+    .source-pills {
+      display: flex; gap: 6px; padding: 10px 16px;
+      overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+    }
+    .source-pills::-webkit-scrollbar { display: none; }
+    .pill {
+      flex-shrink: 0; background: #111; border: 1px solid #222; border-radius: 12px;
+      padding: 4px 10px; font-size: 11px; color: #aaa; white-space: nowrap;
+    }
+    /* Banner */
+    .banner {
+      margin: 0 16px 12px;
+      background: #0d1a09; border: 1px solid #1a2a14; border-left: 3px solid #BCFF2F;
+      border-radius: 8px; padding: 12px 14px;
+    }
+    .banner-label { font-size: 10px; font-weight: 700; color: #BCFF2F; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase; }
+    .banner-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 6px; line-height: 1.4; }
+    .banner-body { font-size: 12px; color: #aaa; line-height: 1.5; }
+    /* Market Grid */
+    .market-wrap { padding: 0 16px 12px; }
+    .market-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: #111; border: 1px solid #1a1a1a; border-radius: 10px; overflow: hidden;
+    }
+    .market-cell { background: #0c0c0c; padding: 10px 8px; text-align: center; }
+    .market-name { font-size: 11px; color: #666; margin-bottom: 3px; }
+    .market-price { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .market-change { font-size: 11px; font-weight: 600; }
+    .up { color: #BCFF2F; }
+    .down { color: #FF3B3B; }
+    /* Section */
+    .section { margin: 0 0 4px; padding: 0 16px; }
+    .section-header {
+      display: flex; align-items: center; gap: 8px;
+      padding: 12px 0 8px; border-top: 1px solid #111;
+    }
+    .section-icon { font-size: 16px; }
+    .section-title { font-size: 13px; font-weight: 700; color: #fff; flex: 1; }
+    .section-count { background: #BCFF2F; color: #000; border-radius: 10px; padding: 1px 7px; font-size: 10px; font-weight: 700; }
+    /* News Item */
+    .news-item { padding: 10px 0; border-bottom: 1px solid #0f0f0f; }
+    .news-item:last-child { border-bottom: none; }
+    .news-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; flex-wrap: wrap; }
+    .tag-priority { border-radius: 4px; padding: 1px 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; }
+    .tag-priority.high { background: rgba(255,59,59,0.15); color: #FF3B3B; border: 1px solid rgba(255,59,59,0.3); }
+    .tag-priority.mid  { background: rgba(255,214,0,0.1);  color: #FFD600; border: 1px solid rgba(255,214,0,0.25); }
+    .tag-priority.low  { background: rgba(255,255,255,0.05); color: #666; border: 1px solid #222; }
+    .news-time { font-size: 10px; color: #444; }
+    .news-title { font-size: 13px; font-weight: 600; color: #f0f0f0; line-height: 1.4; margin-bottom: 4px; }
+    .news-desc  { font-size: 12px; color: #777; line-height: 1.5; margin-bottom: 6px; }
+    .news-tags  { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 5px; }
+    .news-tag   { background: #111; border: 1px solid #1e1e1e; border-radius: 4px; padding: 1px 6px; font-size: 10px; color: #555; }
+    .news-source { font-size: 11px; color: #444; }
+    .news-source a { color: #BCFF2F; text-decoration: none; opacity: 0.8; }
+    .news-source a:hover { opacity: 1; }
+    /* Keywords */
+    .keywords-wrap { padding: 16px 16px 12px; border-top: 1px solid #111; margin-top: 8px; }
+    .keywords-title { font-size: 11px; color: #555; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+    .keywords { display: flex; flex-wrap: wrap; gap: 6px; }
+    .keyword { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 12px; padding: 3px 10px; font-size: 11px; color: #BCFF2F; }
+    /* Footer */
+    .footer { padding: 12px 16px 20px; text-align: center; font-size: 10px; color: #333; line-height: 1.5; }
+  </style>
+</head>
+<body>
+
+<!-- ① Header -->
+<div class="header">
+  <div class="header-date">2026 · APR 16 · 星期四</div>
+  <div class="header-title">加密行业热点<span class="green">早报</span></div>
+  <div class="header-sub">抓取时间窗口：4月15日 20:00 — 4月16日 09:30</div>
+</div>
+
+<!-- ② Source Pills -->
+<div class="source-pills">
+  <div class="pill">Odaily</div>
+  <div class="pill">BlockBeats</div>
+  <div class="pill">链捕手</div>
+  <div class="pill">吴说区块链</div>
+  <div class="pill">Foresight News</div>
+  <div class="pill">CoinDesk</div>
+</div>
+
+<!-- ③ Today's Banner -->
+<div class="banner">
+  <div class="banner-label">🟢 今日核心主线</div>
+  <div class="banner-title">机构资金密集行动：贝莱德8小时提走2.55亿美元BTC，Legal & General 500亿英镑基金代币化上链</div>
+  <div class="banner-body">贝莱德于今晨8:14从Coinbase Custody划出3,446枚BTC（约2.552亿美元），同一时段英国资管巨头Legal & General宣布将超500亿英镑流动性基金接入Calastone代币化分销网络。与此同时，苹果下架假冒Ledger Live应用，50名用户一周损失950万美元，安全警报升级。市场情绪指数维持23（极度恐惧），BTC触及76,800阻力位后承压回落。</div>
+</div>
+
+<!-- ④ Market Grid -->
+<div class="market-wrap">
+  <div class="market-grid">
+    <div class="market-cell">
+      <div class="market-name">BTC</div>
+      <div class="market-price">$74,695</div>
+      <div class="market-change down">▼ -2.03% 24h</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">ETH</div>
+      <div class="market-price">$2,323</div>
+      <div class="market-change down">▼ 窄幅整理</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">原油 WTI</div>
+      <div class="market-price">$91.08</div>
+      <div class="market-change down">▼ -0.34%</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">黄金</div>
+      <div class="market-price">$4,807</div>
+      <div class="market-change up">▲ +0.85%</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">纳斯达克</div>
+      <div class="market-price">25,661</div>
+      <div class="market-change up">▲ 收创新高</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">恐惧贪婪</div>
+      <div class="market-price">23</div>
+      <div class="market-change down">极度恐惧</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 1: 传统金融 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🏦</span>
+    <span class="section-title">传统金融</span>
+    <span class="section-count">1</span>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority high">HIGH</span>
+      <span class="news-time">04-15 22:03</span>
+    </div>
+    <div class="news-title">高盛、摩根大通等大型银行 Q1 股票回购创历史新高，合计达 330 亿美元</div>
+    <div class="news-desc">美国六大银行 Q1 股票回购支出达创纪录 330 亿美元，较市场预期高出 30-50%。强劲的资本返还显示银行业对宏观环境信心充足。叠加纳斯达克再创历史新高，风险资产情绪整体偏多，但加密市场未能同步跟涨，恐惧贪婪指数仍处极度恐惧区间。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">传统金融 · 宏观情绪</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.odaily.news/zh-CN/newsflash/476900" target="_blank">Odaily（Q1回购创纪录）</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 2: 链上安全 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🛡️</span>
+    <span class="section-title">链上安全</span>
+    <span class="section-count">2</span>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority high">HIGH</span>
+      <span class="news-time">04-16 09:20</span>
+    </div>
+    <div class="news-title">苹果 App Store 下架假冒 Ledger Live 应用，50 名受害者一周损失达 950 万美元</div>
+    <div class="news-desc">苹果公司确认下架一款伪装成 Ledger Live 的欺诈应用，该应用通过诱导用户输入助记词进行钓鱼。事发一周内，至少 50 名用户遭受损失，累计金额约 950 万美元。此次事件再次暴露硬件钱包应用伪造的危险性，用户须通过 Ledger 官网核验 App Store 链接。</div>
+    <div class="news-tags">
+      <span class="news-tag">周级影响</span>
+      <span class="news-tag">安全 · 钓鱼攻击 · 用户资产</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341425" target="_blank">BlockBeats（下架详情）</a>
+      · <a href="https://www.chaincatcher.com/article/2258928" target="_blank">链捕手（受害者数据）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-16 09:30</span>
+    </div>
+    <div class="news-title">过去 24 小时全网爆仓 2.13 亿美元，空单占比达 62.9%</div>
+    <div class="news-desc">据链捕手数据，过去 24 小时全网合约爆仓总量达 2.13 亿美元，其中多单爆仓约 7,886 万美元，空单爆仓约 1.34 亿美元。空头损失远超多头，显示市场在震荡中做空力量受挫，或与纳斯达克创新高、美股情绪外溢有关。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">加密数据 · 爆仓 · 多空博弈</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.chaincatcher.com/article/2258930" target="_blank">链捕手（爆仓数据）</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 3: 全球监管 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">⚖️</span>
+    <span class="section-title">全球监管</span>
+    <span class="section-count">3</span>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority high">HIGH</span>
+      <span class="news-time">04-16 08:23</span>
+    </div>
+    <div class="news-title">华尔街巨头 Cantor Fitzgerald 向加密政治 PAC"Fellowship PAC"捐赠 1000 万美元</div>
+    <div class="news-desc">Cantor Fitzgerald 宣布向 Fellowship PAC 捐款 1000 万美元，该超级 PAC 专注于支持倡导加密友好政策的候选人。此举使 Cantor 成为目前最大的单笔加密政治捐款方之一，也进一步表明华尔街主流金融机构正通过政治献金深度介入加密政策博弈。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">监管 · 加密政治 · 华尔街</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341415" target="_blank">BlockBeats（政治捐款详情）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-16 09:09</span>
+    </div>
+    <div class="news-title">Coinbase 公布上币路线图，Diem 与 Opengradient 列入候选</div>
+    <div class="news-desc">Coinbase 更新上币路线图，Diem 与 Opengradient 项目正式进入审核候选名单。Coinbase 上币路线图通常是市场关注的风向指标，相关代币在路线图公布后往往出现流动性溢价。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">交易所 · 上币 · 流动性</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.chaincatcher.com/article/2258925" target="_blank">链捕手（Coinbase路线图）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-15 23:49</span>
+    </div>
+    <div class="news-title">预测市场 Kalshi 拟推"家长门户"，引入面部识别强化未成年人访问限制</div>
+    <div class="news-desc">Kalshi 宣布计划推出家长验证机制，包括面部识别与家长授权门户，以限制未成年人使用其预测市场平台。此举被解读为主动合规动作，或有助于平台在监管收紧背景下规避风险。预测市场近期因大额投注操作（Polymarket NBA 投注超百万美元）而受到关注。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">预测市场 · 合规 · KYC</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.odaily.news/zh-CN/newsflash/476948" target="_blank">Odaily（Kalshi合规）</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: 行业趋势·RWA ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🌐</span>
+    <span class="section-title">行业趋势 · RWA</span>
+    <span class="section-count">3</span>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority high">HIGH</span>
+      <span class="news-time">04-16 08:40</span>
+    </div>
+    <div class="news-title">英国资管巨头 Legal & General 将超 500 亿英镑基金接入 Calastone 代币化分销网络</div>
+    <div class="news-desc">Legal & General 宣布将旗下多支流动性基金（规模逾 500 亿英镑）接入 Calastone 代币化分销网络，实现链上结算与分销。这是迄今为止接入代币化分销基础设施规模最大的传统资管行动之一，标志着欧洲顶级资管机构正全面拥抱 RWA 链上化进程。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">RWA · 机构入场 · 资产代币化</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341420" target="_blank">BlockBeats（L&G上链详情）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-16 09:25</span>
+    </div>
+    <div class="news-title">Circle 推出新跨链 USDC 统一结算协议，支持高频场景原子化转账</div>
+    <div class="news-desc">Circle 发布新跨链转账协议，支持跨链统一结算 USDC，覆盖高频使用场景（如支付、DeFi）。新机制通过原子交换确保资金安全，消除跨链桥风险敞口。该协议有望成为 USDC 在多链生态扩张的基础设施支撑。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">稳定币 · 跨链 · USDC</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.chaincatcher.com/article/2258927" target="_blank">链捕手（Circle跨链协议）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-15 22:50</span>
+    </div>
+    <div class="news-title">股票代币化研究：公募与私募股票四种上链模式、费用结构与市场机遇解析</div>
+    <div class="news-desc">链捕手深度报告拆解股票代币化的四种落地模式（直接持有型、凭证型、基金份额型、合成型），并分析各模式的链上合规路径与费用结构。报告指出私募股票代币化在流动性改善方面潜力最大，但监管套利风险同步存在。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">RWA · 股票代币化 · 研报</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.chaincatcher.com/article/2258799" target="_blank">链捕手（股票代币化研究）</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 5: 链上事件·机构 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🐳</span>
+    <span class="section-title">链上事件 · 机构动向</span>
+    <span class="section-count">2</span>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority high">HIGH</span>
+      <span class="news-time">04-16 08:14</span>
+    </div>
+    <div class="news-title">贝莱德 8 小时内从 Coinbase Custody 提出 3,446 枚 BTC，价值约 2.552 亿美元</div>
+    <div class="news-desc">链上数据显示，贝莱德于今日凌晨至早间从 Coinbase Custody 地址提取 3,446 枚比特币，约合 2.552 亿美元。此类大额提币通常被市场解读为机构调仓或冷钱包归集动作，而非抛售信号。此前一日，比特币现货 ETF（IBIT 居首）净流入合计 4.11 亿美元。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">机构 · BTC · 链上大额转账</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341413" target="_blank">BlockBeats（贝莱德提币详情）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-16 09:26</span>
+    </div>
+    <div class="news-title">Solv Protocol 集成 Utexo，推出基于 RGB 与闪电网络的原生比特币收益方案</div>
+    <div class="news-desc">Solv Protocol 宣布集成 Utexo 方案，支持通过 RGB 协议与闪电网络实现原生比特币的链上收益，全程无需跨链桥，支持原子交换结算。这是比特币 L2 收益生态的重要进展，有望吸引更多 BTC 持有者参与链上 DeFi。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">BTC L2 · RGB · DeFi</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.chaincatcher.com/article/2258929" target="_blank">链捕手（Solv集成详情）</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 6: 加密数据 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">📊</span>
+    <span class="section-title">加密数据</span>
+    <span class="section-count">3</span>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-16 09:15</span>
+    </div>
+    <div class="news-title">CryptoQuant：BTC 链上获利了结压力上升，$76,800 成关键阻力位</div>
+    <div class="news-desc">CryptoQuant 最新链上分析显示，比特币链上卖压指标持续增强，获利了结仓位比例上升。报告将 76,800 美元标注为短期关键阻力位，若无法有效突破，市场或进入获利盘压力释放阶段。当前恐惧贪婪指数 23（极度恐惧）与链上数据形成共振，需警惕下行风险。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">链上分析 · BTC · 获利了结</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341424" target="_blank">BlockBeats（CryptoQuant报告）</a>
+      · <a href="https://www.chaincatcher.com/article/2258926" target="_blank">链捕手（卖压分析）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-16 09:02</span>
+    </div>
+    <div class="news-title">老牌 Meme 与 DeSci 板块代币普涨，BIO 24 小时涨幅达 98.45%</div>
+    <div class="news-desc">加密市场 Meme 板块与 DeSci（去中心化科学）板块出现联动上涨，其中 BIO 代币 24 小时涨幅高达 98.45%，领涨板块。老牌 Meme 代币整体情绪回暖，分析人士认为这与市场对下一轮山寨季的预期升温有关。CZ 本周明确表态支持 Meme 基础设施，或提振了市场信心。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">Meme · DeSci · BIO · 板块轮动</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341422" target="_blank">BlockBeats（板块涨幅）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-16 09:06</span>
+    </div>
+    <div class="news-title">Binance 推出持有 USD1 瓜分 1500 万美元等值 WLFI 奖励活动</div>
+    <div class="news-desc">Binance 宣布面向 USD1（World Liberty Financial 稳定币）持有用户的空投奖励活动，总奖励池达 1500 万美元等值 WLFI 代币。此举将 USD1 与 WLFI 生态深度绑定，持续推动特朗普系加密资产的市场渗透率。孙宇晨此前已公开批评 WLFI 的解锁提案，两方存在潜在分歧。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">WLFI · USD1 · Binance空投</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341423" target="_blank">BlockBeats（Binance活动详情）</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 7: AI 与科技 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🤖</span>
+    <span class="section-title">AI 与科技</span>
+    <span class="section-count">2</span>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority low">LOW</span>
+      <span class="news-time">04-16 08:37</span>
+    </div>
+    <div class="news-title">谷歌发布 Gemini 3.1 Flash TTS，支持 70+ 语言，Elo 评分全球排名第一</div>
+    <div class="news-desc">谷歌推出新一代文本转语音模型 Gemini 3.1 Flash TTS，支持 70 多种语言，在独立评测 Elo 评分中以 1211 分排名第一。AI 语音能力的提升将进一步赋能 Web3 领域的语音交互、AI Agent 沟通层，对 AI×Crypto 叙事有间接催化作用。</div>
+    <div class="news-tags">
+      <span class="news-tag">AI · 语音模型 · 间接关联</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341419" target="_blank">BlockBeats（Gemini TTS发布）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority low">LOW</span>
+      <span class="news-time">04-16 08:27</span>
+    </div>
+    <div class="news-title">英伟达开源 Lyra 2.0：单张照片生成可探索 3D 世界，可直接导入仿真器</div>
+    <div class="news-desc">英伟达开源 Lyra 2.0 框架，支持从单张图片生成完整可交互 3D 世界，并可直接导入物理仿真器。这一技术对元宇宙、链游、AI 生成场景等方向具有较强潜力，长期来看或推动链游和 AI Agent 内容生成成本大幅下降。</div>
+    <div class="news-tags">
+      <span class="news-tag">AI · 3D生成 · 链游潜力</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341418" target="_blank">BlockBeats（英伟达Lyra 2.0）</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 8: 观点与动态 ===== -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">💬</span>
+    <span class="section-title">观点与动态</span>
+    <span class="section-count">3</span>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority mid">MID</span>
+      <span class="news-time">04-16 01:00</span>
+    </div>
+    <div class="news-title">孙宇晨抨击 WLFI 解锁提案，列举"强制、冻结、权力侵犯"五大问题</div>
+    <div class="news-desc">孙宇晨在社媒公开发文批评 World Liberty Financial 提出的代币解锁提案，指控该提案存在强制批准、冻结机制滥用、权力过度集中等五大核心问题。孙宇晨本人持有大量 WLFI，其公开发声可能影响提案投票走向，市场已出现对 WLFI 生态治理风险的讨论升温。</div>
+    <div class="news-tags">
+      <span class="news-tag">周级影响</span>
+      <span class="news-tag">WLFI · 治理 · 孙宇晨</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.odaily.news/zh-CN/newsflash/476949" target="_blank">Odaily（孙宇晨批评WLFI）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority low">LOW</span>
+      <span class="news-time">04-15 21:55</span>
+    </div>
+    <div class="news-title">CZ 回应社区质疑：BNB Chain 仅提供基础设施支持，Meme 操作由用户自行判断</div>
+    <div class="news-desc">CZ 在社媒回应外界对其支持 Meme 代币的质疑，表示 BNB Chain 作为基础设施层提供底层支持，但具体 Meme 项目的投资决策完全由用户自行判断，链本身不为项目背书。该表态被部分观察者认为是主动切割风险的公关动作。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">CZ · BNB · Meme · 公关</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.odaily.news/zh-CN/newsflash/476896" target="_blank">Odaily（CZ回应）</a>
+    </div>
+  </div>
+
+  <div class="news-item">
+    <div class="news-meta">
+      <span class="tag-priority low">LOW</span>
+      <span class="news-time">04-16 08:46</span>
+    </div>
+    <div class="news-title">7000 万美元 AI 电影《杀死中本聪》将在戛纳电影节向买家推介</div>
+    <div class="news-desc">以比特币创始人故事为蓝本的 AI 影片《杀死中本聪》（Kill Satoshi Nakamoto）宣布将于 5 月戛纳电影节上向发行方推介，制作预算约 7000 万美元。影片将 Satoshi 传奇与 AI 技术融合叙事，折射出加密文化正逐步进入主流娱乐视野。</div>
+    <div class="news-tags">
+      <span class="news-tag">文化 · AI电影 · Satoshi</span>
+    </div>
+    <div class="news-source">
+      来源：<a href="https://www.theblockbeats.info/flash/341421" target="_blank">BlockBeats（戛纳推介）</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== Keywords ===== -->
+<div class="keywords-wrap">
+  <div class="keywords-title">今日关键词</div>
+  <div class="keywords">
+    <span class="keyword">贝莱德 3446BTC</span>
+    <span class="keyword">L&G 500亿英镑上链</span>
+    <span class="keyword">假冒Ledger Live</span>
+    <span class="keyword">Cantor PAC 1000万</span>
+    <span class="keyword">BTC 76,800 阻力</span>
+    <span class="keyword">BIO +98%</span>
+    <span class="keyword">WLFI 治理争议</span>
+    <span class="keyword">Circle 跨链USDC</span>
+    <span class="keyword">恐惧贪婪指数 23</span>
+    <span class="keyword">全网爆仓 2.13亿</span>
+    <span class="keyword">Gemini 3.1 TTS</span>
+    <span class="keyword">DeSci 板块轮动</span>
+  </div>
+</div>
+
+<!-- ===== Footer ===== -->
+<div class="footer">
+  OKX Research · 加密早报 · 2026.04.16<br>
+  数据来源：Odaily · BlockBeats · 链捕手 · 吴说区块链 · Foresight News · CoinDesk<br>
+  行情数据：CoinGecko / Yahoo Finance / Alternative.me（04-16 09:30 UTC+8）<br>
+  本报告仅供信息参考，不构成任何投资建议。
+</div>
+
+</body>
+</html>
