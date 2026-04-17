@@ -1,1 +1,419 @@
-test
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>加密早报 · 2026年4月17日</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #000;
+    color: #fff;
+    font-family: -apple-system, 'PingFang SC', 'SF Pro Text', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+    padding-bottom: env(safe-area-inset-bottom, 20px);
+    -webkit-tap-highlight-color: transparent;
+  }
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid #1a1a1a;
+    padding: 14px 16px 12px;
+    text-align: center;
+  }
+  .header-date { display: inline-block; background: #111; border: 1px solid #222; border-radius: 20px; padding: 3px 10px; font-size: 11px; color: #888; margin-bottom: 6px; }
+  .header-title { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; line-height: 1.2; }
+  .header-title .green { color: #BCFF2F; }
+  .header-sub { font-size: 11px; color: #555; margin-top: 4px; }
+  .source-pills { display: flex; gap: 6px; padding: 10px 16px; overflow-x: auto; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .source-pills::-webkit-scrollbar { display: none; }
+  .pill { flex-shrink: 0; background: #111; border: 1px solid #222; border-radius: 12px; padding: 4px 10px; font-size: 11px; color: #aaa; white-space: nowrap; }
+  .banner { margin: 0 16px 12px; background: #0d1a09; border: 1px solid #1a2a14; border-left: 3px solid #BCFF2F; border-radius: 8px; padding: 12px 14px; }
+  .banner-label { font-size: 10px; font-weight: 700; color: #BCFF2F; letter-spacing: 1px; margin-bottom: 6px; text-transform: uppercase; }
+  .banner-title { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 6px; line-height: 1.4; }
+  .banner-body { font-size: 12px; color: #aaa; line-height: 1.5; }
+  .market-wrap { padding: 0 16px 12px; }
+  .market-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #111; border: 1px solid #1a1a1a; border-radius: 10px; overflow: hidden; }
+  .market-cell { background: #0c0c0c; padding: 10px 8px; text-align: center; }
+  .market-name { font-size: 11px; color: #666; margin-bottom: 3px; }
+  .market-price { font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+  .market-change { font-size: 11px; font-weight: 600; }
+  .up { color: #BCFF2F; } .down { color: #FF3B3B; } .neutral { color: #888; }
+  .section { margin: 0 0 4px; padding: 0 16px; }
+  .section-header { display: flex; align-items: center; gap: 8px; padding: 12px 0 8px; border-top: 1px solid #111; }
+  .section-icon { font-size: 16px; }
+  .section-title { font-size: 13px; font-weight: 700; color: #fff; flex: 1; }
+  .section-count { background: #BCFF2F; color: #000; border-radius: 10px; padding: 1px 7px; font-size: 10px; font-weight: 700; }
+  .news-item { padding: 10px 0; border-bottom: 1px solid #0f0f0f; }
+  .news-item:last-child { border-bottom: none; }
+  .news-item:active { background: #0a0a0a; }
+  .news-meta { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; flex-wrap: wrap; }
+  .tag-priority { border-radius: 4px; padding: 1px 6px; font-size: 10px; font-weight: 700; letter-spacing: 0.5px; }
+  .tag-priority.high { background: rgba(255,59,59,0.15); color: #FF3B3B; border: 1px solid rgba(255,59,59,0.3); }
+  .tag-priority.mid  { background: rgba(255,214,0,0.1);  color: #FFD600; border: 1px solid rgba(255,214,0,0.25); }
+  .tag-priority.low  { background: rgba(255,255,255,0.05); color: #666; border: 1px solid #222; }
+  .news-title { font-size: 13px; font-weight: 600; color: #f0f0f0; line-height: 1.4; margin-bottom: 4px; }
+  .news-desc  { font-size: 12px; color: #777; line-height: 1.5; margin-bottom: 6px; }
+  .news-tags  { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 5px; }
+  .news-tag   { background: #111; border: 1px solid #1e1e1e; border-radius: 4px; padding: 1px 6px; font-size: 10px; color: #555; }
+  .news-source { font-size: 11px; color: #444; }
+  .news-source a { color: #BCFF2F; text-decoration: none; opacity: 0.8; }
+  .news-source a:hover { opacity: 1; }
+  .keywords-wrap { padding: 16px 16px 12px; border-top: 1px solid #111; margin-top: 8px; }
+  .keywords-title { font-size: 11px; color: #555; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 6px; }
+  .keyword { background: #0d0d0d; border: 1px solid #1a1a1a; border-radius: 12px; padding: 3px 10px; font-size: 11px; color: #BCFF2F; }
+  .footer { padding: 12px 16px 20px; text-align: center; font-size: 10px; color: #333; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-date">2026 · APR 17 · 星期五</div>
+  <div class="header-title">加密行业热点<span class="green">早报</span></div>
+  <div class="header-sub">抓取时间窗口：4月16日 20:00 — 4月17日 09:30</div>
+</div>
+
+<div class="source-pills">
+  <div class="pill">Odaily</div>
+  <div class="pill">BlockBeats</div>
+  <div class="pill">链捕手</div>
+  <div class="pill">CoinDesk</div>
+  <div class="pill">吴说区块链</div>
+  <div class="pill">Foresight News</div>
+</div>
+
+<div class="banner">
+  <div class="banner-label">🟢 AI军备竞赛全面升温 · 安全事件密集爆发</div>
+  <div class="banner-title">Claude Opus 4.7正式发布 · Drift $1.475亿恢复池启动 · 贝莱德提币$2.9亿 · 以色列-黎巴嫩停火10天</div>
+  <div class="banner-body">Anthropic在夜间正式发布Claude Opus 4.7，编程与视觉能力大幅提升并首搭网络安全防护机制，同日Anthropic筹备AI设计工具消息令Figma股价大跌。链上安全事件密集：Drift获Tether联合支持拟设立$1.475亿用户恢复池、Rhea Finance被攻击损失$760万；贝莱德单次从Coinbase提币3,899枚BTC（约$2.9亿），机构级链上动向显著。地缘方面，特朗普宣布以色列与黎巴嫩达成10天停火，区域风险溢价进一步收缩。</div>
+</div>
+
+<div class="market-wrap">
+  <div class="market-grid">
+    <div class="market-cell">
+      <div class="market-name">BTC</div>
+      <div class="market-price">~$73,000</div>
+      <div class="market-change down">▼ 较前日回落</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">ETH</div>
+      <div class="market-price">~$2,200</div>
+      <div class="market-change neutral">— 区间震荡</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">AI板块</div>
+      <div class="market-price">+12%</div>
+      <div class="market-change up">▲ 领涨全市场</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">BRC-20</div>
+      <div class="market-price">MUBI</div>
+      <div class="market-change up">▲ +398.9%</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">ZETA</div>
+      <div class="market-price">&gt;$0.065</div>
+      <div class="market-change up">▲ +25% 日内</div>
+    </div>
+    <div class="market-cell">
+      <div class="market-name">恐惧贪婪</div>
+      <div class="market-price">21</div>
+      <div class="market-change down">▼ 极度恐惧</div>
+    </div>
+  </div>
+</div>
+
+<!-- 全球事件 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🌍</span>
+    <span class="section-title">全球事件</span>
+    <span class="section-count">1</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">特朗普宣布以色列与黎巴嫩同意为期10天停火，中东局势阶段性降温</div>
+    <div class="news-desc">特朗普于4月16日深夜宣布，以色列与黎巴嫩已同意为期10天的停火协议。这是继本周初宣布美伊"战争已结束"后，地缘风险的又一次阶段性收缩。中东风险溢价持续下降，对原油及全球风险资产情绪产生正向支撑，加密市场短期避险需求减弱。</div>
+    <div class="news-tags">
+      <span class="news-tag">周级影响</span>
+      <span class="news-tag">地缘政治 · 停火</span>
+      <span class="news-tag">风险情绪</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2259142" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+</div>
+
+<!-- 传统金融 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🏦</span>
+    <span class="section-title">传统金融</span>
+    <span class="section-count">2</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">贝莱德从Coinbase提币3,899枚BTC（约$2.9亿）+ 839枚ETH，机构级自托管动作引关注</div>
+    <div class="news-desc">据Onchain Lens链上监测，贝莱德于4月17日凌晨从Coinbase交易所提取3,899枚比特币（价值约$2.8988亿）及839枚以太坊（约$195万），转入自托管钱包。机构将资产从交易所迁至自托管通常意味着长期持仓意图增强，而非短期抛售准备。这是贝莱德近期规模最大的单次链上提币操作之一。</div>
+    <div class="news-tags">
+      <span class="news-tag">周级影响</span>
+      <span class="news-tag">机构动向 · 自托管</span>
+      <span class="news-tag">贝莱德 · BTC</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2259170" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">北美上市矿企Q1抛售3.2万枚BTC超去年全年总和，高成本矿商面临亏损压力</div>
+    <div class="news-desc">链上数据显示，北美上市矿企在2026年第一季度累计抛售约3.2万枚比特币，已超过2025年全年总出售量，创历史单季新高。这一异常抛售潮折射出当前行业现状：BTC价格低于多数矿企盈亏平衡点、电力成本持续攀升、减半后矿工收入骤降，迫使大量矿企以抛售BTC维持日常运营。对市场的抛售压力不可忽视。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">矿企 · 抛售压力</span>
+      <span class="news-tag">BTC市场结构</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2259179" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+</div>
+
+<!-- 全球监管 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">⚖️</span>
+    <span class="section-title">全球监管</span>
+    <span class="section-count">2</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">嘉信理财CEO：正考虑进军预测市场，但聚焦金融事件合约而非娱乐赛事</div>
+    <div class="news-desc">嘉信理财（Charles Schwab）CEO Rick Wurster公开表示，公司正评估是否进军预测市场，重点方向为金融事件类合约（如利率走势、经济数据预测），明确区别于体育博彩类预测平台。这一表态来自于传统券商巨头，意味着预测市场赛道正吸引主流金融机构关注，有望推动合规化进程提速。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">传统金融入场 · 预测市场</span>
+      <span class="news-tag">嘉信理财</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2259175" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">Kalshi提出上诉，预测市场合规之争或将移交至美国最高法院</div>
+    <div class="news-desc">预测市场平台Kalshi在其监管争议案件中提出上诉后，案件有可能被提交至美国最高法院审理。该案涉及CFTC对预测市场监管权限的界定，判决结果将直接影响整个预测市场行业的合规框架，是美国金融科技领域近年来最受关注的监管诉讼之一。</div>
+    <div class="news-tags">
+      <span class="news-tag">季度级影响</span>
+      <span class="news-tag">监管诉讼 · CFTC</span>
+      <span class="news-tag">预测市场合规</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2259172" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+</div>
+
+<!-- 链上事件 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">⛓️</span>
+    <span class="section-title">链上事件</span>
+    <span class="section-count">5</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">Drift获Tether（$1.275亿）等联合支持拟设立$1.475亿恢复池，以USDT替代USDC作为结算层</div>
+    <div class="news-desc">遭受$2.7亿黑客攻击（朝鲜国家级组织主导，历时6个月潜伏）的Solana链DeFi协议Drift宣布重大恢复方案：Tether将提供约$1.275亿、其他合作方提供$2,000万，共计$1.475亿资金池用于用户损失赔付，还款通过协议收入分成机制逐步偿还；同时Drift将以USDT替代Circle USDC作为结算稳定币。这是DeFi史上规模最大的机构救助方案之一。</div>
+    <div class="news-tags">
+      <span class="news-tag">季度级影响</span>
+      <span class="news-tag">DeFi安全 · 朝鲜黑客</span>
+      <span class="news-tag">Tether · Solana</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.coindesk.com/business/2026/04/16/drift-gets-usd148-million-funding-from-tether-and-partners-as-it-replaces-circle-stablecoin-with-usdt-after-massive-exploit" target="_blank">CoinDesk</a> · <a href="https://www.chaincatcher.com/article/2259071" target="_blank">链捕手ChainCatcher（早报）</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">Rhea Finance遭攻击损失$760万，Tether已冻结黑客地址中的329万USDT</div>
+    <div class="news-desc">CertiK安全报告显示，DeFi协议Rhea Finance遭受黑客攻击，损失约$760万，Hyperbridge平台同日漏洞损失也从初估$23.7万大幅上调至$250万，部分资金已被转移至币安。Tether迅速响应，已冻结黑客相关地址中的329万USDT，并同步发声表达对Circle稳定币机制的不满。安全事件密集爆发，4月链上安全风险持续高位。</div>
+    <div class="news-tags">
+      <span class="news-tag">周级影响</span>
+      <span class="news-tag">链上安全 · 黑客</span>
+      <span class="news-tag">Tether冻结 · DeFi</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2259188" target="_blank">链捕手（Rhea Finance）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/477119" target="_blank">Odaily（Tether冻结）</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">以太坊ICO巨鲸将2,000枚ETH转入多签地址，市场担忧大额抛售</div>
+    <div class="news-desc">链上数据显示，一个持有以太坊ICO时期原始ETH的巨鲸地址于4月17日凌晨将2,000枚ETH（约$440万）转入多签中转地址，链上历史显示该地址此前类似操作后随即出现大额出售。BlockBeats同日也报告该地址8小时前的转账操作，引发市场对潜在ETH抛售压力的担忧。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">链上动向 · 巨鲸</span>
+      <span class="news-tag">ETH卖压</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/477121" target="_blank">Odaily星球日报</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">美国政府向Coinbase Prime转入$60.647万比特币，系Bitfinex黑客没收资产</div>
+    <div class="news-desc">链上数据显示，与美国政府相关的地址向Coinbase Prime转入价值约$60.647万的比特币，该批资产系此前从Bitfinex黑客案中没收所得。美国政府长期持有的加密资产处置动向持续受到市场关注，此类转账通常预示后续可能进行司法拍卖或出售。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">政府持仓 · 司法没收</span>
+      <span class="news-tag">BTC</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2259186" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority low">LOW</span></div>
+    <div class="news-title">Bless项目方转移3亿枚BLESS代币，2亿枚进入CEX、1亿枚在BSC抛售，疑似Rug Pull</div>
+    <div class="news-desc">链上监测显示，Bless项目方将3亿枚BLESS代币转移，其中2亿枚流入中心化交易所、1亿枚在BSC链上直接抛售，操作模式高度吻合Rug Pull特征。提醒相关持仓用户注意风险，谨慎操作。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">链上风险 · Rug Pull</span>
+      <span class="news-tag">BSC</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/477116" target="_blank">Odaily星球早讯</a></div>
+  </div>
+</div>
+
+<!-- 行业趋势 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">🚀</span>
+    <span class="section-title">行业趋势 · AI</span>
+    <span class="section-count">5</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">Anthropic正式发布Claude Opus 4.7：编程与视觉能力大幅提升，首搭网络安全防护机制</div>
+    <div class="news-desc">Anthropic于4月16日夜间正式发布旗舰模型Claude Opus 4.7，核心升级包括：编程能力显著提升（在SWE-bench等基准测试中表现领先）、视觉理解能力增强、以及全行业首个内置网络安全防护机制（专门针对恶意提示注入与攻击防御）。这是继上周市场传言后的正式落地，符合此前预期，标志Anthropic在AI安全和能力竞争两条线同时领跑。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">AI产品 · Anthropic</span>
+      <span class="news-tag">Claude Opus 4.7</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/341587" target="_blank">BlockBeats</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">Anthropic筹备AI设计工具，Instagram联合创始人退出Figma董事会避嫌；Adobe跌超2%</div>
+    <div class="news-desc">据报道，Anthropic正在内部筹备一款面向非技术用户的AI设计工具，可生成网页、演示文稿和落地页。消息曝光后，Instagram联合创始人、Figma董事会成员Mike Krieger宣布退出Figma董事会以回避潜在利益冲突，Adobe、Figma、Wix等设计软件股票再度承压跌超2%。这是继4月15日AI设计工具传言后的进一步确认。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">AI设计工具 · 行业颠覆</span>
+      <span class="news-tag">Anthropic · Figma</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/341627" target="_blank">BlockBeats</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority high">HIGH</span></div>
+    <div class="news-title">OpenAI网络安全联盟首批名单公布：华尔街六大行集体加入，资助1000万美元开源安全</div>
+    <div class="news-desc">OpenAI正式公布网络安全联盟首批成员名单，六大华尔街银行全部加入，联盟将联合资助1000万美元用于开源网络安全工具和漏洞研究。这一举动被视为OpenAI在AI安全领域的战略布局，也是华尔街与AI公司在网络安全基础设施上首次大规模联合行动。与Anthropic的Mythos模型竞争态势进一步明显。</div>
+    <div class="news-tags">
+      <span class="news-tag">季度级影响</span>
+      <span class="news-tag">AI安全 · 金融机构</span>
+      <span class="news-tag">OpenAI · 华尔街</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/341616" target="_blank">BlockBeats</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">OpenAI拟三年投入超200亿美元采购Cerebras芯片服务器并获得股权</div>
+    <div class="news-desc">OpenAI计划在未来三年内向Cerebras芯片驱动的服务器投入超过200亿美元，同时将获得Cerebras的部分股权。Cerebras以其超大规模AI芯片（单芯片晶体管数量超过NVIDIA H100的100倍以上）著称，此次合作将显著扩充OpenAI的算力基础设施，并将其与Nvidia形成的算力垄断格局产生潜在竞争。</div>
+    <div class="news-tags">
+      <span class="news-tag">季度级影响</span>
+      <span class="news-tag">AI算力 · 芯片</span>
+      <span class="news-tag">OpenAI · Cerebras</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/477127" target="_blank">Odaily星球日报</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">谷歌与五角大楼谈判机密Gemini部署；OpenAI Codex大更新支持跨天自动继续任务</div>
+    <div class="news-desc">谷歌正与美国国防部五角大楼谈判，探讨在机密环境中部署Gemini模型，合同条款参照Anthropic拒绝接受的OpenAI模板。同日，OpenAI的Codex系统迎来重大更新，新版本支持直接操控Mac桌面并可跨天自动唤醒继续任务，AI Agent自主化能力再上一台阶，与Claude Code Routines功能形成直接竞争。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">AI军事 · Agent能力</span>
+      <span class="news-tag">谷歌 · OpenAI</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/341631" target="_blank">BlockBeats（谷歌五角大楼）</a> · <a href="https://www.theblockbeats.info/flash/341619" target="_blank">BlockBeats（OpenAI Codex）</a></div>
+  </div>
+</div>
+
+<!-- 加密数据 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">📈</span>
+    <span class="section-title">加密数据</span>
+    <span class="section-count">2</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">加密市场板块普涨，AI概念板块领涨超12%；ZETA日内涨超25%，未平仓合约增长25.3%</div>
+    <div class="news-desc">4月17日凌晨，加密市场主要板块普涨，AI概念代币板块以超12%的涨幅领跑全市场，受Claude Opus 4.7发布和OpenAI系列消息提振。ZETA（ZetaChain）短时突破$0.065，24小时涨幅超25%，未平仓合约量同步增长25.3%，显示资金活跃度上升。恐惧贪婪指数仍处21（极度恐惧区间），情绪面与价格面存在背离。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">板块轮动 · AI概念</span>
+      <span class="news-tag">市场数据</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/477124" target="_blank">Odaily（板块普涨）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/477125" target="_blank">Odaily（ZETA）</a></div>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority low">LOW</span></div>
+    <div class="news-title">BRC-20板块代币拉升：MUBI 24H涨398.9%，SATS 24H涨60.8%</div>
+    <div class="news-desc">BRC-20板块在今日凌晨出现异动，MUBI 24小时涨幅达398.9%，SATS涨幅60.8%。BRC-20代币流动性较低，短期大幅波动属于小市值代币特征，需警惕跟风风险。NAT同日上线SpiderPool矿池，支持比特币同区块DMT-NAT双挖，为矿工提供额外收益来源。</div>
+    <div class="news-tags">
+      <span class="news-tag">日级影响</span>
+      <span class="news-tag">BRC-20 · 小市值</span>
+      <span class="news-tag">波动风险</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/477123" target="_blank">Odaily（BRC-20）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/477126" target="_blank">Odaily（NAT双挖）</a></div>
+  </div>
+</div>
+
+<!-- 以太坊生态 -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-icon">💎</span>
+    <span class="section-title">以太坊生态</span>
+    <span class="section-count">1</span>
+  </div>
+  <div class="news-item">
+    <div class="news-meta"><span class="tag-priority mid">MID</span></div>
+    <div class="news-title">以太坊基金会核心成员Josh Stark宣布月底离职，任职超5年</div>
+    <div class="news-desc">以太坊基金会核心成员Josh Stark宣布将于4月底正式离职，其在以太坊基金会任职超过5年，主导了多个生态发展和社区建设项目。目前尚未披露离职后的去向。以太坊基金会近期经历多次人员调整，市场对其组织稳定性持续关注。</div>
+    <div class="news-tags">
+      <span class="news-tag">月级影响</span>
+      <span class="news-tag">以太坊基金会 · 人事</span>
+      <span class="news-tag">生态治理</span>
+    </div>
+    <div class="news-source">来源：<a href="https://www.chaincatcher.com/article/2259143" target="_blank">链捕手ChainCatcher</a></div>
+  </div>
+</div>
+
+<div class="keywords-wrap">
+  <div class="keywords-title">今日关键词</div>
+  <div class="keywords">
+    <span class="keyword">Claude Opus 4.7正式发布</span>
+    <span class="keyword">Anthropic AI设计工具</span>
+    <span class="keyword">OpenAI华尔街六大行联盟</span>
+    <span class="keyword">OpenAI投$200亿购Cerebras</span>
+    <span class="keyword">Drift $1.475亿恢复池</span>
+    <span class="keyword">朝鲜6个月潜伏Drift</span>
+    <span class="keyword">Rhea Finance损失$760万</span>
+    <span class="keyword">贝莱德提币$2.9亿</span>
+    <span class="keyword">北美矿企Q1抛售3.2万BTC</span>
+    <span class="keyword">AI板块领涨+12%</span>
+    <span class="keyword">恐惧贪婪指数21极度恐惧</span>
+    <span class="keyword">以色列-黎巴嫩停火10天</span>
+    <span class="keyword">嘉信理财入局预测市场</span>
+    <span class="keyword">Josh Stark离职以太坊基金会</span>
+  </div>
+</div>
+
+<div class="footer">
+  OKX Research · 加密早报 · 2026.04.17<br>
+  数据来源：Odaily · BlockBeats · 链捕手 · CoinDesk · 吴说区块链 · Foresight News<br>
+  本报告仅供信息参考，不构成任何投资建议。
+</div>
+
+</body>
+</html>
