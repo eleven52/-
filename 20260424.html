@@ -1,719 +1,172 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>加密行业热点早报 · 4月24日</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-<style>
-* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-
-body {
-  background: #0d0d0d;
-  color: #e0e0e0;
-  font-family: 'Noto Sans SC', -apple-system, sans-serif;
-  font-size: 13px;
-  line-height: 1.55;
-  max-width: 480px;
-  margin: 0 auto;
-  padding-bottom: 40px;
-}
-
-/* ===== TOP HEADER ===== */
-.top-header {
-  background: #0d0d0d;
-  text-align: center;
-  padding: 22px 12px 18px;
-  border-bottom: 1px solid #222;
-}
-.top-date {
-  display: inline-block;
-  font-size: 12px;
-  color: #888;
-  margin-bottom: 10px;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 20px;
-  padding: 4px 14px;
-  letter-spacing: 0.5px;
-}
-.top-title {
-  font-size: 24px;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: 0.5px;
-}
-.top-title .accent { color: #bcff2f; }
-.top-subtitle {
-  font-size: 11px;
-  color: #555;
-  margin-top: 6px;
-}
-
-/* ===== TAB BAR ===== */
-.tab-bar {
-  display: flex;
-  background: #0d0d0d;
-  padding: 10px 10px;
-  gap: 8px;
-  overflow-x: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-  border-bottom: 1px solid #1a1a1a;
-}
-.tab-bar::-webkit-scrollbar { display: none; }
-.tab-item {
-  flex-shrink: 0;
-  padding: 6px 14px;
-  font-size: 12px;
-  color: #666;
-  cursor: pointer;
-  white-space: nowrap;
-  border: 1px solid #2a2a2a;
-  border-radius: 20px;
-  background: #111;
-}
-.tab-item.active {
-  color: #e0e0e0;
-  border-color: #555;
-  background: #1a1a1a;
-}
-
-/* ===== 今日核心主线 ===== */
-.mainline-box {
-  margin: 10px 10px 0;
-  background: #111;
-  border: 1px solid #2a2a2a;
-  border-left: 3px solid #bcff2f;
-  border-radius: 8px;
-  overflow: hidden;
-  padding: 12px 14px;
-}
-.mainline-header {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  margin-bottom: 10px;
-}
-.mainline-header-dot {
-  width: 8px; height: 8px;
-  background: #bcff2f;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-.mainline-header-text {
-  font-size: 13px;
-  font-weight: 700;
-  color: #bcff2f;
-  letter-spacing: 0.5px;
-}
-.mainline-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  padding: 6px 0;
-  border-bottom: 1px solid #1a1a1a;
-}
-.mainline-item:last-child { border-bottom: none; padding-bottom: 0; }
-.mainline-num {
-  font-size: 13px;
-  font-weight: 900;
-  color: #bcff2f;
-  flex-shrink: 0;
-  margin-top: 1px;
-}
-.mainline-text {
-  font-size: 13px;
-  color: #bbb;
-  line-height: 1.6;
-}
-.mainline-text b { color: #fff; font-weight: 700; }
-
-/* ===== 行情数据 ===== */
-.market-box {
-  margin: 10px 10px 0;
-  background: #111;
-  border: 1px solid #222;
-  border-radius: 8px;
-  overflow: hidden;
-}
-.market-top-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  border-bottom: 1px solid #1a1a1a;
-}
-.market-bottom-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.mkt-cell {
-  padding: 9px 10px;
-  border-right: 1px solid #1a1a1a;
-}
-.mkt-cell:last-child { border-right: none; }
-.mkt-label {
-  font-size: 10px;
-  color: #555;
-  margin-bottom: 2px;
-}
-.mkt-val {
-  font-size: 16px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.2;
-}
-.mkt-val.small { font-size: 13px; }
-.mkt-chg {
-  font-size: 11px;
-  font-weight: 600;
-  margin-top: 1px;
-}
-.mkt-chg.up { color: #22c55e; }
-.mkt-chg.down { color: #ff4d4d; }
-.mkt-chg.fear { color: #ff8c00; }
-.mkt-sub { font-size: 10px; color: #444; margin-top: 1px; }
-
-/* ===== SECTION ===== */
-.section {
-  margin: 10px 10px 0;
-}
-.section-header {
-  display: flex;
-  align-items: center;
-  padding: 8px 2px;
-  position: relative;
-}
-.section-left {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.section-icon { font-size: 14px; }
-.section-title {
-  font-size: 14px;
-  font-weight: 700;
-  color: #fff;
-}
-.section-badge {
-  width: 22px; height: 22px;
-  background: #c8a800;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  font-weight: 900;
-  color: #000;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-/* ===== NEWS CARD ===== */
-.news-card {
-  background: #111;
-  border: 1px solid #1e1e1e;
-  border-radius: 8px;
-  padding: 11px 12px;
-  margin-bottom: 8px;
-}
-.news-top-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-.pill {
-  display: inline-flex;
-  align-items: center;
-  font-size: 11px;
-  font-weight: 900;
-  padding: 3px 10px;
-  border-radius: 4px;
-  letter-spacing: 0.5px;
-  flex-shrink: 0;
-}
-.pill.high {
-  background: transparent;
-  color: #ff4d4d;
-  border: 1px solid #ff4d4d;
-}
-.pill.mid {
-  background: transparent;
-  color: #e87c2a;
-  border: 1px solid #e87c2a;
-}
-.news-time {
-  font-size: 11px;
-  color: #555;
-  flex-shrink: 0;
-}
-.news-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.45;
-  margin-bottom: 6px;
-}
-.news-body {
-  font-size: 12px;
-  color: #888;
-  line-height: 1.6;
-  margin-bottom: 8px;
-}
-.news-footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 6px;
-}
-.tag {
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 3px;
-  padding: 2px 6px;
-  font-size: 10px;
-  color: #555;
-}
-.news-source {
-  font-size: 11px;
-  color: #c8a800;
-  margin-top: 2px;
-}
-.news-source a {
-  color: #c8a800;
-  text-decoration: none;
-}
-.news-source a:hover { color: #bcff2f; }
-
-/* ===== 底部关键词 ===== */
-.keywords-bar {
-  margin: 14px 10px 0;
-  background: #111;
-  border: 1px solid #1e1e1e;
-  border-radius: 8px;
-  padding: 10px 12px;
-}
-.keywords-label {
-  font-size: 10px;
-  color: #444;
-  margin-bottom: 7px;
-}
-.keywords-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
-.kw {
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 4px;
-  padding: 3px 9px;
-  font-size: 11px;
-  color: #888;
-}
-.kw.hot {
-  background: rgba(188,255,47,0.08);
-  border-color: rgba(188,255,47,0.2);
-  color: #bcff2f;
-}
-
-.disclaimer {
-  margin: 10px 10px 0;
-  padding: 8px 12px;
-  border-top: 1px solid #1a1a1a;
-  font-size: 10px;
-  color: #333;
-  line-height: 1.6;
-  text-align: center;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>加密行业热点早报 · 2026年4月24日</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--black:#000;--neo:#191919;--white:#fff;--neon:#BCFF2F;--neon-dim:rgba(188,255,47,.10);--neon-mid:rgba(188,255,47,.20);--g1:#111;--g2:#1a1a1a;--ts:#999;--td:#666;--th:#444;--brd:rgba(255,255,255,.06);--bhv:rgba(188,255,47,.18);--red:#FF4D4D;--green:#2ECC71;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--black);color:#fff;font-family:'Noto Sans SC',sans-serif;font-size:14px;line-height:1.7;padding:20px 14px;}
+    .container{max-width:780px;margin:0 auto;}
+    .header{text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--brd);margin-bottom:24px;}
+    .date-badge{display:inline-flex;align-items:center;gap:8px;background:var(--neo);border:1px solid var(--brd);border-radius:20px;padding:4px 14px;font-size:11px;color:var(--ts);margin-bottom:14px;letter-spacing:.05em;}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--neon);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    h1{font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;margin-bottom:6px;letter-spacing:-.02em;}
+    .accent{color:var(--neon);}
+    .sub{font-size:11px;color:var(--td);margin-bottom:14px;letter-spacing:.1em;}
+    .source-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+    .source-tag{background:var(--g1);border:1px solid var(--brd);border-radius:4px;padding:3px 10px;font-size:10px;color:var(--ts);}
+    .market{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:20px;overflow:hidden;}
+    .market-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--brd);}
+    .market-title{font-size:12px;font-weight:700;color:var(--ts);}
+    .market-time{font-size:10px;color:var(--td);}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);}
+    .ci{background:var(--g1);padding:14px 16px;}
+    .cl{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+    .ico{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+    .btc{background:#F7931A;color:#fff;}.eth{background:#627EEA;color:#fff;}.sol{background:#9945FF;color:#fff;}.xrp{background:#346AA9;color:#fff;}
+    .cn{font-size:11px;color:var(--ts);}
+    .cp{font-size:20px;font-weight:700;}
+    .coin-change{font-size:11px;font-weight:600;margin-top:2px;}
+    .up{color:var(--green);}.down{color:var(--red);}
+    .fng-bar{display:grid;grid-template-columns:repeat(3,1fr);background:var(--g2);border-top:1px solid var(--brd);}
+    .fi{padding:10px;text-align:center;border-right:1px solid var(--brd);}
+    .fi:last-child{border-right:none;}
+    .fl{font-size:9px;color:var(--td);margin-bottom:4px;}
+    .fv{font-size:12px;font-weight:700;}
+    .section{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:14px;overflow:hidden;}
+    .section-header{display:flex;align-items:center;gap:10px;padding:13px 18px;background:var(--g2);border-bottom:1px solid var(--brd);}
+    .section-icon{font-size:17px;}
+    .section-title{font-size:13px;font-weight:700;flex:1;letter-spacing:.02em;}
+    .section-count{background:var(--neon-dim);border:1px solid var(--bhv);color:var(--neon);font-size:10px;font-weight:700;padding:2px 9px;border-radius:10px;}
+    .news-item{padding:14px 18px;border-bottom:1px solid var(--brd);}
+    .news-item:last-child{border-bottom:none;}
+    .priority{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;margin-bottom:7px;letter-spacing:.04em;}
+    .priority.high{background:var(--neon);color:#000;}
+    .priority.mid{background:rgba(255,255,255,.07);color:var(--ts);border:1px solid rgba(255,255,255,.1);}
+    .priority.low{background:rgba(255,255,255,.03);color:var(--th);border:1px solid rgba(255,255,255,.05);}
+    .news-title{font-size:13px;font-weight:700;margin-bottom:5px;line-height:1.5;}
+    .news-detail{font-size:12px;color:var(--ts);line-height:1.7;margin-bottom:8px;}
+    .news-source{font-size:11px;color:var(--th);}
+    .news-source a{color:var(--neon);text-decoration:none;opacity:.8;}
+    .news-source a:hover{opacity:1;}
+    .divider{height:1px;background:var(--brd);margin:24px 0;}
+    .footer{text-align:center;padding:20px 0 12px;}
+    .disclaimer{font-size:10px;color:var(--th);line-height:1.7;max-width:520px;margin:0 auto 10px;}
+    .compiled{font-size:10px;color:var(--th);letter-spacing:.15em;}
+    .empty{text-align:center;padding:32px;color:var(--td);font-size:13px;}
+  </style>
 </head>
 <body>
-
-<!-- ===== TOP HEADER ===== -->
-<div class="top-header">
-  <div class="top-date">2026 · APR 24 · 星期五</div>
-  <div class="top-title">加密行业热点<span class="accent">早报</span></div>
-  <div class="top-subtitle">抓取时间窗口：4月23日 20:00 — 4月24日 09:30</div>
-</div>
-
-<!-- ===== TAB BAR ===== -->
-<div class="tab-bar">
-  <div class="tab-item active">Odaily星球日报</div>
-  <div class="tab-item">CoinDesk</div>
-  <div class="tab-item">吴说区块链</div>
-  <div class="tab-item">PANews</div>
-  <div class="tab-item">链捕手</div>
-</div>
-
-<!-- ===== 今日核心主线 ===== -->
-<div class="mainline-box">
-  <div class="mainline-header">
-    <div class="mainline-header-dot"></div>
-    <div class="mainline-header-text">今日核心主线</div>
-  </div>
-  <div class="mainline-item">
-    <div class="mainline-num">①</div>
-    <div class="mainline-text"><b>ETH 机构积累潮</b>：Bitmine 持有 498 万枚 ETH（约$115亿），昨日再买 10 万枚，ETH 现货 ETF 连续 9 日净流入，机构正大规模锁仓 ETH</div>
-  </div>
-  <div class="mainline-item">
-    <div class="mainline-num">②</div>
-    <div class="mainline-text"><b>KelpDAO $2.92 亿黑客余震</b>：Aave 联合 Lido/EtherFi 发起"DeFi United"紧急救援，坏账风险仍高达 $230M，跨链桥安全问题持续发酵</div>
-  </div>
-  <div class="mainline-item">
-    <div class="mainline-num">③</div>
-    <div class="mainline-text"><b>中东局势主导宏观情绪</b>：美伊停火谈判停滞、霍尔木兹封锁持续，油价反弹令亚洲股市交还涨幅，BTC 困于 $78K 震荡，未能有效突破 $80K</div>
-  </div>
-  <div class="mainline-item">
-    <div class="mainline-num">④</div>
-    <div class="mainline-text"><b>CLARITY Act 立法博弈白热化</b>：逾百家加密企业联署催参议院推进，但国会日程被美伊战争、联储主席提名严重挤占，立法时间窗口持续收窄</div>
-  </div>
-</div>
-
-<!-- ===== 行情数据 ===== -->
-<div class="market-box">
-  <div class="market-top-row">
-    <div class="mkt-cell">
-      <div class="mkt-label">BTC</div>
-      <div class="mkt-val">$78,017</div>
-      <div class="mkt-chg up">近90日新高</div>
-    </div>
-    <div class="mkt-cell">
-      <div class="mkt-label">ETH</div>
-      <div class="mkt-val">$2,353</div>
-      <div class="mkt-chg down">精准值 -1.75%</div>
-    </div>
-    <div class="mkt-cell">
-      <div class="mkt-label">恐惧指数</div>
-      <div class="mkt-val small">46</div>
-      <div class="mkt-chg fear">恐惧区间中</div>
-    </div>
-  </div>
-  <div class="market-bottom-row">
-    <div class="mkt-cell">
-      <div class="mkt-label">WTI原油</div>
-      <div class="mkt-val small">$98.5+</div>
-      <div class="mkt-chg down">油价反弹↑</div>
-    </div>
-    <div class="mkt-cell">
-      <div class="mkt-label">黄金</div>
-      <div class="mkt-val small">$3,290</div>
-      <div class="mkt-chg up">风险规避↑</div>
-    </div>
-    <div class="mkt-cell">
-      <div class="mkt-label">纳斯达克</div>
-      <div class="mkt-val small">震荡</div>
-      <div class="mkt-sub">亚市交还涨幅</div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== 宏观与地缘 ===== -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-left">
-      <span class="section-icon">🌍</span>
-      <span class="section-title">宏观与地缘</span>
-    </div>
-    <div class="section-badge">2</div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill high">HIGH</span>
-      <span class="news-time">04-23 21:33</span>
-    </div>
-    <div class="news-title">伊朗外长强硬表态：美以是海湾不安全根源，亚洲股市高开后回吐全部涨幅</div>
-    <div class="news-body">伊朗外长 Araqchi 会见韩国特使时表示，美以侵略是海湾及霍尔木兹海峡不安全的根源，所有后果由侵略者承担。受此影响，日本、韩国股市高开后显著回落。分析师指出目前尚无和平谈判计划，油价跟随反弹，BTC 未能有效突破 $80K 阻力位。</div>
-    <div class="news-footer">
-      <span class="tag">美伊战争</span>
-      <span class="tag">地缘风险</span>
-      <span class="tag">油价</span>
-    
-      <div class="news-source">来源：<a href="https://www.odaily.news/en/newsflash/478015" target="_blank">Odaily</a> · <a href="https://www.odaily.news/en/newsflash/478026" target="_blank">Odaily（亚市）</a></div>
+<div class="container">
+  <div class="header">
+    <div class="date-badge"><span class="dot"></span> 2026年4月24日 · 周五</div>
+    <h1>加密行业热点<span class="accent">早报</span></h1>
+    <div class="sub">多源去重 · 分类评级 · 自动生成</div>
+    <div class="source-bar">
+      <span class="source-tag">Odaily星球日报</span>
+      <span class="source-tag">CoinDesk</span>
+      <span class="source-tag">CoinGecko</span>
+      <span class="source-tag">Alternative.me</span>
     </div>
   </div>
 
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill high">HIGH</span>
-      <span class="news-time">04-23 09:00 ET</span>
+  <div class="market">
+    <div class="market-header">
+      <span class="market-title">📊 实时行情</span>
+      <span class="market-time">15:27 UTC+8</span>
     </div>
-    <div class="news-title">比特币开盘突破 $78,000，为美伊战争爆发以来首次站上该位；但交易者仍谨慎</div>
-    <div class="news-body">BTC 当日开盘报 $78,192，较前日上涨 2.4%，为今年 2 月初美伊战争爆发以来首次在此价位开盘。ETH 同步开盘 $2,375，较前日涨约 2%。随后因伊朗强硬表态及油价反弹，两者均有所回落。Bernstein 分析师重申 2026 年底 BTC 目标价 $15 万。</div>
-    <div class="news-footer">
-      <span class="tag">BTC $78K</span>
-      <span class="tag">关键位</span>
-    
-      <div class="news-source">来源：<a href="https://finance.yahoo.com/personal-finance/investing/article/bitcoin-and-ethereum-price-today-thursday-april-23-2026-strong-opening-for-bitcoin-but-traders-still-cautious-114021085.html" target="_blank">Yahoo Finance</a></div>
+    <div class="grid">
+      <div class="ci"><div class="cl"><div class="ico btc">₿</div><span class="cn">Bitcoin</span></div><div class="cp">$77,679</div><div class="coin-change down">▼ 0.65% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico eth">Ξ</div><span class="cn">Ethereum</span></div><div class="cp">$2,314</div><div class="coin-change down">▼ 1.61% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico sol">◎</div><span class="cn">Solana</span></div><div class="cp">$85.440</div><div class="coin-change down">▼ 0.74% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico xrp">✕</div><span class="cn">XRP</span></div><div class="cp">$1.430</div><div class="coin-change up">▲ 0.48% 24H</div></div>
     </div>
+    <div class="fng-bar">
+      <div class="fi"><div class="fl">恐慌贪婪指数</div><div class="fv" style="color:#FF4D4D">39 · 恐慌</div></div>
+      <div class="fi"><div class="fl">BTC主导率</div><div class="fv">~57%</div></div>
+      <div class="fi"><div class="fl">更新时间</div><div class="fv" style="font-size:11px">15:27</div></div>
+    </div>
+  </div>
+
+  
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">⚖️</span>
+        <span class="section-title">全球监管</span>
+        <span class="section-count">2 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority high">高价值</div>
+          <div class="news-title">Bitcoin ETFs just pulled $2 billion in 8 days while short-term holders quietly started selling</div>
+          <div class="news-detail">The Wall Street giant has announced a fund build specifically for stablecoin issuers. Here is what it does and means for the market.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/04/24/morgan-stanley-is-positioning-itself-as-the-reserve-manager-for-the-stablecoin-industry" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority high">高价值</div>
+          <div class="news-title">Bitcoin rally is stalling as Japanese inflation adds to Iran war–driven market jitters</div>
+          <div class="news-detail">Spot bitcoin ETFs logged their first 8-day inflow streak since October, but on-chain profit-taking is already running at 3x the rate that has marked every local top this year.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/04/24/bitcoin-etfs-just-pulled-usd2-billion-in-8-days-while-short-term-holders-quietly-started-selling" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🏦</span>
+        <span class="section-title">传统金融</span>
+        <span class="section-count">1 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Wisconsin joins prediction market fight, suing Kalshi, Coinbase, Polymarket, Robinhood and Crypto.com</div>
+          <div class="news-detail">Crypto markets weaken amid rising Japan inflation, Iran war oil disruptions, and expectations of a hawkish Bank of Japan.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/04/24/bitcoin-rally-is-stalling-as-japan-macro-adds-to-iran-war-driven-market-jitters" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚀</span>
+        <span class="section-title">行业趋势</span>
+        <span class="section-count">2 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">U.S. arrests Army green beret for $400,000 Polymarket bets on Venezuela raid he was in</div>
+          <div class="news-detail">The state's complaint highlights language used by prediction market platforms as language for gambling, not investing.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/policy/2026/04/24/wisconsin-joins-prediction-market-fight-suing-kalshi-coinbase-polymarket-robinhood-and-crypto-com" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Inside the $71 million freeze on Arbitrum that has the crypto world questioning what decentralization really means</div>
+          <div class="news-detail">Industry players are coordinating a recovery effort as the year's biggest crypto theft rattled Aave, with Lido and EtherFi being firsts to offer aid.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/business/2026/04/23/aave-rallies-defi-partners-to-contain-fallout-from-usd292-million-kelpdao-hack" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">⛓️</span>
+        <span class="section-title">链上事件</span>
+        <span class="section-count">1 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Aave rallies DeFi partners to contain fallout from $292 million KelpDAO hack</div>
+          <div class="news-detail">Master Sergeant Gannon Ken Van Dyke allegedly tried to conceal his bets about the raid on Venezuela that led to Nicolas Maduro's arrest.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/policy/2026/04/23/u-s-arrests-soldier-for-polymarket-bets-on-nicolas-maduro-raid-he-participated-in" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+
+  <div class="divider"></div>
+  <div class="footer">
+    <div class="disclaimer">⚠️ 本早报由程序自动抓取公开信息整合生成，不构成任何投资建议。加密资产具有高度波动性，投资须谨慎。</div>
+    <div class="compiled">AUTO GENERATED · 20260424 · POWERED BY GITHUB ACTIONS</div>
   </div>
 </div>
-
-<!-- ===== 机构与资金 ===== -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-left">
-      <span class="section-icon">🏛️</span>
-      <span class="section-title">机构与资金</span>
-    </div>
-    <div class="section-badge">3</div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill high">HIGH</span>
-      <span class="news-time">04-23 20:05</span>
-    </div>
-    <div class="news-title">Bitmine 疑似再买 10 万枚 ETH（约 $2.34 亿），累计持仓 498 万枚约 $115 亿</div>
-    <div class="news-body">Lookonchain 检测到与 Tom Lee 旗下 Bitmine 关联的三个新地址从 BitGo 合计接收 100,000 ETH（$2.337 亿）。公司 ETH 总储量已达 498 万枚，目标持有 ETH 流通供应的 5%，持续压缩市场可流通以太坊供给。Bitmine 已将其中 68.24%（339.6 万枚，约 $78 亿）质押于 Beacon Chain。</div>
-    <div class="news-footer">
-      <span class="tag">Bitmine</span>
-      <span class="tag">ETH积累</span>
-      <span class="tag">机构储备</span>
-    
-      <div class="news-source">来源：<a href="https://www.odaily.news/en/newsflash/478022" target="_blank">Odaily</a> · <a href="https://x.com/lookonchain/status/2047163342159278292" target="_blank">Lookonchain</a></div>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill high">HIGH</span>
-      <span class="news-time">04-22 连续第9日</span>
-    </div>
-    <div class="news-title">ETH 现货 ETF 连续 9 日净流入，BlackRock ETHA 单日 $3700 万领衔；BTC ETF 连续 5 日正流入</div>
-    <div class="news-body">4月21日美国 ETH 现货 ETF 净流入 $4336 万，BlackRock ETHA 以 $3700 万领先，累计净流入已达 $119.43 亿。BTC 现货 ETF 4月20日单日净入 $2.38 亿，连续5日正流入。机构资金持续稳健入场为市场底部提供有力支撑。</div>
-    <div class="news-footer">
-      <span class="tag">ETH ETF</span>
-      <span class="tag">BTC ETF</span>
-      <span class="tag">BlackRock</span>
-    
-      <div class="news-source">来源：<a href="https://bitcoinethereumnews.com/ethereum/ethereum-gains-3-5-as-etf-inflows-extend-and-staking-rises/" target="_blank">BitcoinEthereumNews</a> · <a href="https://coinmarketcap.com/cmc-ai/bitcoin/latest-updates/" target="_blank">CoinMarketCap</a></div>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill high">HIGH</span>
-      <span class="news-time">04-20</span>
-    </div>
-    <div class="news-title">Strategy 以 $25.4 亿再度增持 34,164 枚 BTC，累计持仓逾 81.5 万枚</div>
-    <div class="news-body">Michael Saylor 披露，Strategy 均价 $74,395 买入，累计持有 815,061 BTC（均价 $75,527，总成本 $615.6 亿）。Saylor 表示若持仓达 BTC 总量 7.5%，长期目标价 $1000 万/枚，企业与 ETF 持续积累将带来非线性定价重估。</div>
-    <div class="news-footer">
-      <span class="tag">Strategy</span>
-      <span class="tag">BTC企业储备</span>
-      <span class="tag">Saylor</span>
-    
-      <div class="news-source">来源：<a href="https://www.odaily.news/en/newsflash/478029" target="_blank">Odaily</a></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== 链上事件 ===== -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-left">
-      <span class="section-icon">⛓️</span>
-      <span class="section-title">链上事件</span>
-    </div>
-    <div class="section-badge">3</div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill high">HIGH</span>
-      <span class="news-time">04-23 20:52</span>
-    </div>
-    <div class="news-title">Aave 牵头 "DeFi United" 救援：Lido、EtherFi 率先出资，协调填补 KelpDAO 黑客坏账</div>
-    <div class="news-body">KelpDAO $2.92 亿黑客事件余震持续（事件发生于 04-18）。攻击者将伪造的 rsETH 存入 Aave V3 借走真实 ETH，留下约 $1.96 亿坏账缺口。Aave 服务商发起 "DeFi United" 协调救援，Lido Finance 与 EtherFi 率先表态出资，Aave 创始人 Stani Kulechov 亦参与协调。坏账区间约 $123M（全网分摊）至 $230M（仅限 L2），治理方案待投票。</div>
-    <div class="news-footer">
-      <span class="tag">KelpDAO</span>
-      <span class="tag">Aave</span>
-      <span class="tag">DeFi救援</span>
-      <span class="tag">rsETH</span>
-    
-      <div class="news-source">来源：<a href="https://www.coindesk.com/business/2026/04/23/aave-rallies-defi-partners-to-contain-fallout-from-usd292-million-kelpdao-hack" target="_blank">CoinDesk</a></div>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill mid">MID</span>
-      <span class="news-time">04-23 20:23</span>
-    </div>
-    <div class="news-title">鲸鱼反手低吸 7,448 枚 ETH：三天前以 $2,300 出货，今以 $2,350 回补</div>
-    <div class="news-body">Lookonchain 监测，地址 0x65B4 三天前以均价 $2,300 抛售 10,829 枚 ETH（约 $2491 万），一小时前反向以 $2,350 回购 7,448 枚 ETH（约 $1750 万）。大户主动在低位回补，反映对短期底部的判断，但整体仓位较出货前仍有所缩减。</div>
-    <div class="news-footer">
-      <span class="tag">ETH鲸鱼</span>
-      <span class="tag">链上博弈</span>
-    
-      <div class="news-source">来源：<a href="https://www.odaily.news/en/newsflash/478024" target="_blank">Odaily</a> · <a href="https://x.com/lookonchain/status/2047168916171207105" target="_blank">Lookonchain</a></div>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill mid">MID</span>
-      <span class="news-time">04-23 03:47</span>
-    </div>
-    <div class="news-title">SPK 单日暴涨超 80%，F2Pool 联创 Wang Chun 喊话"卖早了有点后悔"</div>
-    <div class="news-body">据 OKX 行情，SPK（Spark 协议代币）单日涨幅超 80%，最高触及 $0.555。F2Pool 联合创始人 Wang Chun 在 X 发文：过去一年卖出 8370 万枚 SPK，换回 663 ETH 和 $140 万 USDT，"现在有点后悔"。帖文引发社区热议，成为 SPK 本轮行情的情绪催化剂。</div>
-    <div class="news-footer">
-      <span class="tag">SPK</span>
-      <span class="tag">Spark</span>
-      <span class="tag">F2Pool</span>
-    
-      <div class="news-source">来源：<a href="https://www.odaily.news/en/newsflash/478019" target="_blank">Odaily（行情）</a> · <a href="https://www.odaily.news/en/newsflash/478020" target="_blank">Odaily（Wang Chun）</a></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== 监管与政策 ===== -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-left">
-      <span class="section-icon">⚖️</span>
-      <span class="section-title">监管与政策</span>
-    </div>
-    <div class="section-badge">3</div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill high">HIGH</span>
-      <span class="news-time">04-21 ~ 04-23</span>
-    </div>
-    <div class="news-title">超 100 家加密企业联署，联名催促参议院尽快推进 CLARITY Act</div>
-    <div class="news-body">逾百家加密企业联名致信参议院，要求加速《数字资产市场明确性法案》立法。法案核心争议：SEC/CFTC 监管边界划分、非托管开发者保护、稳定币收益条款三点。当前国会日程被美伊战争、国土安全拨款、联储主席提名大幅挤占，银行委员会版本还需与农业委员会版本合并，时间窗口紧张。</div>
-    <div class="news-footer">
-      <span class="tag">CLARITY Act</span>
-      <span class="tag">SEC</span>
-      <span class="tag">CFTC</span>
-    
-      <div class="news-source">来源：<a href="https://www.coindesk.com/news-analysis/2026/04/21/crypto-s-great-hope-in-senate-s-clarity-act-still-has-a-path-to-survive-tight-calendar" target="_blank">CoinDesk（04-21）</a></div>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill high">HIGH</span>
-      <span class="news-time">04-22 ~ 04-23</span>
-    </div>
-    <div class="news-title">Tether 配合美执法部门，冻结 Tron 链 $3.44 亿 USDT 涉嫌非法资金</div>
-    <div class="news-body">Tether 应美国执法部门请求，冻结 Tron 区块链上涉嫌非法活动的 $3.44 亿 USDT。此举发生于 FATF 警告数字美元在非法资金流通中作用日益扩大之际，是稳定币发行商深度配合主权监管的重大案例，将加速 AML 合规框架立法讨论。</div>
-    <div class="news-footer">
-      <span class="tag">Tether</span>
-      <span class="tag">USDT</span>
-      <span class="tag">AML合规</span>
-      <span class="tag">FATF</span>
-    
-      <div class="news-source">来源：<a href="https://www.coindesk.com/" target="_blank">CoinDesk</a></div>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill mid">MID</span>
-      <span class="news-time">04-22</span>
-    </div>
-    <div class="news-title">BIS 警告：加密交易所正成为"影子银行"，稳定币收益产品缺乏安全网</div>
-    <div class="news-body">国际清算银行（BIS）报告警告，稳定币收益产品与 DeFi 存款类服务实质已是类银行服务，却缺乏相应保障与存款保险。JPMorgan 同步发报指出 KelpDAO 黑客造成约 $200 亿 TVL 蒸发，是今年迄今最大 DeFi 损失，加剧机构对 DeFi 的信任危机。</div>
-    <div class="news-footer">
-      <span class="tag">BIS</span>
-      <span class="tag">DeFi监管</span>
-      <span class="tag">稳定币</span>
-    
-      <div class="news-source">来源：<a href="https://www.coindesk.com/" target="_blank">CoinDesk</a></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== 行业动态 ===== -->
-<div class="section">
-  <div class="section-header">
-    <div class="section-left">
-      <span class="section-icon">🚀</span>
-      <span class="section-title">行业动态</span>
-    </div>
-    <div class="section-badge">3</div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill high">HIGH</span>
-      <span class="news-time">04-24 04:51</span>
-    </div>
-    <div class="news-title">Arthur Hayes：BTC 突破 $50 万需美联储重启印钞机，预测 2026 年底达 $25–50 万</div>
-    <div class="news-body">Arthur Hayes 表示，在美联储为银行资产负债表"黑洞"补充流动性之前，BTC 不会出现实质性涨幅。他认为 AI 正在侵蚀知识工作者收入并引发消费信贷违约，这将最终迫使美联储干预。具体预测：2026 年夏 $15–20 万，2026 年底 $25–50 万，2028 年 $100 万。</div>
-    <div class="news-footer">
-      <span class="tag">Arthur Hayes</span>
-      <span class="tag">BTC预测</span>
-      <span class="tag">美联储</span>
-    
-      <div class="news-source">来源：<a href="https://www.odaily.news/en/newsflash/478029" target="_blank">Odaily</a> · <a href="https://www.forbes.com/sites/digital-assets/2026/04/23/no-trade-zone-hayes-warning-bitcoin-needs-fed-to-hit-500k/" target="_blank">Forbes原文</a></div>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill mid">MID</span>
-      <span class="news-time">04-23 03:39</span>
-    </div>
-    <div class="news-title">Aurise Foundation 发布黄金收益代币 XAUE，RWA 黄金可编程化迈出新步</div>
-    <div class="news-body">Aurise Foundation 在以太坊上线 XAUE，定位为 Tether Gold（XAU₮）的收益型金库代币，通过量化策略和机构借贷引入链上收益。Aurelion 与 Antalpha 已联合注入 16,052 枚 XAU₮（约 $7600 万），未来将接入更多 DeFi 协议。</div>
-    <div class="news-footer">
-      <span class="tag">RWA黄金</span>
-      <span class="tag">XAUE</span>
-      <span class="tag">Tether Gold</span>
-    
-      <div class="news-source">来源：<a href="https://www.odaily.news/en/newsflash/478017" target="_blank">Odaily</a> · <a href="https://www.prnewswire.com/news-releases/aurise-foundation-launches-xaue-unlocking-yield-for-rwa-gold-302750318.html" target="_blank">PRNewswire</a></div>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="news-top-row">
-      <span class="pill mid">MID</span>
-      <span class="news-time">04-22 ~ 04-23</span>
-    </div>
-    <div class="news-title">Morgan Stanley 全面布局加密基础设施；KraneShares 多资产加密 ETF 申请推进</div>
-    <div class="news-body">Morgan Stanley 通过 E*Trade 提供现货 BTC ETF，并申请自营 ETF，计划 2026 年下半年开放代币化股权交易，从间接敞口走向完整数字资产基础设施布局。KraneShares 多资产加密 ETF 申请同步推进，华尔街机构入场步伐明显加快。</div>
-    <div class="news-footer">
-      <span class="tag">Morgan Stanley</span>
-      <span class="tag">ETF扩容</span>
-      <span class="tag">代币化股权</span>
-    
-      <div class="news-source">来源：<a href="https://www.analyticsinsight.net/price-analysis/crypto-prices-today-bitcoin-at-70610-hype-up-6-as-us-iran-peace-talks-weigh-on-oil" target="_blank">AnalyticsInsight</a></div>
-    </div>
-  </div>
-</div>
-
-<!-- ===== 底部关键词 ===== -->
-<div class="keywords-bar">
-  <div class="keywords-label">📌 今日关键词</div>
-  <div class="keywords-list">
-    <span class="kw hot">Bitmine ETH储备</span>
-    <span class="kw hot">DeFi United</span>
-    <span class="kw hot">KelpDAO余震</span>
-    <span class="kw hot">CLARITY Act</span>
-    <span class="kw">美伊地缘</span>
-    <span class="kw">BTC $78K</span>
-    <span class="kw">ETH ETF流入</span>
-    <span class="kw">Tether冻结</span>
-    <span class="kw">SPK +80%</span>
-    <span class="kw">BIS影子银行</span>
-    <span class="kw">Arthur Hayes</span>
-    <span class="kw">RWA黄金</span>
-  </div>
-</div>
-
-<div class="disclaimer">
-  ⚠️ 本早报仅为信息整合，不构成任何投资建议<br>
-  资讯时间范围：04/23 20:00 — 04/24 09:30（UTC+8）<br>
-  COMPILED BY CLAUDE · 2026/04/24
-</div>
-
 </body>
 </html>
