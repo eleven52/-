@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>加密行业热点早报 · 2026年4月27日</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--black:#000;--neo:#191919;--white:#fff;--neon:#BCFF2F;--neon-dim:rgba(188,255,47,.10);--neon-mid:rgba(188,255,47,.20);--g1:#111;--g2:#1a1a1a;--ts:#999;--td:#666;--th:#444;--brd:rgba(255,255,255,.06);--bhv:rgba(188,255,47,.18);--red:#FF4D4D;--green:#2ECC71;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--black);color:#fff;font-family:'Noto Sans SC',sans-serif;font-size:14px;line-height:1.7;padding:20px 14px;}
+    .container{max-width:780px;margin:0 auto;}
+    .header{text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--brd);margin-bottom:24px;}
+    .date-badge{display:inline-flex;align-items:center;gap:8px;background:var(--neo);border:1px solid var(--brd);border-radius:20px;padding:4px 14px;font-size:11px;color:var(--ts);margin-bottom:14px;letter-spacing:.05em;}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--neon);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    h1{font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;margin-bottom:6px;letter-spacing:-.02em;}
+    .accent{color:var(--neon);}
+    .sub{font-size:11px;color:var(--td);margin-bottom:14px;letter-spacing:.1em;}
+    .source-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+    .source-tag{background:var(--g1);border:1px solid var(--brd);border-radius:4px;padding:3px 10px;font-size:10px;color:var(--ts);}
+    .market{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:20px;overflow:hidden;}
+    .market-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--brd);}
+    .market-title{font-size:12px;font-weight:700;color:var(--ts);}
+    .market-time{font-size:10px;color:var(--td);}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);}
+    .ci{background:var(--g1);padding:14px 16px;}
+    .cl{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+    .ico{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+    .btc{background:#F7931A;color:#fff;}.eth{background:#627EEA;color:#fff;}.sol{background:#9945FF;color:#fff;}.xrp{background:#346AA9;color:#fff;}
+    .cn{font-size:11px;color:var(--ts);}
+    .cp{font-size:20px;font-weight:700;}
+    .coin-change{font-size:11px;font-weight:600;margin-top:2px;}
+    .up{color:var(--green);}.down{color:var(--red);}
+    .fng-bar{display:grid;grid-template-columns:repeat(3,1fr);background:var(--g2);border-top:1px solid var(--brd);}
+    .fi{padding:10px;text-align:center;border-right:1px solid var(--brd);}
+    .fi:last-child{border-right:none;}
+    .fl{font-size:9px;color:var(--td);margin-bottom:4px;}
+    .fv{font-size:12px;font-weight:700;}
+    .section{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:14px;overflow:hidden;}
+    .section-header{display:flex;align-items:center;gap:10px;padding:13px 18px;background:var(--g2);border-bottom:1px solid var(--brd);}
+    .section-icon{font-size:17px;}
+    .section-title{font-size:13px;font-weight:700;flex:1;letter-spacing:.02em;}
+    .section-count{background:var(--neon-dim);border:1px solid var(--bhv);color:var(--neon);font-size:10px;font-weight:700;padding:2px 9px;border-radius:10px;}
+    .news-item{padding:14px 18px;border-bottom:1px solid var(--brd);}
+    .news-item:last-child{border-bottom:none;}
+    .priority{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;margin-bottom:7px;letter-spacing:.04em;}
+    .priority.high{background:var(--neon);color:#000;}
+    .priority.mid{background:rgba(255,255,255,.07);color:var(--ts);border:1px solid rgba(255,255,255,.1);}
+    .priority.low{background:rgba(255,255,255,.03);color:var(--th);border:1px solid rgba(255,255,255,.05);}
+    .news-title{font-size:13px;font-weight:700;margin-bottom:5px;line-height:1.5;}
+    .news-detail{font-size:12px;color:var(--ts);line-height:1.7;margin-bottom:8px;}
+    .news-source{font-size:11px;color:var(--th);}
+    .news-source a{color:var(--neon);text-decoration:none;opacity:.8;}
+    .news-source a:hover{opacity:1;}
+    .divider{height:1px;background:var(--brd);margin:24px 0;}
+    .footer{text-align:center;padding:20px 0 12px;}
+    .disclaimer{font-size:10px;color:var(--th);line-height:1.7;max-width:520px;margin:0 auto 10px;}
+    .compiled{font-size:10px;color:var(--th);letter-spacing:.15em;}
+    .empty{text-align:center;padding:32px;color:var(--td);font-size:13px;}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="date-badge"><span class="dot"></span> 2026年4月27日 · 周一</div>
+    <h1>加密行业热点<span class="accent">早报</span></h1>
+    <div class="sub">多源去重 · 分类评级 · 自动生成</div>
+    <div class="source-bar">
+      <span class="source-tag">Odaily星球日报</span>
+      <span class="source-tag">CoinDesk</span>
+      <span class="source-tag">CoinGecko</span>
+      <span class="source-tag">Alternative.me</span>
+    </div>
+  </div>
+
+  <div class="market">
+    <div class="market-header">
+      <span class="market-title">📊 实时行情</span>
+      <span class="market-time">17:39 UTC+8</span>
+    </div>
+    <div class="grid">
+      <div class="ci"><div class="cl"><div class="ico btc">₿</div><span class="cn">Bitcoin</span></div><div class="cp">$77,911</div><div class="coin-change down">▼ 0.07% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico eth">Ξ</div><span class="cn">Ethereum</span></div><div class="cp">$2,323</div><div class="coin-change down">▼ 0.41% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico sol">◎</div><span class="cn">Solana</span></div><div class="cp">$85.400</div><div class="coin-change down">▼ 1.26% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico xrp">✕</div><span class="cn">XRP</span></div><div class="cp">$1.420</div><div class="coin-change down">▼ 0.72% 24H</div></div>
+    </div>
+    <div class="fng-bar">
+      <div class="fi"><div class="fl">恐慌贪婪指数</div><div class="fv" style="color:#999">47 · 中性</div></div>
+      <div class="fi"><div class="fl">BTC主导率</div><div class="fv">~57%</div></div>
+      <div class="fi"><div class="fl">更新时间</div><div class="fv" style="font-size:11px">17:39</div></div>
+    </div>
+  </div>
+
+  
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚀</span>
+        <span class="section-title">行业趋势</span>
+        <span class="section-count">3 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">A long-time developer wants to split Bitcoin blockchain and reassign Satoshi coins. The community is calling it a theft</div>
+          <div class="news-detail">Your look at what's coming in the week starting April 27.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/04/27/global-interest-rates-robinhood-galaxy-earnings-crypto-week-ahead" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Pudgy Penguins, BAYC rally masks a shrinking NFT market as volumes and users fall</div>
+          <div class="news-detail">Paul Sztorc proposes a 2026 hard fork of Bitcoin called eCash, giving BTC holders equivalent tokens and adding Drivechains.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/tech/2026/04/27/a-long-time-developer-wants-to-fork-bitcoin-and-reassign-satoshi-coins-the-community-is-calling-it-a-theft" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Bitcoin pulls back from 12-week high as Iran rally hits seller wall at $79,400</div>
+          <div class="news-detail">The two blue-chip collections are leading double-digit gains as global NFT sales volume falls and participation hits multi-year lows.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/04/27/pudgy-penguins-bayc-rally-masks-a-shrinking-nft-market-as-volumes-and-users-fall" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">📋</span>
+        <span class="section-title">行业动态</span>
+        <span class="section-count">1 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Running out of time on Clarity: State of Crypto</div>
+          <div class="news-detail">April is almost over. May is the month to watch.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/04/27/bitcoin-pulls-back-from-12-week-high-as-iran-rally-hits-seller-wall-at-usd79-400" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">⛓️</span>
+        <span class="section-title">链上事件</span>
+        <span class="section-count">2 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Aave raises nearly 80% of the $200 million it needs to cover bad debt left by Kelp DAO exploit</div>
+          <div class="news-detail">Blockchain analytics platform Arkham said that the largest contributors are Mantle and Aave DAO, having raised a combined $127 million.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/policy/2026/04/26/running-out-of-time-on-clarity-state-of-crypto" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Why DeFi isn't dead despite massive exploits and $13 billion investor exodus</div>
+          <div class="news-detail">A $292 million exploit and $13 billion TVL drop looks catastrophic on the surface, but the data tells a different story.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/business/2026/04/26/aave-raises-nearly-80-of-the-usd200-million-it-needs-to-cover-bad-debt-left-by-kelp-dao-exploit" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+
+  <div class="divider"></div>
+  <div class="footer">
+    <div class="disclaimer">⚠️ 本早报由程序自动抓取公开信息整合生成，不构成任何投资建议。加密资产具有高度波动性，投资须谨慎。</div>
+    <div class="compiled">AUTO GENERATED · 20260427 · POWERED BY GITHUB ACTIONS</div>
+  </div>
+</div>
+</body>
+</html>
