@@ -1,625 +1,164 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>加密行业热点早报 · 2026年4月28日</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
-<style>
-:root {
-  --black: #000000;
-  --neo-black: #191919;
-  --white: #FFFFFF;
-  --neon: #BCFF2F;
-  --neon-dim: rgba(188,255,47,0.10);
-  --neon-mid: rgba(188,255,47,0.20);
-  --gray-1: #111111;
-  --text-primary: #FFFFFF;
-  --text-secondary: #999999;
-  --text-dim: #666666;
-  --text-hint: #444444;
-  --border: rgba(255,255,255,0.07);
-  --red: #FF4D4D;
-  --amber: #FFC14D;
-}
-* { box-sizing: border-box; margin: 0; padding: 0; }
-body {
-  background: var(--black);
-  color: var(--text-primary);
-  font-family: 'Noto Sans SC', sans-serif;
-  font-size: 15px;
-  line-height: 1.65;
-  -webkit-text-size-adjust: 100%;
-}
-.container { max-width: 480px; margin: 0 auto; padding: 0 0 52px; }
-
-/* ── HEADER ── */
-.header {
-  background: var(--neo-black);
-  padding: 26px 20px 22px;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-}
-.date-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 20px;
-  padding: 5px 16px;
-  font-size: 12px;
-  color: var(--text-secondary);
-  letter-spacing: 0.05em;
-  margin-bottom: 16px;
-}
-.dot {
-  width: 7px; height: 7px;
-  background: var(--neon);
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--neon);
-  animation: pulse 2s infinite;
-}
-@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
-h1 {
-  font-family: 'Noto Serif SC', serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: 0.04em;
-  margin-bottom: 8px;
-}
-.accent { color: var(--neon); }
-.time-window {
-  font-size: 12px;
-  color: var(--text-secondary);
-  margin-bottom: 18px;
-}
-.source-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 7px;
-  justify-content: center;
-}
-.source-tag {
-  border: 1px solid rgba(255,255,255,0.14);
-  border-radius: 14px;
-  padding: 5px 14px;
-  font-size: 12px;
-  color: var(--text-secondary);
-}
-
-/* ── 今日核心主线 ── */
-.core-mainline {
-  margin: 16px 16px 0;
-  background: var(--neo-black);
-  border: 1px solid rgba(255,255,255,0.07);
-  border-left: 3px solid var(--neon);
-  border-radius: 10px;
-  padding: 16px 18px 18px;
-}
-.core-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--neon);
-  margin-bottom: 14px;
-}
-.core-dot {
-  width: 8px; height: 8px;
-  background: var(--neon);
-  border-radius: 50%;
-  box-shadow: 0 0 7px var(--neon);
-  flex-shrink: 0;
-}
-.core-lines {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.core-lines li {
-  font-size: 13px;
-  color: #cccccc;
-  line-height: 1.65;
-  padding-left: 22px;
-  position: relative;
-}
-.core-lines li::before {
-  position: absolute; left: 0;
-  color: var(--white); font-weight: 700;
-}
-.core-lines li:nth-child(1)::before { content: '①'; }
-.core-lines li:nth-child(2)::before { content: '②'; }
-.core-lines li:nth-child(3)::before { content: '③'; }
-.core-lines li:nth-child(4)::before { content: '④'; }
-.core-lines li:nth-child(5)::before { content: '⑤'; }
-.core-lines li strong { color: var(--white); font-weight: 700; }
-
-/* ── 市场行情（严格对照参考图）── */
-.market-wrap { margin: 16px 16px 0; }
-.market-header-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-}
-.mh-label { font-size: 12px; color: var(--text-secondary); }
-.mh-ts    { font-size: 11px; color: var(--text-dim); }
-
-.market-table {
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--neo-black);
-}
-
-/* 上下两行之间有明显的行间距分隔 */
-.market-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding: 18px 20px 14px;
-}
-
-/* 行间分割线 */
-.market-row + .market-row {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding-top: 16px;
-}
-
-/* 每格内部：label在上，价格居中，涨跌幅在下 */
-.mcell { }
-.mcell .mc-label {
-  font-size: 11px;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-}
-.mcell .mc-price {
-  font-size: 26px;
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1;
-  margin-bottom: 6px;
-  letter-spacing: -0.01em;
-}
-.mcell .mc-change {
-  font-size: 13px;
-  font-weight: 600;
-}
-.c-up   { color: var(--neon); }
-.c-down { color: var(--red); }
-.c-flat { color: var(--amber); }
-
-/* ── FOMC横幅 ── */
-.fomc-banner {
-  margin: 14px 16px 0;
-  background: linear-gradient(135deg,#1a0404,#1e0707);
-  border-left: 3px solid var(--red);
-  border-radius: 10px;
-  padding: 14px 16px;
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-}
-.fomc-icon { font-size: 22px; flex-shrink: 0; margin-top: 2px; }
-.fomc-body h3 {
-  font-size: 14px; font-weight: 700; color: var(--white);
-  line-height: 1.45; margin-bottom: 6px;
-}
-.fomc-body p { font-size: 12px; color: #cccccc; line-height: 1.6; }
-.tag-red {
-  display: inline-block;
-  background: var(--red); color: #fff;
-  font-size: 10px; font-weight: 700;
-  padding: 2px 7px; border-radius: 3px;
-  margin-right: 5px; vertical-align: middle;
-}
-
-/* ── SECTION ── */
-.section { margin: 14px 16px 0; }
-.section-header {
-  display: flex; align-items: center; gap: 8px;
-  margin-bottom: 10px; padding-bottom: 8px;
-  border-bottom: 1px solid var(--border);
-}
-.section-icon  { font-size: 16px; }
-.section-title { font-size: 13px; font-weight: 700; color: var(--white); flex: 1; letter-spacing: 0.04em; }
-.section-count {
-  background: var(--neon-dim); color: var(--neon);
-  font-size: 10px; padding: 2px 9px;
-  border-radius: 10px; border: 1px solid var(--neon-mid);
-}
-
-/* ── NEWS ITEM ── */
-.news-item {
-  background: var(--gray-1);
-  border-radius: 10px; padding: 14px 14px 12px;
-  margin-bottom: 10px; border: 1px solid var(--border);
-}
-.news-item:last-child { margin-bottom: 0; }
-.news-top { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
-
-/* 优先级标签：对照参考图放大、全大写 */
-.priority {
-  display: inline-block;
-  font-size: 11px; font-weight: 900;
-  padding: 3px 10px; border-radius: 4px;
-  flex-shrink: 0; letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-.priority.high {
-  background: #2a0000;
-  color: #FF4D4D;
-  border: 1px solid rgba(255,77,77,0.3);
-}
-.priority.mid {
-  background: #2a2600;
-  color: #FFD700;
-  border: 1px solid rgba(255,215,0,0.3);
-}
-.priority.low {
-  background: rgba(255,255,255,0.06);
-  color: var(--text-dim);
-}
-
-.news-time     { font-size: 11px; color: var(--text-dim); }
-.news-title    { font-size: 15px; font-weight: 700; color: var(--white); line-height: 1.45; margin-bottom: 8px; }
-.news-detail   { font-size: 12.5px; color: #aaaaaa; line-height: 1.7; margin-bottom: 10px; }
-.news-meta     { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-
-/* 影响标签：默认灰色，关键词标签加色 */
-.impact-tag {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.10);
-  color: var(--text-secondary); font-size: 11px;
-  padding: 3px 9px; border-radius: 4px;
-  font-weight: 500;
-}
-/* 彩色关键词标签（高亮关键词，参考图中绿色标签） */
-.impact-tag.kw {
-  background: rgba(188,255,47,0.12);
-  border: 1px solid rgba(188,255,47,0.25);
-  color: var(--neon);
-}
-
-/* 来源：橙黄色链接，参考图样式 */
-.news-source {
-  font-size: 12px; color: var(--text-dim);
-  border-top: 1px solid var(--border);
-  padding-top: 9px; line-height: 1.7;
-}
-.news-source a {
-  color: #FFA040;
-  text-decoration: none;
-  font-weight: 500;
-}
-.news-source a:hover { text-decoration: underline; }
-
-/* ── FOOTER ── */
-.divider { height:1px; background: var(--border); margin: 28px 0 0; }
-.footer {
-  padding: 28px 20px 36px;
-  text-align: center;
-}
-.footer-brand {
-  font-size: 14px; font-weight: 700;
-  color: var(--white); letter-spacing: 0.04em;
-  margin-bottom: 14px;
-}
-.footer-sources {
-  font-size: 12px; color: var(--text-secondary);
-  line-height: 2; margin-bottom: 10px;
-}
-.footer-window {
-  font-size: 12px; color: var(--text-secondary);
-  margin-bottom: 10px;
-}
-.footer-disclaimer {
-  font-size: 11.5px; color: var(--text-dim);
-  line-height: 1.7;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>加密行业热点早报 · 2026年4月28日</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--black:#000;--neo:#191919;--white:#fff;--neon:#BCFF2F;--neon-dim:rgba(188,255,47,.10);--neon-mid:rgba(188,255,47,.20);--g1:#111;--g2:#1a1a1a;--ts:#999;--td:#666;--th:#444;--brd:rgba(255,255,255,.06);--bhv:rgba(188,255,47,.18);--red:#FF4D4D;--green:#2ECC71;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--black);color:#fff;font-family:'Noto Sans SC',sans-serif;font-size:14px;line-height:1.7;padding:20px 14px;}
+    .container{max-width:780px;margin:0 auto;}
+    .header{text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--brd);margin-bottom:24px;}
+    .date-badge{display:inline-flex;align-items:center;gap:8px;background:var(--neo);border:1px solid var(--brd);border-radius:20px;padding:4px 14px;font-size:11px;color:var(--ts);margin-bottom:14px;letter-spacing:.05em;}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--neon);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    h1{font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;margin-bottom:6px;letter-spacing:-.02em;}
+    .accent{color:var(--neon);}
+    .sub{font-size:11px;color:var(--td);margin-bottom:14px;letter-spacing:.1em;}
+    .source-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+    .source-tag{background:var(--g1);border:1px solid var(--brd);border-radius:4px;padding:3px 10px;font-size:10px;color:var(--ts);}
+    .market{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:20px;overflow:hidden;}
+    .market-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--brd);}
+    .market-title{font-size:12px;font-weight:700;color:var(--ts);}
+    .market-time{font-size:10px;color:var(--td);}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);}
+    .ci{background:var(--g1);padding:14px 16px;}
+    .cl{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+    .ico{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+    .btc{background:#F7931A;color:#fff;}.eth{background:#627EEA;color:#fff;}.sol{background:#9945FF;color:#fff;}.xrp{background:#346AA9;color:#fff;}
+    .cn{font-size:11px;color:var(--ts);}
+    .cp{font-size:20px;font-weight:700;}
+    .coin-change{font-size:11px;font-weight:600;margin-top:2px;}
+    .up{color:var(--green);}.down{color:var(--red);}
+    .fng-bar{display:grid;grid-template-columns:repeat(3,1fr);background:var(--g2);border-top:1px solid var(--brd);}
+    .fi{padding:10px;text-align:center;border-right:1px solid var(--brd);}
+    .fi:last-child{border-right:none;}
+    .fl{font-size:9px;color:var(--td);margin-bottom:4px;}
+    .fv{font-size:12px;font-weight:700;}
+    .section{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:14px;overflow:hidden;}
+    .section-header{display:flex;align-items:center;gap:10px;padding:13px 18px;background:var(--g2);border-bottom:1px solid var(--brd);}
+    .section-icon{font-size:17px;}
+    .section-title{font-size:13px;font-weight:700;flex:1;letter-spacing:.02em;}
+    .section-count{background:var(--neon-dim);border:1px solid var(--bhv);color:var(--neon);font-size:10px;font-weight:700;padding:2px 9px;border-radius:10px;}
+    .news-item{padding:14px 18px;border-bottom:1px solid var(--brd);}
+    .news-item:last-child{border-bottom:none;}
+    .priority{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;margin-bottom:7px;letter-spacing:.04em;}
+    .priority.high{background:var(--neon);color:#000;}
+    .priority.mid{background:rgba(255,255,255,.07);color:var(--ts);border:1px solid rgba(255,255,255,.1);}
+    .priority.low{background:rgba(255,255,255,.03);color:var(--th);border:1px solid rgba(255,255,255,.05);}
+    .news-title{font-size:13px;font-weight:700;margin-bottom:5px;line-height:1.5;}
+    .news-detail{font-size:12px;color:var(--ts);line-height:1.7;margin-bottom:8px;}
+    .news-source{font-size:11px;color:var(--th);}
+    .news-source a{color:var(--neon);text-decoration:none;opacity:.8;}
+    .news-source a:hover{opacity:1;}
+    .divider{height:1px;background:var(--brd);margin:24px 0;}
+    .footer{text-align:center;padding:20px 0 12px;}
+    .disclaimer{font-size:10px;color:var(--th);line-height:1.7;max-width:520px;margin:0 auto 10px;}
+    .compiled{font-size:10px;color:var(--th);letter-spacing:.15em;}
+    .empty{text-align:center;padding:32px;color:var(--td);font-size:13px;}
+  </style>
 </head>
 <body>
 <div class="container">
-
-<!-- HEADER -->
-<div class="header">
-  <div class="date-badge"><span class="dot"></span>2026年4月28日 · 星期二</div>
-  <h1>加密行业热点<span class="accent">早报</span></h1>
-  <div class="time-window">时间窗口：4月27日 20:00 — 4月28日 09:30（北京时间）</div>
-  <div class="source-bar">
-    <span class="source-tag">Odaily星球日报</span>
-    <span class="source-tag">BlockBeats</span>
-    <span class="source-tag">链捕手</span>
-    <span class="source-tag">Foresight News</span>
-    <span class="source-tag">吴说</span>
-    <span class="source-tag">金十数据</span>
+  <div class="header">
+    <div class="date-badge"><span class="dot"></span> 2026年4月28日 · 周二</div>
+    <h1>加密行业热点<span class="accent">早报</span></h1>
+    <div class="sub">多源去重 · 分类评级 · 自动生成</div>
+    <div class="source-bar">
+      <span class="source-tag">Odaily星球日报</span>
+      <span class="source-tag">CoinDesk</span>
+      <span class="source-tag">CoinGecko</span>
+      <span class="source-tag">Alternative.me</span>
+    </div>
   </div>
-</div>
 
-<!-- 今日核心主线 -->
-<div class="core-mainline">
-  <div class="core-title"><span class="core-dot"></span>今日核心主线</div>
-  <ul class="core-lines">
-    <li><strong>FOMC今日开幕，鲍威尔最后发布会：</strong>美联储4月28-29日会议启动，明日是鲍威尔任期内最后一次主席发布会，措辞是最大变量。恐惧贪婪指数当前32（恐惧），历史上BTC在9次FOMC会后8次下跌，但本轮ETF持续净流入构成底盘。</li>
-    <li><strong>Strategy本周再购2.55亿美元BTC：</strong>均价77,906美元持续吸筹，Strive同步增持，4月机构多渠道资金回流已达187亿美元，底盘支撑明确。</li>
-    <li><strong>DeFi坏账修复提速：</strong>Consensys提供3万ETH + Circle买入AAVE + DeFi United筹款超3亿美元，生态集体自救信号强烈，AAVE/ETH受益。</li>
-    <li><strong>加密股美股全线承压：</strong>CRCL跌超4.22%、MARA跌3.95%、COIN跌1.55%，FOMC开幕前投资者主动收缩加密风险敞口。</li>
-    <li><strong>《Clarity法案》窗口告急：</strong>美参议院实际仅剩9~10个工作周，若阵亡将士纪念日前无突破，合规催化剂将落入选举博弈泥潭。</li>
-  </ul>
-</div>
-
-<!-- 市场行情 -->
-<div class="market-wrap">
-  <div class="market-header-row">
-    <span class="mh-label">市场行情</span>
-    <span class="mh-ts">· 4月28日 实时数据</span>
+  <div class="market">
+    <div class="market-header">
+      <span class="market-title">📊 实时行情</span>
+      <span class="market-time">18:01 UTC+8</span>
+    </div>
+    <div class="grid">
+      <div class="ci"><div class="cl"><div class="ico btc">₿</div><span class="cn">Bitcoin</span></div><div class="cp">$76,587</div><div class="coin-change down">▼ 1.64% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico eth">Ξ</div><span class="cn">Ethereum</span></div><div class="cp">$2,282</div><div class="coin-change down">▼ 1.74% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico sol">◎</div><span class="cn">Solana</span></div><div class="cp">$83.640</div><div class="coin-change down">▼ 2.13% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico xrp">✕</div><span class="cn">XRP</span></div><div class="cp">$1.390</div><div class="coin-change down">▼ 2.06% 24H</div></div>
+    </div>
+    <div class="fng-bar">
+      <div class="fi"><div class="fl">恐慌贪婪指数</div><div class="fv" style="color:#FF4D4D">33 · 恐慌</div></div>
+      <div class="fi"><div class="fl">BTC主导率</div><div class="fv">~57%</div></div>
+      <div class="fi"><div class="fl">更新时间</div><div class="fv" style="font-size:11px">18:01</div></div>
+    </div>
   </div>
-  <div class="market-table">
-    <div class="market-row">
-      <div class="mcell">
-        <div class="mc-label">BTC</div>
-        <div class="mc-price">$77,750</div>
-        <div class="mc-change c-down">−0.38%</div>
+
+  
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🏛️</span>
+        <span class="section-title">货币政策</span>
+        <span class="section-count">4 条</span>
       </div>
-      <div class="mcell">
-        <div class="mc-label">ETH</div>
-        <div class="mc-price">$2,318</div>
-        <div class="mc-change c-down">−0.62%</div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Bitmine's ether buys are catching up to Strategy's bitcoin accumulation pace</div>
+          <div class="news-detail">The firm added 114 BTC to its corporate treasury, for a total of 8,997 BTC, and said it plans to issue regular third-party reports.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/business/2026/04/28/jack-dorsey-s-block-nears-9-000-bitcoin-in-treasury-after-q1-addition" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Ondo Finance adds proxy voting for holders of its $700 million tokenized equities</div>
+          <div class="news-detail">Bitmine bought $234 million of ether in its largest weekly purchase this year, closing in on Strategy's regular bitcoin buys once the firm's STRC-fueled spikes are stripped out.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/business/2026/04/28/bitmine-s-ether-buys-are-catching-up-to-strategy-s-bitcoin-accumulation-pace" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">What next as XRP drops 3% under $1.40 on strong selling</div>
+          <div class="news-detail">Markets are pricing in a June rate hike after a split BoJ vote that saw three policymakers dissent in favor of a hike.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/04/28/three-bank-of-japan-members-call-for-a-rate-hike-yen-rises-while-bitcoin-falls" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Bitcoin pressured by Fed uncertainty, oil, and AI slowdown</div>
+          <div class="news-detail">Bitcoin traded at $76,923 on Tuesday morning, down 2.4% over 24 hours after rejecting $79,400 the previous day, with the entire top 10 closing red as Brent crude extended its rally</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/04/28/bitcoin-loses-usd77-000-ether-solana-slide-as-hormuz-standoff-lifts-oil-to-3-week-high" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">⚖️</span>
+        <span class="section-title">全球监管</span>
+        <span class="section-count">1 条</span>
       </div>
-      <div class="mcell">
-        <div class="mc-label">恐惧贪婪指数</div>
-        <div class="mc-price">32</div>
-        <div class="mc-change c-down">恐惧</div>
+      
+        <div class="news-item">
+          <div class="priority high">高价值</div>
+          <div class="news-title">Three Bank of Japan members call for a rate hike; yen rises while bitcoin falls</div>
+          <div class="news-detail">The move aims to bring Ondo's tokenized stocks and ETFs closer to traditional ones held in a brokerage account.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/tech/2026/04/28/ondo-finance-adds-proxy-voting-for-holders-of-its-usd700-million-tokenized-equities" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚀</span>
+        <span class="section-title">行业趋势</span>
+        <span class="section-count">1 条</span>
       </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Bitcoin loses $77,000, ether, solana slide as Hormuz standoff lifts oil to 3-week high</div>
+          <div class="news-detail">High-volume breakdown confirms sellers in control, with failed support turning into a key pivot as downside targets come into focus.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/04/28/what-next-as-xrp-drops-3-under-usd1-40-on-strong-selling" target="_blank">CoinDesk</a></div>
+        </div>
     </div>
-    <div class="market-row">
-      <div class="mcell">
-        <div class="mc-label">WTI 原油</div>
-        <div class="mc-price">$99.08</div>
-        <div class="mc-change c-up">+1.10%</div>
-      </div>
-      <div class="mcell">
-        <div class="mc-label">黄金</div>
-        <div class="mc-price">$4,678</div>
-        <div class="mc-change c-down">−0.69%</div>
-      </div>
-      <div class="mcell">
-        <div class="mc-label">纳斯达克（周五收）</div>
-        <div class="mc-price">24,837</div>
-        <div class="mc-change c-up">+1.60% ATH</div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- FOMC横幅 -->
-<div class="fomc-banner">
-  <div class="fomc-icon">🔴</div>
-  <div class="fomc-body">
-    <h3><span class="tag-red">今日重磅</span>FOMC两天会议开幕，明日鲍威尔最后一次主席发布会</h3>
-    <p>美联储4月28-29日会议今日启动，明日东部时间14:00宣布利率决定，几乎确定维持3.5%~3.75%不变。鲍威尔作为主席的最后一次发布会措辞将主导短期加密走向。历史：BTC过去9次FOMC会后8次下跌。</p>
+  <div class="divider"></div>
+  <div class="footer">
+    <div class="disclaimer">⚠️ 本早报由程序自动抓取公开信息整合生成，不构成任何投资建议。加密资产具有高度波动性，投资须谨慎。</div>
+    <div class="compiled">AUTO GENERATED · 20260428 · POWERED BY GITHUB ACTIONS</div>
   </div>
-</div>
-
-<!-- 货币政策 -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-icon">🏛️</span>
-    <span class="section-title">货币政策</span>
-    <span class="section-count">1 条</span>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority high">HIGH</span><span class="news-time">04-28 / 今日</span></div>
-    <div class="news-title">FOMC两天会议今日开幕，明日鲍威尔以主席身份最后一次宣布利率决定</div>
-    <div class="news-detail">美联储4月28-29日两天会议今日正式开启。明日东部时间14:00公布利率决定，市场几乎100%确定维持利率3.5%~3.75%不变。焦点在于：①鲍威尔此次是其主席任期内的最后一次发布会，任何措辞都将被市场反复解读；②参议院银行委员会同日对沃什进行确认投票；③历史上BTC在过去9次FOMC会后8次于48小时内下跌，"sell-the-news"模式是加密市场最稳定的短期信号之一，但此轮ETF连续净流入构成不同以往的底盘支撑。</div>
-    <div class="news-meta">
-      <span class="impact-tag">周级</span>
-      <span class="impact-tag">📈 影响价格</span>
-      <span class="impact-tag">💧 改变流动性预期</span>
-      <span class="impact-tag">😤 调动市场情绪</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.theblockbeats.info/newsflash" target="_blank">BlockBeats（4月27日快讯 · Nic Puckrin分析）</a></div>
-  </div>
-</div>
-
-<!-- 传统金融 -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-icon">🏦</span>
-    <span class="section-title">传统金融</span>
-    <span class="section-count">2 条</span>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority high">HIGH</span><span class="news-time">04-28 / 01:30</span></div>
-    <div class="news-title">Strategy过去一周均价77,906美元买入2.55亿美元比特币，Strive同期增持789枚</div>
-    <div class="news-detail">Odaily星球早讯（4月28日01:30）确认：Strategy过去一周以平均价格77,906美元购入价值2.55亿美元比特币；Strive同期增持789枚，累计持有14,557枚。BIT投研4月27日报告确认4月以来多渠道资金回流约187亿美元，机构需求构成行情底盘，直接对冲资金费率偏负信号。</div>
-    <div class="news-meta">
-      <span class="impact-tag">周级</span>
-      <span class="impact-tag">📈 影响价格</span>
-      <span class="impact-tag">👥 改变参与者结构</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478579" target="_blank">Odaily星球日报（星球早讯 04-28 01:30）</a></div>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority mid">MID</span><span class="news-time">04-28 / 01:00</span></div>
-    <div class="news-title">美股收盘加密板块普跌：CRCL −4.22%、MARA −3.95%、COIN −1.55%</div>
-    <div class="news-detail">据Odaily（4月28日01:00），美股收盘道指跌0.13%、纳指涨0.2%、标普涨0.12%，但加密相关股票全线承压：Circle（CRCL）跌超4.22%，Marathon Digital（MARA）跌3.95%，ABTC跌2.42%，SBET跌1.78%，Coinbase（COIN）跌1.55%。加密股逆主板下行，反映FOMC开幕前投资者主动收缩加密风险敞口。</div>
-    <div class="news-meta">
-      <span class="impact-tag">日级</span>
-      <span class="impact-tag">📈 影响价格</span>
-      <span class="impact-tag">😤 调动情绪</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478575" target="_blank">Odaily星球日报（04-28 01:00）</a></div>
-  </div>
-</div>
-
-<!-- 加密数据 -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-icon">📈</span>
-    <span class="section-title">加密数据</span>
-    <span class="section-count">2 条</span>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority mid">MID</span><span class="news-time">04-28 / 01:00</span></div>
-    <div class="news-title">黄金与原油小幅上涨，BTC与ETH波动率回落，市场进入低波动等待模式</div>
-    <div class="news-detail">据Odaily（4月28日01:00），黄金与原油小幅上涨，BTC与ETH波动率指数回落。BTC资金费率（BlockBeats 4月27日）在多个主流平台录得负值，ETH在Binance等主力平台同样为负，空头持续向多头支付费用，市场处于FOMC前谨慎观望的低波动区间。</div>
-    <div class="news-meta">
-      <span class="impact-tag">日级</span>
-      <span class="impact-tag">📈 影响价格</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478574" target="_blank">Odaily星球日报（04-28 01:00）</a> · <a href="https://www.theblockbeats.info/newsflash" target="_blank">BlockBeats（资金费率 04-27）</a></div>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority mid">MID</span><span class="news-time">04-28 / 01:18</span></div>
-    <div class="news-title">Polymarket Q1访问量1.22亿次超越Robinhood，位列加密应用网站第一</div>
-    <div class="news-detail">据Similarweb数据（Odaily 4月28日01:18），2026年Q1 Polymarket以1.22亿次超越Robinhood（1.18亿次），位居加密应用网站第一。Coinbase以7,880万次居第三，Kalshi以3,480万次居第六，Hyperliquid以1,280万次居第九。预测市场流量规模反映加密原生用户深度，是行业活跃度的重要信号。</div>
-    <div class="news-meta">
-      <span class="impact-tag">月级</span>
-      <span class="impact-tag">🔧 影响使用方式</span>
-      <span class="impact-tag">👥 改变参与者结构</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478580" target="_blank">Odaily星球日报（04-28 01:18）</a></div>
-  </div>
-</div>
-
-<!-- 全球监管 -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-icon">⚖️</span>
-    <span class="section-title">全球监管</span>
-    <span class="section-count">2 条</span>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority high">HIGH</span><span class="news-time">04-28 / 01:30</span></div>
-    <div class="news-title">《Clarity法案》实际仅剩9~10个工作周立法窗口，加密合规催化剂时效告急</div>
-    <div class="news-detail">Odaily星球早讯（4月28日01:30）：美参议院实际仅剩约9至10个工作周推进《数字资产市场清晰法案》。5月21日国会休会期开始后若无关键进展，将落入中期选举博弈。《Clarity法案》核心是将绝大多数加密货币监管权移交CFTC，是行业最重要的合规基础设施立法，过期将延迟加密合规化进程至少一至两年。</div>
-    <div class="news-meta">
-      <span class="impact-tag">月级以上</span>
-      <span class="impact-tag">👥 改变参与者结构</span>
-      <span class="impact-tag">🔧 影响使用方式</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478579" target="_blank">Odaily星球日报（星球早讯 04-28 01:30）</a></div>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority mid">MID</span><span class="news-time">04-28 / 01:05</span></div>
-    <div class="news-title">韩国交易所Coinone起诉韩国金融情报院，寻求叫停监管处罚</div>
-    <div class="news-detail">据Odaily（4月28日01:05），韩国加密货币交易所Coinone正式对韩国金融情报院（KoFIU）提起诉讼，寻求叫停相关监管处罚决定。这是亚洲加密交易所通过司法途径反制监管的又一案例，韩国合规环境仍存争议。</div>
-    <div class="news-meta">
-      <span class="impact-tag">月级</span>
-      <span class="impact-tag">🔧 影响使用方式</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478578" target="_blank">Odaily星球日报（04-28 01:05）</a></div>
-  </div>
-</div>
-
-<!-- 链上事件 -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-icon">⛓️</span>
-    <span class="section-title">链上事件</span>
-    <span class="section-count">3 条</span>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority high">HIGH</span><span class="news-time">04-28 / 01:30</span></div>
-    <div class="news-title">Consensys提供3万ETH修复Aave坏账，Circle买入AAVE，DeFi United筹款超3亿美元</div>
-    <div class="news-detail">Odaily星球早讯（4月28日01:30）：Consensys及创始人Joseph Lubin将提供30,000枚ETH用于Aave rsETH坏账修复；Circle宣布购买AAVE代币支持DeFi生态；Avalanche基金会支持DeFi United恢复rsETH抵押；DeFi United筹款超3亿美元；Curve创始人提议通过市场化模式回收坏账。这是KelpDAO事件冲击后多方集体出手的大规模生态自救行动。</div>
-    <div class="news-meta">
-      <span class="impact-tag">周级</span>
-      <span class="impact-tag kw">📈 影响价格（AAVE/ETH）</span>
-      <span class="impact-tag">💧 改变流动性</span>
-      <span class="impact-tag">🔧 影响使用方式</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478579" target="_blank">Odaily星球日报（星球早讯 04-28 01:30）</a></div>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority high">HIGH</span><span class="news-time">04-28 / 01:30</span></div>
-    <div class="news-title">Bitmine资产133亿美元，持有507万枚ETH占流通供应量4.21%</div>
-    <div class="news-detail">Odaily星球早讯（4月28日01:30）：Bitmine资产总额达133亿美元，持有超507万枚ETH，占ETH流通供应量4.21%，成为ETH最重要的单一机构持有者之一。大规模集中持仓对ETH供应结构和流动性具有长期结构性影响，是ETH价格的重要底盘变量。</div>
-    <div class="news-meta">
-      <span class="impact-tag">月级以上</span>
-      <span class="impact-tag kw">📈 影响价格（ETH）</span>
-      <span class="impact-tag">👥 改变参与者结构</span>
-      <span class="impact-tag">💧 改变流动性</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478579" target="_blank">Odaily星球日报（星球早讯 04-28 01:30）</a></div>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority mid">MID</span><span class="news-time">04-28 / 01:30</span></div>
-    <div class="news-title">Kalshi完成首笔定制化大宗交易，由Jump Trading提供流动性</div>
-    <div class="news-detail">Odaily星球早讯（4月28日01:30）：预测市场Kalshi完成首笔定制化大宗交易，由Jump Trading提供流动性，机构级流动性提供商正式进入去中心化预测市场。结合Polymarket Q1访问量创纪录，预测市场赛道机构化进程加速。</div>
-    <div class="news-meta">
-      <span class="impact-tag">月级</span>
-      <span class="impact-tag">👥 改变参与者结构</span>
-      <span class="impact-tag">🔧 影响使用方式</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478579" target="_blank">Odaily星球日报（星球早讯 04-28 01:30）</a></div>
-  </div>
-</div>
-
-<!-- 观点研报 -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-icon">🧠</span>
-    <span class="section-title">观点研报</span>
-    <span class="section-count">2 条</span>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority mid">MID</span><span class="news-time">04-27 / 11:39（背景参考）</span></div>
-    <div class="news-title">BIT投研：多项技术指标共振 + 4月187亿美元资金回流，比特币趋势性修复或已启动</div>
-    <div class="news-detail">BIT投研（Odaily 4月27日11:39，作为本期背景参考）：BTC重新站上21周均线，月线RSI与周线随机震荡指标同处历史底部区域，三大指标共振。4月以来稳定币流入、BTC ETF、期货杠杆及Strategy买盘合计约187亿美元资金回流。核心判断：市场正从反弹阶段过渡至趋势性修复阶段，熊市或已接近尾声。⚠️ 注：该报告发布于4月27日11:39，早于本期时间窗口（20:00），作为背景数据援引。</div>
-    <div class="news-meta">
-      <span class="impact-tag">月级</span>
-      <span class="impact-tag">😤 调动市场情绪</span>
-      <span class="impact-tag">📈 影响价格预期</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/post/5210514" target="_blank">Odaily星球日报（BIT投研 04-27 11:39）</a></div>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority mid">MID</span><span class="news-time">04-28 / 01:30</span></div>
-    <div class="news-title">伯恩斯坦：比特币牛市周期将更长；分析师：周三几乎是鲍威尔最后一次FOMC</div>
-    <div class="news-detail">Odaily星球早讯引述伯恩斯坦：比特币牛市周期将更长，机构资金持续流入与稳定币需求扩张是核心驱动力。BlockBeats引述分析师Nic Puckrin："周三几乎肯定是鲍威尔作为美联储主席的最后一次FOMC，利率决议几乎肯定是按兵不动。"两观点叠加构成当前"短期谨慎/长期乐观"的市场叙事分裂。</div>
-    <div class="news-meta">
-      <span class="impact-tag">月级</span>
-      <span class="impact-tag">😤 调动市场情绪</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478579" target="_blank">Odaily星球日报（星球早讯 04-28）</a> · <a href="https://www.theblockbeats.info/newsflash" target="_blank">BlockBeats（04-27）</a></div>
-  </div>
-</div>
-
-<!-- 行业趋势 -->
-<div class="section">
-  <div class="section-header">
-    <span class="section-icon">🚀</span>
-    <span class="section-title">行业趋势</span>
-    <span class="section-count">1 条</span>
-  </div>
-  <div class="news-item">
-    <div class="news-top"><span class="priority mid">MID</span><span class="news-time">04-28 / 01:04</span></div>
-    <div class="news-title">马斯克诉OpenAI案正式开庭，双方庭前公开交锋升级</div>
-    <div class="news-detail">据Odaily（4月28日01:04），马斯克诉OpenAI案正式开庭，双方庭前公开交锋升级，核心争议是OpenAI从非营利转向营利模式的合法性。若判决约束大型AI公司，可能利好去中心化AI赛道（TAO等）；若OpenAI胜诉则加速AI垄断格局，短期对市场情绪中性。</div>
-    <div class="news-meta">
-      <span class="impact-tag">月级</span>
-      <span class="impact-tag">🔧 影响使用方式（AI赛道）</span>
-    </div>
-    <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478577" target="_blank">Odaily星球日报（04-28 01:04）</a></div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- FOOTER -->
-<div class="footer">
-  <div class="footer-brand">OKX · 加密行业热点早报 · 2026年4月28日</div>
-  <div class="footer-sources">数据来源：Odaily星球日报 · BlockBeats · 链捕手 · Foresight News · 吴说 · 金十数据</div>
-  <div class="footer-window">时间窗口：2026年4月27日 20:00 — 4月28日 09:30（北京时间）</div>
-  <div class="footer-disclaimer">本报告仅供信息参考，不构成任何投资建议。加密市场存在高度风险，请独立判断。</div>
-</div>
-
 </div>
 </body>
 </html>
