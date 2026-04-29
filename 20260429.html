@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>加密行业热点早报 · 2026年4月29日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000; --neo-black: #191919; --white: #FFFFFF; --neon: #BCFF2F;
+    --neon-dim: rgba(188,255,47,0.10); --neon-mid: rgba(188,255,47,0.20);
+    --gray-1: #111111; --gray-2: #1a1a1a;
+    --text-primary: #FFFFFF; --text-secondary: #999999;
+    --text-dim: #666666; --text-hint: #444444;
+    --border: rgba(255,255,255,0.06); --red: #FF4D4D;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--black); color: var(--text-primary);
+    font-family: 'Noto Sans SC', -apple-system, sans-serif;
+    font-size: 14px; line-height: 1.6; -webkit-text-size-adjust: 100%;
+  }
+  .container { max-width: 480px; margin: 0 auto; padding: 0 0 48px; }
+
+  /* ── HEADER ── */
+  .header {
+    background: linear-gradient(180deg, #0d0d0d 0%, #000 100%);
+    padding: 28px 16px 22px;
+    border-bottom: 1px solid rgba(188,255,47,0.18);
+    text-align: center;
+  }
+  .date-badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    background: var(--neon-dim); border: 1px solid rgba(188,255,47,0.28);
+    border-radius: 20px; padding: 4px 14px;
+    font-size: 11px; color: var(--neon); letter-spacing: 0.8px; margin-bottom: 14px;
+  }
+  .dot { width: 6px; height: 6px; background: var(--neon); border-radius: 50%; animation: blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
+  h1 {
+    font-family: 'Noto Serif SC', serif; font-size: 28px; font-weight: 700;
+    color: var(--white); line-height: 1.2; margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  h1 .accent { color: var(--neon); }
+  .sub { font-size: 11px; color: var(--text-dim); letter-spacing: 2px; margin-bottom: 16px; }
+  .source-bar { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+  .source-tag {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 4px; padding: 2px 8px; font-size: 10px; color: var(--text-secondary);
+  }
+
+  /* ── TODAY FOCUS (matching provided template) ── */
+  .focus-block {
+    margin: 14px 16px 0;
+    background: #111;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid var(--neon);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .focus-title-row {
+    display: flex; align-items: center; gap: 8px;
+    padding: 11px 14px 9px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .focus-dot { width: 8px; height: 8px; background: var(--neon); border-radius: 50%; flex-shrink: 0; }
+  .focus-title-text {
+    font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: 0.5px;
+  }
+  .focus-body { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 11px; }
+  .focus-item-row { display: flex; gap: 0; }
+  .focus-num-bold {
+    font-size: 13px; font-weight: 700; color: var(--white);
+    flex-shrink: 0; margin-right: 4px; line-height: 1.6;
+  }
+  .focus-item-text { font-size: 13px; color: #ccc; line-height: 1.65; }
+  .focus-item-text strong { color: var(--white); font-weight: 700; }
+
+  /* ── FOMC BANNER ── */
+  .fomc-banner {
+    margin: 10px 16px 0;
+    background: rgba(255,77,77,0.07);
+    border: 1px solid rgba(255,77,77,0.28); border-left: 3px solid var(--red);
+    border-radius: 8px; padding: 11px 14px;
+    display: flex; gap: 10px; align-items: flex-start;
+  }
+  .fomc-icon { font-size: 17px; flex-shrink: 0; margin-top: 1px; }
+  .fomc-banner h3 { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
+  .fomc-banner p { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
+  .tag { background: var(--red); color: #fff; font-size: 10px; padding: 2px 6px; border-radius: 3px; margin-right: 5px; font-weight: 600; }
+
+  /* ── MARKET SNAPSHOT ── */
+  .market-section { margin: 12px 16px 0; }
+  .blk-hd {
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 0; padding-bottom: 0;
+  }
+  .blk-hd-title { font-size: 12px; font-weight: 400; color: var(--text-secondary); letter-spacing: .3px; }
+  .blk-hd-sub { margin-left: 6px; font-size: 12px; color: var(--text-secondary); }
+  /* Market card outer wrapper */
+  .market-outer {
+    background: #131313; border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 10px; margin-top: 10px; overflow: hidden;
+  }
+  .market-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .market-grid.row2 { border-bottom: none; }
+  .mc {
+    padding: 14px 12px 12px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .mc:last-child { border-right: none; }
+  .mc-label { font-size: 11px; color: var(--text-dim); margin-bottom: 7px; letter-spacing: .2px; }
+  .mc-price { font-size: 20px; font-weight: 700; color: var(--white); margin-bottom: 3px; font-variant-numeric: tabular-nums; letter-spacing: -.3px; }
+  .mc-chg { font-size: 12px; font-weight: 500; }
+  .mc-chg.dn { color: #FF4D4D; }
+  .mc-chg.up { color: #BCFF2F; }
+  .mc-chg.warn { color: #FFB800; }
+  .mc-price.warn { color: #FFB800; font-size: 20px; }
+
+  /* ── NEWS SECTIONS ── */
+  .section { margin: 16px 0 0; padding: 0 16px; }
+  .section-header {
+    display: flex; align-items: center; gap: 8px;
+    padding: 10px 0 8px; border-bottom: 1px solid var(--border); margin-bottom: 10px;
+  }
+  .section-icon { font-size: 16px; }
+  .section-title { font-size: 13px; font-weight: 700; color: var(--white); letter-spacing: .5px; }
+  .section-count {
+    margin-left: auto; background: var(--neon-dim);
+    border: 1px solid rgba(188,255,47,0.2); color: var(--neon);
+    font-size: 10px; padding: 2px 7px; border-radius: 10px;
+  }
+  .news-item {
+    background: var(--gray-1); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px; margin-bottom: 8px;
+  }
+  .priority {
+    display: inline-block; font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 4px; margin-bottom: 7px; letter-spacing: .5px;
+  }
+  .priority.high { background: var(--neon-mid); border: 1px solid rgba(188,255,47,0.3); color: var(--neon); }
+  .priority.mid { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: var(--text-secondary); }
+  .priority.low { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); color: var(--text-hint); }
+  .news-title { font-size: 14px; font-weight: 600; color: var(--white); line-height: 1.45; margin-bottom: 6px; }
+  .news-detail { font-size: 12px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 8px; }
+  .news-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; font-size: 10px; color: var(--text-dim); }
+  .impact-tag {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px; padding: 2px 6px; color: var(--text-dim);
+  }
+  .news-source { font-size: 10px; color: var(--text-hint); padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.05); }
+  .news-source a { color: rgba(188,255,47,0.6); text-decoration: none; }
+  .news-source a:hover { color: var(--neon); }
+
+  .divider { height: 1px; background: var(--border); margin: 20px 16px; }
+
+  /* ── FOOTER ── */
+  .footer { margin: 0 16px; padding: 16px 0 0; }
+  .keywords {
+    font-size: 12px; color: var(--text-secondary); line-height: 1.85; margin-bottom: 12px;
+    padding: 12px 14px; background: var(--neo-black);
+    border: 1px solid var(--border); border-radius: 8px;
+  }
+  .keywords strong { color: var(--neon); }
+  .disclaimer { font-size: 11px; color: var(--text-hint); line-height: 1.65; margin-bottom: 10px; }
+  .compiled { font-size: 10px; color: var(--text-hint); letter-spacing: 1.5px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="date-badge"><span class="dot"></span> 2026年4月29日 · 周三</div>
+    <h1>加密行业热点<span class="accent">早报</span></h1>
+    <div class="sub">多源去重 · 分类评级 · 精准来源</div>
+    <div class="source-bar">
+      <span class="source-tag">Odaily星球日报</span>
+      <span class="source-tag">BlockBeats律动</span>
+      <span class="source-tag">链捕手ChainCatcher</span>
+      <span class="source-tag">Foresight News</span>
+      <span class="source-tag">吴说区块链</span>
+      <span class="source-tag">金十数据</span>
+    </div>
+  </div>
+
+  <!-- TODAY FOCUS — matching provided image template -->
+  <div class="focus-block">
+    <div class="focus-title-row">
+      <span class="focus-dot"></span>
+      <span class="focus-title-text">今日核心主线</span>
+    </div>
+    <div class="focus-body">
+      <div class="focus-item-row">
+        <span class="focus-num-bold">①&nbsp;</span>
+        <span class="focus-item-text"><strong>特朗普升级伊朗经济战：</strong>指示助手准备"长期封锁"，财政部同步打击伊朗加密渠道，WTI原油升破$102.65。</span>
+      </div>
+      <div class="focus-item-row">
+        <span class="focus-num-bold">②&nbsp;</span>
+        <span class="focus-item-text"><strong>LayerZero认错赔付：</strong>DVN配置漏洞引发Kelp rsETH 2.93亿美元危机，LayerZero合计向DeFi United及Aave注入超1万枚ETH。</span>
+      </div>
+      <div class="focus-item-row">
+        <span class="focus-num-bold">③&nbsp;</span>
+        <span class="focus-item-text"><strong>Polymarket申请重返美国：</strong>Q1访问量1.22亿次居加密应用第一，CLOBv2昨夜上线，正待CFTC批准解禁。</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOMC BANNER -->
+  <div class="fomc-banner">
+    <div class="fomc-icon">🔴</div>
+    <div>
+      <h3><span class="tag">今夜重磅</span>美联储FOMC利率决议 + 鲍威尔最终发布会</h3>
+      <p>北京时间4月30日凌晨02:00公布，CME显示不变概率100%。02:30鲍威尔举行任内最后一次新闻发布会，继任者沃什或废除此惯例。</p>
+    </div>
+  </div>
+
+  <!-- 行情快照 -->
+  <div class="market-section">
+    <div class="blk-hd">
+      <span class="blk-hd-title">市场行情</span>
+      <span class="blk-hd-sub">· 4月29日 09:30 北京时间</span>
+    </div>
+    <div class="market-outer">
+      <!-- Row 1 -->
+      <div class="market-grid">
+        <div class="mc">
+          <div class="mc-label">BTC</div>
+          <div class="mc-price">$76,335</div>
+          <div class="mc-chg dn">-1.76%</div>
+        </div>
+        <div class="mc">
+          <div class="mc-label">ETH</div>
+          <div class="mc-price">$2,301</div>
+          <div class="mc-chg dn">-0.61%</div>
+        </div>
+        <div class="mc">
+          <div class="mc-label">恐惧贪婪指数</div>
+          <div class="mc-price">31</div>
+          <div class="mc-chg warn">恐惧</div>
+        </div>
+      </div>
+      <!-- Row 2 -->
+      <div class="market-grid row2">
+        <div class="mc">
+          <div class="mc-label">WTI 原油</div>
+          <div class="mc-price">$102.65</div>
+          <div class="mc-chg up">+0.37%</div>
+        </div>
+        <div class="mc">
+          <div class="mc-label">黄金</div>
+          <div class="mc-price">$4,583</div>
+          <div class="mc-chg dn">-0.31%</div>
+        </div>
+        <div class="mc">
+          <div class="mc-label">纳斯达克（周二收）</div>
+          <div class="mc-price" style="font-size:18px">24,664</div>
+          <div class="mc-chg dn">-0.90%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 货币政策 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🏛️</span>
+      <span class="section-title">货币政策</span>
+      <span class="section-count">2 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="priority high">高价值</div>
+      <div class="news-title">鲍威尔今夜登台谢幕，美联储主席定期公开问答或成历史</div>
+      <div class="news-detail">今夜凌晨02:00（北京时间4月30日），美联储公布4月利率决议，CME显示不变概率100%。随后鲍威尔举行任内最后一次正式新闻发布会。继任者凯文·沃什曾暗示可能完全停止定期发布会，认为美联储"沟通过度"，自2019年起确立的每次会议后必开发布会的惯例或随之终结。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>美联储 · 鲍威尔 · 沃什 · 货币沟通</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/343477" target="_blank">BlockBeats律动（2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority mid">中优级</div>
+      <div class="news-title">蒂利斯撤回阻挠，沃什美联储主席提名确认概率升至93%</div>
+      <div class="news-detail">参议员汤姆·蒂利斯同意推进凯文·沃什的美联储主席提名，Polymarket预测5月15日前确认概率升至93%。司法部此前已撤销对鲍威尔的相关调查。沃什若接任，其货币政策立场及对沟通透明度的态度将深刻影响2026年下半年的利率路径预期。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：季级</span>
+        <span>美联储人事 · 降息预期 · 货币政策</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/337547" target="_blank">BlockBeats律动（2026-04-26）</a></div>
+    </div>
+  </div>
+
+  <!-- 全球事件 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🌍</span>
+      <span class="section-title">全球事件</span>
+      <span class="section-count">3 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="priority high">高价值</div>
+      <div class="news-title">特朗普指示为对伊朗长期封锁做准备；财政部称已打击伊朗加密货币渠道</div>
+      <div class="news-detail">据华尔街日报：特朗普指示助手为对伊朗实施长期封锁做好准备，通过阻断港口船只打压石油出口。财政部长Bessent同步表示，已针对伊朗影子银行基础设施及加密货币访问渠道采取制裁行动，相关行动已扰乱数百亿美元收入。伊朗陆军发言人宣称"战争尚未结束，军队严阵以待"。WTI原油盘中突破$102/桶，对加密市场情绪构成持续压制。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：季级</span>
+        <span>美伊冲突 · 加密制裁 · 油价 · 霍尔木兹</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478713" target="_blank">Odaily（特朗普封锁 2026-04-29）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/478708" target="_blank">Odaily（财政部制裁 2026-04-29）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/478693" target="_blank">Odaily（伊朗回应 2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority high">高价值</div>
+      <div class="news-title">阿联酋宣布5月1日退出欧佩克和欧佩克+，全球能源格局震荡</div>
+      <div class="news-detail">阿联酋周二宣布自5月1日起退出欧佩克和欧佩克+，或导致该组织陷入混乱并削弱其协调影响力。分析认为此举是特朗普压低油价战略的胜利——特朗普曾多次指责欧佩克通过抬价"敲诈世界"，并将美国对海湾地区的军事支持与油价政策挂钩。阿联酋此前批评其他阿拉伯国家未充分保护其免受伊朗袭击，退出欧佩克是此次地区博弈的延伸。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>欧佩克 · 油价 · 地缘政治 · 通胀</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478673" target="_blank">Odaily（2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority mid">中优级</div>
+      <div class="news-title">吴说独家：TOKEN2049迪拜峰会延期至2027年4月21-22日</div>
+      <div class="news-detail">吴说独家获悉，原定于2026年4月29-30日举行的迪拜TOKEN2049峰会今日宣布延期至2027年4月21-22日，受美伊战争引发的中东安全风险上升影响。TOKEN2049是全球规模最大的加密行业年度峰会之一，此次延期对行业社区日程排布及迪拜作为加密中心的形象均有影响。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：周级</span>
+        <span>TOKEN2049 · 迪拜 · 行业活动</span>
+      </div>
+      <div class="news-source">来源：<a href="https://wublock123.com/index.php?a=show&c=index&catid=6&id=55925&m=content" target="_blank">吴说区块链独家（2026-04-29）</a></div>
+    </div>
+  </div>
+
+  <!-- 全球监管 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">⚖️</span>
+      <span class="section-title">全球监管</span>
+      <span class="section-count">3 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="priority high">高价值</div>
+      <div class="news-title">以色列批准首个锚定谢克尔的受监管稳定币BILS，基于Solana链发行</div>
+      <div class="news-detail">以色列资本市场管理局批准Bits of Gold发行该国首个锚定谢克尔的稳定币BILS，历经两年评估和试点。代币基于Solana开发，托管方为Fireblocks，审计由安永负责。目前全球稳定币市场规模已超3000亿美元，此次发行旨在应对美元锚定代币的链上支付主导地位，维护以色列数字主权，是继欧元、日元、新加坡元之后又一主权货币进入区块链金融体系。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>稳定币 · 以色列 · Solana · 数字主权</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478663" target="_blank">Odaily（2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority high">高价值</div>
+      <div class="news-title">欧盟第20轮对俄制裁首次全面限制俄罗斯加密行业，封锁数字卢布及RUBx</div>
+      <div class="news-detail">欧盟通过近两年最大规模制裁方案，首次对加密行业实施全面限制：禁止俄罗斯加密服务商及平台运营、封锁数字卢布及稳定币RUBx，并禁止欧盟主体与俄罗斯及白俄罗斯加密及DeFi平台交易，同时覆盖20家俄罗斯银行。欧盟称俄罗斯正越来越依赖加密资产规避制裁。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>欧盟制裁 · 俄罗斯 · DeFi · 稳定币 · CBDC</span>
+      </div>
+      <div class="news-source">来源：<a href="https://wublock123.com/articles/article-58916" target="_blank">吴说区块链每日精选（2026-04-27）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority mid">中优级</div>
+      <div class="news-title">CFTC主席：将用AI审核加密市场注册申请，弥补联邦裁员导致的人力缺口</div>
+      <div class="news-detail">CFTC主席Mike Selig表示，CFTC正构建利用AI审核美国加密市场注册申请和监控交易的工具，因联邦政府裁员导致机构人员减少超五分之一。员工正接受Microsoft Copilot培训，同时开发审查掉期数据的内部工具。Selig还重申CFTC与SEC联合发布的数字资产分类指南是其任内最重要举措。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>CFTC · AI监管 · 合规 · 预测市场</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478675" target="_blank">Odaily（2026-04-29）</a></div>
+    </div>
+  </div>
+
+  <!-- 链上事件 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">⛓️</span>
+      <span class="section-title">链上事件</span>
+      <span class="section-count">5 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="priority high">高价值</div>
+      <div class="news-title">LayerZero承担Kelp rsETH危机责任，向DeFi United提供超1万枚ETH</div>
+      <div class="news-detail">Kelp DAO rsETH桥接合约因LayerZero DVN配置为"1-of-1"单验证节点被黑，损失约2.93亿美元，并引发Aave大量坏账风险。LayerZero主动承担责任，承诺向DeFi United提供超1万枚ETH，其中5,000 ETH捐赠DeFi United，另5,000 ETH注入Aave市场以增强流动性，合计超1万枚ETH。本次事件暴露了LayerZero V2中DVN配置安全审计的重大盲区。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>LayerZero · Kelp · DeFi安全 · Aave</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478717" target="_blank">Odaily星球早讯（2026-04-29）</a> · <a href="https://www.odaily.news/en/post/5210357" target="_blank">Odaily深度分析（2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority high">高价值</div>
+      <div class="news-title">BitMine增持101,901枚ETH，总仓达507.8万枚；今日凌晨再新增质押107,992枚</div>
+      <div class="news-detail">BitMine宣布上周增持101,901枚以太坊，截至4月26日总持仓达5,078,386枚，约占以太坊总供应量4.21%，质押量3,701,589枚，总加密资产及现金规模133亿美元。BlockBeats链上侦探监测：BitMine在4月29日凌晨新增质押107,992枚ETH（约2.48亿美元），另一疑似关联地址接收25,000枚ETH（约5,713万美元）。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：周级</span>
+        <span>ETH质押 · 机构持仓 · BitMine</span>
+      </div>
+      <div class="news-source">来源：<a href="https://wublock123.com/articles/article-58916" target="_blank">吴说（2026-04-27）</a> · <a href="https://www.theblockbeats.info/flash/343448" target="_blank">BlockBeats链上侦探（新增质押 2026-04-29）</a> · <a href="https://www.theblockbeats.info/flash/343478" target="_blank">BlockBeats（接收ETH 2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority high">高价值</div>
+      <div class="news-title">Strategy以2.55亿美元购入3,273枚BTC，累计持仓818,334枚</div>
+      <div class="news-detail">Strategy宣布以约2.55亿美元购入3,273枚BTC，均价约77,906美元。截至2026年4月26日，公司共持有818,334枚BTC，总成本约618.1亿美元，平均成本约75,537美元，2026年迄今BTC收益率约9.6%。机构持续买入是对抗当前宏观逆风的核心支撑力量。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>Strategy · BTC · 机构持仓</span>
+      </div>
+      <div class="news-source">来源：<a href="https://wublock123.com/articles/article-58916" target="_blank">吴说区块链（2026-04-27）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority mid">中优级</div>
+      <div class="news-title">以太坊OG巨鲸持币10年首次转出1万枚ETH；富达向Coinbase存入19,934枚ETH</div>
+      <div class="news-detail">BlockBeats链上侦探监测：某以太坊ICO参与地址持有10年后首次转出1万枚ETH（约2,288万美元）。同期Odaily早讯披露，富达向Coinbase存入19,934枚ETH（约4,529万美元）。两大信号方向相反：老鲸鱼或获利了结，机构方面则在持续入场。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：日级</span>
+        <span>ETH巨鲸 · 富达 · 链上资金流向</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/343447" target="_blank">BlockBeats（OG巨鲸 2026-04-29）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/478717" target="_blank">Odaily星球早讯（富达 2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority mid">中优级</div>
+      <div class="news-title">pumpfun销毁约3.7亿美元PUMP（占流通量36%），承诺未来一年50%收入回购销毁</div>
+      <div class="news-detail">pumpfun创始人alon发文：过去约9个月将100%收入用于回购，今日销毁价值约3.7亿美元的PUMP，占流通供应量36%。未来一年将50%收入用于程序化回购和销毁，另50%用于业务增长、产品开发和生态建设，旨在重建社区信任并通过持续通缩机制为代币价值提供长期支撑。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>Solana · pumpfun · 代币销毁 · Meme</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478705" target="_blank">Odaily（2026-04-29）</a></div>
+    </div>
+  </div>
+
+  <!-- 行业趋势 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🚀</span>
+      <span class="section-title">行业趋势</span>
+      <span class="section-count">3 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="priority high">高价值</div>
+      <div class="news-title">Polymarket完成CLOBv2升级，移除幽灵订单主因；拟重返美国尚待CFTC批准</div>
+      <div class="news-detail">昨晚Polymarket完成维护窗口，正式上线CLOB V2：移除全局nonce机制（旧版幽灵订单主因），改用单笔order hash撤单，引入新抵押稳定币PUSD及新版CLOB-Client SDK。与此同时，Polymarket正与CFTC官员谈判解除对美国用户的交易限制，Q1访问量1.22亿次成加密应用第一，美国化进程加速。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>Polymarket · CLOBv2 · CFTC · 预测市场</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/post/5210542" target="_blank">Odaily（CLOBv2升级深度 2026-04-29）</a> · <a href="https://www.odaily.news/zh-CN/newsflash/478691" target="_blank">Odaily（CFTC申请 2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority mid">中优级</div>
+      <div class="news-title">Tether正开发新型比特币挖矿模块化基础设施，与嘉楠科技合作</div>
+      <div class="news-detail">Tether公司正通过模块化高密度挖矿系统扩展定制计算基础设施，与嘉楠科技（Canaan Inc.）及ACME Swisstech合作，集成自研控制架构、热管理系统及软件栈，旨在提高大规模运营效率。这是Tether继发行稳定币、持有黄金和BTC之后向算力基础设施领域的延伸布局。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：季级</span>
+        <span>Tether · BTC挖矿 · 算力 · 基础设施</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478677" target="_blank">Odaily（2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority low">情绪噪音</div>
+      <div class="news-title">借贷协议Tropykus关闭当前版本，存款与借贷功能永久停用</div>
+      <div class="news-detail">BlockBeats消息，借贷协议Tropykus宣布关闭当前版本，存款与借贷功能永久停用。与同日Over Protocol宣布停止运营合并观察，当前市场环境下中小规模DeFi协议生存压力持续加大。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：日级</span>
+        <span>DeFi · 项目关停 · 行业风险</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.theblockbeats.info/flash/343475" target="_blank">BlockBeats律动（2026-04-29）</a></div>
+    </div>
+  </div>
+
+  <!-- 加密数据 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">📈</span>
+      <span class="section-title">加密数据</span>
+      <span class="section-count">2 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="priority mid">中优级</div>
+      <div class="news-title">Robinhood Q1加密交易收入同比降47%，名义交易额降48%；总营收增15%</div>
+      <div class="news-detail">Robinhood 2026年Q1：总营收1.07亿美元（+15%），净利润3.46亿美元（+3%），平台总资产3,070亿美元（+39%）。加密业务收入仅1.34亿美元（-47%），加密名义交易额240亿美元（-48%）。期权+8%、股票+46%。加密部分持续弱于其他业务，折射散户层面加密参与度的明显下滑。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>Robinhood · 散户情绪 · 加密交易量</span>
+      </div>
+      <div class="news-source">来源：<a href="https://www.odaily.news/zh-CN/newsflash/478706" target="_blank">Odaily（2026-04-29）</a></div>
+    </div>
+
+    <div class="news-item">
+      <div class="priority mid">中优级</div>
+      <div class="news-title">Galaxy Digital Q1净亏损2.16亿美元，受数字资产市场价格下跌拖累</div>
+      <div class="news-detail">Galaxy Digital公布2026年一季度财报：净亏损2.16亿美元，调整后每股亏损0.49美元，调整后毛亏损8800万美元，EBITDA亏损1.88亿美元。截至3月31日，总股本权益28亿美元，持有现金及稳定币26亿美元。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：月级</span>
+        <span>Galaxy Digital · 财报 · 机构亏损</span>
+      </div>
+      <div class="news-source">来源：<a href="https://foresightnews.pro/" target="_blank">Foresight News（2026-04-28）</a></div>
+    </div>
+  </div>
+
+  <!-- 观点研报 -->
+  <div class="section">
+    <div class="section-header">
+      <span class="section-icon">🧠</span>
+      <span class="section-title">观点研报</span>
+      <span class="section-count">1 条</span>
+    </div>
+
+    <div class="news-item">
+      <div class="priority mid">中优级</div>
+      <div class="news-title">Arthur Hayes在Bitcoin Las Vegas：沃什并非鹰派；4月1日银行业新规或释放数万亿信贷</div>
+      <div class="news-detail">Maelstrom CIO Arthur Hayes在Bitcoin Las Vegas演讲阐述BTC看涨逻辑：凯文·沃什并非市场担心的鹰派，且一项于4月1日悄然生效的银行业监管法规（Enhanced Supplemental Leverage Ratio修订）可能为市场释放数万亿美元新信贷，叠加美国因伊朗战争产生的大规模国防支出，共同构成看涨BTC的宏观叙事。</div>
+      <div class="news-meta">
+        <span class="impact-tag">影响周期：季级</span>
+        <span>Arthur Hayes · 宏观叙事 · 银行监管 · BTC</span>
+      </div>
+      <div class="news-source">来源：<a href="https://foresightnews.pro/" target="_blank">Foresight News（2026-04-28）</a></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="keywords">
+      📌 今日关键词：<strong>FOMC决议</strong> · <strong>鲍威尔谢幕</strong> · <strong>伊朗长期封锁</strong> · <strong>阿联酋退出欧佩克</strong> · <strong>LayerZero赔付1万ETH</strong> · <strong>以色列稳定币BILS</strong> · <strong>Polymarket CLOBv2</strong> · <strong>TOKEN2049延期</strong>
+    </div>
+    <div class="disclaimer">
+      ⚠️ 本早报资讯时间范围：2026年4月28日20:00 — 2026年4月29日09:30（UTC+8）。信息来源严格限定为：Odaily星球日报、BlockBeats律动、链捕手ChainCatcher、Foresight News、吴说区块链、金十数据。所有内容仅为信息整合，不构成任何投资建议。
+    </div>
+    <div class="compiled">COMPILED BY CLAUDE · 2026/04/29</div>
+  </div>
+
+</div>
+</body>
+</html>
