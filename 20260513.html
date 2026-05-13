@@ -1,379 +1,172 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>加密行业热点早报 · 2026年5月13日</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --black: #000000;
-    --card: #111111;
-    --white: #FFFFFF;
-    --neon: #BCFF2F;
-    --gray-2: #1c1c1c;
-    --text-primary: #FFFFFF;
-    --text-secondary: #999999;
-    --text-dim: #666666;
-    --text-hint: #3a3a3a;
-    --border: rgba(255,255,255,0.07);
-    --border-light: rgba(255,255,255,0.04);
-    --border-hover: rgba(188,255,47,0.20);
-    --red: #FF4444;
-    --green: #00CC66;
-    --orange: #FF8800;
-  }
-
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { background:var(--black); color:var(--text-primary); font-family:'Noto Sans SC',sans-serif; font-size:14px; line-height:1.65; padding:24px 16px 56px; }
-  .container { max-width:800px; margin:0 auto; }
-
-  .header { text-align:center; padding:32px 0 26px; }
-  .date-pill { display:inline-flex; align-items:center; gap:8px; background:var(--gray-2); border:1px solid var(--border); border-radius:20px; padding:5px 18px; font-size:12px; color:var(--text-secondary); letter-spacing:0.14em; margin-bottom:14px; }
-  .date-pill .dot { width:6px; height:6px; background:var(--neon); border-radius:50%; animation:blink 2s infinite; }
-  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
-  .header h1 { font-family:'Noto Serif SC',serif; font-size:34px; font-weight:700; color:var(--white); margin-bottom:7px; letter-spacing:0.02em; }
-  .header h1 .accent { color:var(--neon); }
-  .time-range { font-size:12px; color:var(--text-dim); letter-spacing:0.07em; margin-bottom:16px; }
-  .source-bar { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; }
-  .source-tag { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10); color:var(--text-secondary); border-radius:20px; padding:3px 13px; font-size:11px; }
-
-  .headline-block { background:var(--card); border:1px solid rgba(188,255,47,0.16); border-left:3px solid var(--neon); border-radius:8px; padding:18px 22px; margin:22px 0 20px; }
-  .headline-title { font-size:13px; font-weight:700; color:var(--neon); letter-spacing:0.1em; margin-bottom:14px; display:flex; align-items:center; gap:8px; }
-  .headline-title::before { content:''; width:8px; height:8px; background:var(--neon); border-radius:50%; flex-shrink:0; }
-  .headline-item { display:flex; gap:10px; margin-bottom:11px; font-size:13px; color:var(--text-secondary); line-height:1.65; }
-  .headline-item:last-child { margin-bottom:0; }
-  .hn { color:var(--neon); font-weight:700; flex-shrink:0; min-width:18px; }
-
-  .mkt-section { margin-bottom:22px; }
-  .mkt-label { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--text-primary); letter-spacing:0.05em; margin-bottom:11px; }
-  .mkt-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
-  .mkt-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:13px 15px; }
-  .mkt-name { font-size:11px; color:var(--text-dim); letter-spacing:0.06em; margin-bottom:5px; }
-  .mkt-price { font-size:21px; font-weight:700; color:var(--white); letter-spacing:-0.01em; line-height:1.2; margin-bottom:4px; }
-  .mkt-change { font-size:11px; }
-  .up { color:var(--green); }
-  .down { color:var(--red); }
-  .warn { color:var(--orange); }
-
-  .sec-head { display:flex; align-items:center; gap:9px; padding:13px 0 11px; border-bottom:1px solid var(--border); margin-bottom:11px; }
-  .sec-icon { font-size:15px; }
-  .sec-name { font-size:14px; font-weight:700; color:var(--white); letter-spacing:0.03em; flex:1; }
-  .cnt-badge { background:rgba(188,255,47,0.10); border:1px solid rgba(188,255,47,0.25); color:#BCFF2F; border-radius:10px; padding:2px 9px; font-size:11px; font-weight:700; }
-
-  .news-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:14px 15px; margin-bottom:8px; transition:border-color .18s; }
-  .news-card:hover { border-color:var(--border-hover); }
-  .card-top { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
-  .prio { display:inline-block; border-radius:3px; padding:2px 9px; font-size:10px; font-weight:900; letter-spacing:0.1em; }
-  .prio.high { background:rgba(255,68,68,0.18); color:#FF4444; border:1px solid rgba(255,68,68,0.40); }
-  .prio.mid  { background:rgba(255,136,0,0.15); color:#FF8800; border:1px solid rgba(255,136,0,0.35); }
-  .prio.low  { background:rgba(255,255,255,0.02); color:#555; border:1px solid rgba(255,255,255,0.04); }
-  .ts { font-size:11px; color:var(--text-dim); font-variant-numeric:tabular-nums; }
-  .news-title { font-size:14px; font-weight:700; color:var(--white); line-height:1.5; margin-bottom:8px; }
-  .news-body  { font-size:12.5px; color:var(--text-secondary); line-height:1.72; margin-bottom:10px; }
-  .tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:9px; }
-  .tag { background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07); color:var(--text-dim); border-radius:3px; padding:2px 7px; font-size:10px; }
-  .news-src { font-size:11px; color:var(--text-hint); padding-top:8px; border-top:1px solid var(--border-light); }
-  .news-src a { color:rgba(188,255,47,0.65); text-decoration:none; }
-  .news-src a:hover { color:var(--neon); text-decoration:underline; }
-  .sec-block { margin-bottom:26px; }
-
-  .divider { height:1px; background:linear-gradient(to right,transparent,rgba(188,255,47,0.14),transparent); margin:30px 0; }
-  .footer { text-align:center; }
-  .kw { font-size:13px; color:var(--text-secondary); margin-bottom:11px; line-height:1.8; }
-  .kw strong { color:var(--neon); font-weight:700; }
-  .disc { font-size:11px; color:var(--text-hint); line-height:1.7; max-width:580px; margin:0 auto 10px; }
-  .compiled { font-size:10px; color:var(--text-hint); letter-spacing:0.15em; opacity:.4; }
-
-  @media (max-width:540px) { .mkt-grid{grid-template-columns:repeat(2,1fr);} .header h1{font-size:26px;} .mkt-price{font-size:18px;} }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>加密行业热点早报 · 2026年5月13日</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--black:#000;--neo:#191919;--white:#fff;--neon:#BCFF2F;--neon-dim:rgba(188,255,47,.10);--neon-mid:rgba(188,255,47,.20);--g1:#111;--g2:#1a1a1a;--ts:#999;--td:#666;--th:#444;--brd:rgba(255,255,255,.06);--bhv:rgba(188,255,47,.18);--red:#FF4D4D;--green:#2ECC71;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--black);color:#fff;font-family:'Noto Sans SC',sans-serif;font-size:14px;line-height:1.7;padding:20px 14px;}
+    .container{max-width:780px;margin:0 auto;}
+    .header{text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--brd);margin-bottom:24px;}
+    .date-badge{display:inline-flex;align-items:center;gap:8px;background:var(--neo);border:1px solid var(--brd);border-radius:20px;padding:4px 14px;font-size:11px;color:var(--ts);margin-bottom:14px;letter-spacing:.05em;}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--neon);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    h1{font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;margin-bottom:6px;letter-spacing:-.02em;}
+    .accent{color:var(--neon);}
+    .sub{font-size:11px;color:var(--td);margin-bottom:14px;letter-spacing:.1em;}
+    .source-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+    .source-tag{background:var(--g1);border:1px solid var(--brd);border-radius:4px;padding:3px 10px;font-size:10px;color:var(--ts);}
+    .market{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:20px;overflow:hidden;}
+    .market-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--brd);}
+    .market-title{font-size:12px;font-weight:700;color:var(--ts);}
+    .market-time{font-size:10px;color:var(--td);}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);}
+    .ci{background:var(--g1);padding:14px 16px;}
+    .cl{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+    .ico{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+    .btc{background:#F7931A;color:#fff;}.eth{background:#627EEA;color:#fff;}.sol{background:#9945FF;color:#fff;}.xrp{background:#346AA9;color:#fff;}
+    .cn{font-size:11px;color:var(--ts);}
+    .cp{font-size:20px;font-weight:700;}
+    .coin-change{font-size:11px;font-weight:600;margin-top:2px;}
+    .up{color:var(--green);}.down{color:var(--red);}
+    .fng-bar{display:grid;grid-template-columns:repeat(3,1fr);background:var(--g2);border-top:1px solid var(--brd);}
+    .fi{padding:10px;text-align:center;border-right:1px solid var(--brd);}
+    .fi:last-child{border-right:none;}
+    .fl{font-size:9px;color:var(--td);margin-bottom:4px;}
+    .fv{font-size:12px;font-weight:700;}
+    .section{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:14px;overflow:hidden;}
+    .section-header{display:flex;align-items:center;gap:10px;padding:13px 18px;background:var(--g2);border-bottom:1px solid var(--brd);}
+    .section-icon{font-size:17px;}
+    .section-title{font-size:13px;font-weight:700;flex:1;letter-spacing:.02em;}
+    .section-count{background:var(--neon-dim);border:1px solid var(--bhv);color:var(--neon);font-size:10px;font-weight:700;padding:2px 9px;border-radius:10px;}
+    .news-item{padding:14px 18px;border-bottom:1px solid var(--brd);}
+    .news-item:last-child{border-bottom:none;}
+    .priority{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;margin-bottom:7px;letter-spacing:.04em;}
+    .priority.high{background:var(--neon);color:#000;}
+    .priority.mid{background:rgba(255,255,255,.07);color:var(--ts);border:1px solid rgba(255,255,255,.1);}
+    .priority.low{background:rgba(255,255,255,.03);color:var(--th);border:1px solid rgba(255,255,255,.05);}
+    .news-title{font-size:13px;font-weight:700;margin-bottom:5px;line-height:1.5;}
+    .news-detail{font-size:12px;color:var(--ts);line-height:1.7;margin-bottom:8px;}
+    .news-source{font-size:11px;color:var(--th);}
+    .news-source a{color:var(--neon);text-decoration:none;opacity:.8;}
+    .news-source a:hover{opacity:1;}
+    .divider{height:1px;background:var(--brd);margin:24px 0;}
+    .footer{text-align:center;padding:20px 0 12px;}
+    .disclaimer{font-size:10px;color:var(--th);line-height:1.7;max-width:520px;margin:0 auto 10px;}
+    .compiled{font-size:10px;color:var(--th);letter-spacing:.15em;}
+    .empty{text-align:center;padding:32px;color:var(--td);font-size:13px;}
+  </style>
 </head>
 <body>
 <div class="container">
-
   <div class="header">
-    <div class="date-pill"><span class="dot"></span>2026 · 05 · 13 · 早报</div>
+    <div class="date-badge"><span class="dot"></span> 2026年5月13日 · 周三</div>
     <h1>加密行业热点<span class="accent">早报</span></h1>
-    <div class="time-range">5月12日 20:00 — 5月13日 09:30 · 北京时间</div>
+    <div class="sub">多源去重 · 分类评级 · 自动生成</div>
     <div class="source-bar">
-      <span class="source-tag">Odaily</span>
-      <span class="source-tag">BlockBeats</span>
-      <span class="source-tag">Foresight News</span>
-      <span class="source-tag">ChainCatcher</span>
-      <span class="source-tag">吴说区块链</span>
+      <span class="source-tag">Odaily星球日报</span>
+      <span class="source-tag">CoinDesk</span>
+      <span class="source-tag">CoinGecko</span>
+      <span class="source-tag">Alternative.me</span>
     </div>
   </div>
 
-  <div class="headline-block">
-    <div class="headline-title">今日核心主线</div>
-    <div class="headline-item">
-      <span class="hn">①</span>
-      <span>4月CPI年率3.8%超预期（2023年5月来新高），核心通胀粘性来自服务端——「美联储传声筒」Timiraos直言「关税乐观论不成立」；Wintermute：本轮BTC破8万更像空头挤压，现货成交量仍处两年低位</span>
+  <div class="market">
+    <div class="market-header">
+      <span class="market-title">📊 实时行情</span>
+      <span class="market-time">18:09 UTC+8</span>
     </div>
-    <div class="headline-item">
-      <span class="hn">②</span>
-      <span>吴说晚报：Arthur Hayes最新文章称比特币重返12.6万美元「已成定局」，重仓HYPE和ZEC；灰度提交Zcash信托转现货ETF申请，全球首只隐私币ETF或诞生</span>
+    <div class="grid">
+      <div class="ci"><div class="cl"><div class="ico btc">₿</div><span class="cn">Bitcoin</span></div><div class="cp">$81,183</div><div class="coin-change up">▲ 0.49% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico eth">Ξ</div><span class="cn">Ethereum</span></div><div class="cp">$2,317</div><div class="coin-change up">▲ 1.10% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico sol">◎</div><span class="cn">Solana</span></div><div class="cp">$95.520</div><div class="coin-change down">▼ 0.33% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico xrp">✕</div><span class="cn">XRP</span></div><div class="cp">$1.470</div><div class="coin-change up">▲ 0.58% 24H</div></div>
     </div>
-    <div class="headline-item">
-      <span class="hn">③</span>
-      <span>机构基础设施提速：DTCC引入Chainlink扩展至华尔街核心风险管理；CME将推出AI算力期货；Foresight News：BTC今晨05:13突破82000 USDT，日内涨1.70%</span>
-    </div>
-  </div>
-
-  <div class="mkt-section">
-    <div class="mkt-label"><span>📊</span> 市场行情</div>
-    <div class="mkt-grid">
-      <div class="mkt-card">
-        <div class="mkt-name">BTC</div>
-        <div class="mkt-price">~$82,000</div>
-        <div class="mkt-change up">↑ 突破82000 · 日内+1.70%</div>
-      </div>
-      <div class="mkt-card">
-        <div class="mkt-name">ETH</div>
-        <div class="mkt-price">$2,313</div>
-        <div class="mkt-change down">-1.02% 24h</div>
-      </div>
-      <div class="mkt-card">
-        <div class="mkt-name">恐惧贪婪指数</div>
-        <div class="mkt-price" style="font-size:17px;color:var(--orange);line-height:1.4">中性 · 49</div>
-        <div class="mkt-change" style="color:var(--orange)">昨日 48（中性）</div>
-      </div>
-      <div class="mkt-card">
-        <div class="mkt-name">4月CPI 年率</div>
-        <div class="mkt-price" style="font-size:19px;color:var(--red)">3.8%</div>
-        <div class="mkt-change down">↑ 超预期 3.7%</div>
-      </div>
-      <div class="mkt-card">
-        <div class="mkt-name">核心CPI 年率</div>
-        <div class="mkt-price" style="font-size:19px;color:var(--red)">2.8%</div>
-        <div class="mkt-change down">↑ 超预期 2.7%</div>
-      </div>
-      <div class="mkt-card">
-        <div class="mkt-name">BTC 200日均线</div>
-        <div class="mkt-price" style="font-size:15px;color:var(--neon);line-height:1.5">已突破</div>
-        <div class="mkt-change" style="color:var(--neon)">7个月来首次</div>
-      </div>
+    <div class="fng-bar">
+      <div class="fi"><div class="fl">恐慌贪婪指数</div><div class="fv" style="color:#999">42 · 恐慌</div></div>
+      <div class="fi"><div class="fl">BTC主导率</div><div class="fv">~57%</div></div>
+      <div class="fi"><div class="fl">更新时间</div><div class="fv" style="font-size:11px">18:09</div></div>
     </div>
   </div>
 
-  <!-- 货币政策 -->
-  <div class="sec-block">
-    <div class="sec-head">
-      <span class="sec-icon">🏛️</span>
-      <span class="sec-name">货币政策</span>
-      <span class="cnt-badge">2 条</span>
-    </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio high">HIGH</span><span class="ts">05-12 20:30</span></div>
-      <div class="news-title">4月CPI年率3.8%超预期——能源+住房双推动，核心服务通胀为2025年1月来第三高</div>
-      <div class="news-body">据BlockBeats 5月12日快讯，美国4月未季调CPI年率录得3.8%，为2023年5月以来新高，高于市场预期的3.7%；未季调核心CPI年率录得2.8%，为2025年9月以来新高，高于预期2.7%；季调后核心CPI月率0.4%，高于预期0.3%。数据公布后，BTC短暂承压后走强，24小时跌幅迅速由-0.79%收窄至-0.23%，现报80,950美元；美股三大指数期货集体下跌，纳指期货跌0.99%。</div>
-      <div class="tags">
-        <span class="tag">影响周期：月级</span>
-        <span class="tag">通胀数据</span>
-        <span class="tag">降息预期延后</span>
+  
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">⚖️</span>
+        <span class="section-title">全球监管</span>
+        <span class="section-count">1 条</span>
       </div>
-      <div class="news-src">来源：<a href="https://www.theblockbeats.info/newsflash" target="_blank">BlockBeats律动</a></div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Bitcoin back above $81,000 after hot CPI print, BNB, DOGE lead majors gains</div>
+          <div class="news-detail">XRP/KRW was the most traded pair on Upbit and second on Bithumb, a familiar Korean market signal that has often preceded sharper moves in the token.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/05/13/xrp-tops-bitcoin-ether-volumes-on-major-south-korean-exchanges" target="_blank">CoinDesk</a></div>
+        </div>
     </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio high">HIGH</span><span class="ts">05-12</span></div>
-      <div class="news-title">「美联储传声筒」Timiraos：关税乐观论不成立——通胀粘性来自服务端而非商品端</div>
-      <div class="news-body">据BlockBeats 5月12日快讯，Nick Timiraos评CPI称：「近期物价上涨由关税引起、不会持续——仅从4月CPI看并不成立。」住房价格环比上涨0.6%；剔除住房的核心服务价格上涨0.45%，是2025年1月以来第三高环比涨幅；核心商品价格仅上涨0.03%。这表明通胀的驱动力是服务端粘性，而非可一次性消化的关税商品涨价，对降息预期构成更持续的压制。</div>
-      <div class="tags">
-        <span class="tag">影响周期：月级</span>
-        <span class="tag">通胀粘性</span>
-        <span class="tag">美联储观点</span>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">📋</span>
+        <span class="section-title">行业动态</span>
+        <span class="section-count">2 条</span>
       </div>
-      <div class="news-src">来源：<a href="https://www.theblockbeats.info/newsflash" target="_blank">BlockBeats律动</a></div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Nevada regulators push back after prediction market conference blames them for move</div>
+          <div class="news-detail">Bitcoin rolled back to $81,200 after dipping to $79,800 on Tuesday's hotter-than-expected U.S. inflation reading, while BNB zoomed 2.5% over 24 hours and dogecoin added 1.3% as cry</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/05/13/bitcoin-back-above-usd81-000-after-hot-cpi-print-bnb-doge-lead-majors-gains" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">JPMorgan files to launch new tokenized fund as Wall Street tokenization race heats up</div>
+          <div class="news-detail">Spokesperson for regulator denies that it put pressure on ARIA Resort & Casino for hosting Predict 2026</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/policy/2026/05/13/nevada-gaming-regulator-says-prediction-market-conferences-are-welcome-in-las-vegas" target="_blank">CoinDesk</a></div>
+        </div>
     </div>
-  </div>
-
-  <!-- 市场行情与分析 -->
-  <div class="sec-block">
-    <div class="sec-head">
-      <span class="sec-icon">📈</span>
-      <span class="sec-name">市场行情与分析</span>
-      <span class="cnt-badge">3 条</span>
-    </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio high">HIGH</span><span class="ts">05-13 06:33</span></div>
-      <div class="news-title">BTC今晨突破82,000 USDT，7个月来首次站上200日均线</div>
-      <div class="news-body">据Foresight News 05-13 06:33快讯，比特币升破82,000 USDT，现报82,045.67 USDT，日内涨幅1.70%。此前据吴说晚报，Wintermute指出BTC自1月以来首次突破8万美元并触及约8.3万，突破了过去7个月压制价格的200日均线。但Wintermute同时提醒：本轮上涨短期更像是空头挤压——未平仓合约一个月内从480亿美元升至580亿，而现货成交量处于两年来低位，真正的牛市确认需要现货买盘推动。</div>
-      <div class="tags">
-        <span class="tag">影响周期：周级</span>
-        <span class="tag">BTC行情</span>
-        <span class="tag">空头挤压</span>
-        <span class="tag">200日均线</span>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🏦</span>
+        <span class="section-title">传统金融</span>
+        <span class="section-count">1 条</span>
       </div>
-      <div class="news-src">来源：<a href="https://foresightnews.pro/news" target="_blank">Foresight News（06:33）</a> · <a href="https://wublockchain123.substack.com/p/glamsterdam-protocol-cluster" target="_blank">吴说区块链晚报（5/12）</a></div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">The Ethereum Foundation unveils new 'Clear Signing' standard to stop users from approving malicious crypto transactions</div>
+          <div class="news-detail">The global banking giant is expanding its tokenized money market lineup, following BlackRock's similar move just a few days ago.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/business/2026/05/12/jpmorgan-files-to-launch-new-tokenized-fund-as-wall-street-tokenization-race-heats-up" target="_blank">CoinDesk</a></div>
+        </div>
     </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-12</span></div>
-      <div class="news-title">Arthur Hayes：比特币重返12.6万美元「已成定局」，重仓HYPE和ZEC，看好NEAR</div>
-      <div class="news-body">据吴说区块链5月12日晚报，BitMEX联合创始人Arthur Hayes在最新文章《The Butterfly Touch》中表示，AI基建竞赛、战争开支及各国转向基础设施储备，将推动美元与人民币信贷继续扩张，利好加密资产。Hayes称比特币已在6万美元附近见底，重新突破12.6万美元「已成定局」，若突破9万美元涨势可能加速。其家族基金Maelstrom目前已重仓HYPE和ZEC，并表示将重点布局NEAR。（以上为Hayes个人观点，不构成投资建议）</div>
-      <div class="tags">
-        <span class="tag">影响周期：月级</span>
-        <span class="tag">KOL观点</span>
-        <span class="tag">Arthur Hayes</span>
-        <span class="tag">BTC目标价</span>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🏛️</span>
+        <span class="section-title">货币政策</span>
+        <span class="section-count">2 条</span>
       </div>
-      <div class="news-src">来源：<a href="https://wublockchain123.substack.com/p/glamsterdam-protocol-cluster" target="_blank">吴说区块链晚报（5/12）</a></div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Senate confirms Kevin Warsh to Fed board ahead of expected Chair vote</div>
+          <div class="news-detail">The move comes after billions in losses from phishing attacks and wallet drains, with Ethereum pushing to make transaction approvals safer and easier to understand.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/tech/2026/05/12/the-ethereum-foundation-unveils-new-clear-signing-standard-to-stop-users-from-approving-malicious-crypto-transactions" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Stablecoin yield infrastructure project raises $13.5M in round led by Sky Ecosystem</div>
+          <div class="news-detail">Warsh’s confirmation to the Fed board positions the crypto-linked investor to replace Jerome Powell as chair amid inflation and digital asset policy debates.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/policy/2026/05/12/senate-confirms-kevin-warsh-to-fed-board-ahead-of-expected-chair-vote" target="_blank">CoinDesk</a></div>
+        </div>
     </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-12</span></div>
-      <div class="news-title">Michael Saylor：Strategy出售比特币支付股息影响「微不足道」，持续增持方向不变</div>
-      <div class="news-body">据吴说区块链5月12日晚报，Strategy执行董事长Michael Saylor在接受CoinDesk采访时表示，即使未来出售部分比特币用于支付股息，其影响「微不足道」，因为计划购买的比特币数量仍远高于潜在出售规模。他回应外界关于「总在高点买入」的批评，称公司是在MSTR股权溢价最高时通过equity swap换取更多比特币，以提升每股BTC持仓。此前此前市场曾担忧Strategy可能大规模卖币，Saylor此番表态有效化解恐慌。</div>
-      <div class="tags">
-        <span class="tag">影响周期：月级</span>
-        <span class="tag">Strategy</span>
-        <span class="tag">机构持仓</span>
-        <span class="tag">市场情绪</span>
-      </div>
-      <div class="news-src">来源：<a href="https://wublockchain123.substack.com/p/glamsterdam-protocol-cluster" target="_blank">吴说区块链晚报（5/12）</a></div>
-    </div>
-  </div>
-
-  <!-- 机构基础设施 -->
-  <div class="sec-block">
-    <div class="sec-head">
-      <span class="sec-icon">🏦</span>
-      <span class="sec-name">机构基础设施</span>
-      <span class="cnt-badge">2 条</span>
-    </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio high">HIGH</span><span class="ts">05-12</span></div>
-      <div class="news-title">DTCC将在区块链抵押品管理平台引入Chainlink基础设施，扩展至华尔街核心风险管理</div>
-      <div class="news-body">据BlockBeats 5月12日快讯，美国存管信托和清算公司（DTCC）宣布将在其基于区块链的抵押品管理平台中使用Chainlink基础设施，采用Chainlink的CRE及数据标准，支持资产定价、估值、保证金管理、抵押品优化和结算等功能，目标实现全天候近实时自动化抵押品管理。据吴说晚报此前报道，DTCC计划于2026年7月启动初步真实交易测试、10月正式上线，已有BlackRock、Goldman Sachs、J.P. Morgan、Nasdaq等50余家机构参与。</div>
-      <div class="tags">
-        <span class="tag">影响周期：年级</span>
-        <span class="tag">DTCC</span>
-        <span class="tag">Chainlink</span>
-        <span class="tag">机构代币化</span>
-      </div>
-      <div class="news-src">来源：<a href="https://www.theblockbeats.info/newsflash" target="_blank">BlockBeats律动</a> · <a href="https://wublockchain123.substack.com/p/top10-b60" target="_blank">吴说区块链周精选</a></div>
-    </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-12</span></div>
-      <div class="news-title">CME集团将推出AI算力期货，与Silicon Data合作——算力资产金融化迈入新阶段</div>
-      <div class="news-body">据BlockBeats 5月12日快讯，芝商所（CME）集团将推出支持AI的算力期货市场，与数据分析公司Silicon Data合作推出首个算力期货。这意味着GPU/算力资源开始获得与能源、大宗商品类似的金融衍生品定价机制，是AI算力资产金融化的重要里程碑，也将为AI基础设施投资者提供新的对冲工具。</div>
-      <div class="tags">
-        <span class="tag">影响周期：年级</span>
-        <span class="tag">CME</span>
-        <span class="tag">AI算力期货</span>
-        <span class="tag">资产金融化</span>
-      </div>
-      <div class="news-src">来源：<a href="https://www.theblockbeats.info/newsflash" target="_blank">BlockBeats律动</a></div>
-    </div>
-  </div>
-
-  <!-- 全球监管 -->
-  <div class="sec-block">
-    <div class="sec-head">
-      <span class="sec-icon">⚖️</span>
-      <span class="sec-name">全球监管</span>
-      <span class="cnt-badge">1 条</span>
-    </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-12</span></div>
-      <div class="news-title">灰度提交Zcash信托转现货ETF申请，隐私币监管障碍已扫清</div>
-      <div class="news-body">据吴说区块链5月12日晚报，灰度（Grayscale）已提交将其Zcash信托转换为现货ETF的申请，若获批将成为全球首个隐私币现货ETF。此前美国SEC已结束对隐私币的长期审查且未采取执法行动，扫清了关键监管障碍。加密对冲基金Multicoin Capital联合创始人Tushar Jain同时披露，该基金自今年2月起将ZEC作为宏观对冲资产进行大规模建仓。</div>
-      <div class="tags">
-        <span class="tag">影响周期：季度级</span>
-        <span class="tag">灰度</span>
-        <span class="tag">Zcash</span>
-        <span class="tag">隐私币ETF</span>
-      </div>
-      <div class="news-src">来源：<a href="https://wublockchain123.substack.com/p/glamsterdam-protocol-cluster" target="_blank">吴说区块链晚报（5/12）</a></div>
-    </div>
-  </div>
-
-  <!-- 行业趋势 -->
-  <div class="sec-block">
-    <div class="sec-head">
-      <span class="sec-icon">🚀</span>
-      <span class="sec-name">行业趋势</span>
-      <span class="cnt-badge">3 条</span>
-    </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-12</span></div>
-      <div class="news-title">以太坊基金会公布Glamsterdam升级进展，Protocol Cluster启动领导层调整</div>
-      <div class="news-body">据吴说区块链5月12日晚报，以太坊基金会发布Protocol Cluster 2026年5月更新：开发者在挪威Svalbard推进Glamsterdam升级测试，确认建立2亿gas limit floor目标、完成ePBS多客户端devnet测试、敲定EIP-8037状态访问重定价方案，并推进Hegotá升级相关FOCIL与原生账户抽象（AA）准备。Protocol Cluster同步启动领导层调整，Will Corcoran、Kev Wedderburn与Fredrik将担任新的cluster leads。</div>
-      <div class="tags">
-        <span class="tag">影响周期：季度级</span>
-        <span class="tag">以太坊升级</span>
-        <span class="tag">Glamsterdam</span>
-        <span class="tag">以太坊基金会</span>
-      </div>
-      <div class="news-src">来源：<a href="https://wublockchain123.substack.com/p/glamsterdam-protocol-cluster" target="_blank">吴说区块链晚报（5/12）</a></div>
-    </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-12</span></div>
-      <div class="news-title">SOL Strategies任命Bitcoin Foundation创始人Jon Matonis为董事会主席</div>
-      <div class="news-body">据BlockBeats 5月12日快讯（官方消息），纳斯达克上市Solana生态财库公司SOL Strategies宣布任命Jon Matonis为董事会主席。Matonis是Bitcoin Foundation创始董事之一，长期倡导金融隐私，拥有数十年行业经验。此举显示Solana生态机构化进程持续推进。</div>
-      <div class="tags">
-        <span class="tag">影响周期：月级</span>
-        <span class="tag">Solana生态</span>
-        <span class="tag">机构化</span>
-      </div>
-      <div class="news-src">来源：<a href="https://www.theblockbeats.info/newsflash" target="_blank">BlockBeats律动</a></div>
-    </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-12</span></div>
-      <div class="news-title">Fluid发Resolv事件复盘：约2100万美元坏账已获全额覆盖，用户资金安全</div>
-      <div class="news-body">据吴说区块链5月12日晚报，DeFi流动性协议Fluid发布Resolv事件复盘：3月Resolv遭攻击并被恶意铸造约8000万美元无抵押USR，导致Fluid产生约2100万美元坏账。Fluid称智能合约未被攻破，损失已全额覆盖：Resolv承担约970万美元、Fluid治理金库承担820万美元、团队承担150万美元。受此影响，Fluid将暂停FLUID回购，并大幅减少激励以重建财库。</div>
-      <div class="tags">
-        <span class="tag">影响周期：月级</span>
-        <span class="tag">DeFi安全</span>
-        <span class="tag">Fluid</span>
-        <span class="tag">坏账处置</span>
-      </div>
-      <div class="news-src">来源：<a href="https://wublockchain123.substack.com/p/glamsterdam-protocol-cluster" target="_blank">吴说区块链晚报（5/12）</a></div>
-    </div>
-  </div>
-
-  <!-- 宏观与地缘 -->
-  <div class="sec-block">
-    <div class="sec-head">
-      <span class="sec-icon">🌍</span>
-      <span class="sec-name">宏观与地缘</span>
-      <span class="cnt-badge">1 条</span>
-    </div>
-
-    <div class="news-card">
-      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-12</span></div>
-      <div class="news-title">美国防部长赫格塞思：如有必要，已有对伊朗升级局势的计划</div>
-      <div class="news-body">据BlockBeats 5月12日快讯（引用金十），美国国防部长赫格塞思表示，「如果有必要，我们已有对伊朗升级局势的计划。」当前美伊停火协议处于「岌岌可危」状态，特朗普已称伊朗回应「愚蠢」。军事升级选项仍在桌面，布伦特原油价格持续高位，对风险资产情绪构成压制。</div>
-      <div class="tags">
-        <span class="tag">影响周期：月级</span>
-        <span class="tag">美伊局势</span>
-        <span class="tag">军事升级风险</span>
-        <span class="tag">油价</span>
-      </div>
-      <div class="news-src">来源：<a href="https://www.theblockbeats.info/newsflash" target="_blank">BlockBeats律动</a></div>
-    </div>
-  </div>
 
   <div class="divider"></div>
   <div class="footer">
-    <div class="kw">
-      📌 今日关键词：<strong>CPI 3.8%超预期</strong> · <strong>BTC破200日均线</strong> · <strong>Hayes看多12.6万</strong> · <strong>灰度申请ZEC ETF</strong> · <strong>DTCC引入Chainlink</strong>
-    </div>
-    <div class="disc">
-      ⚠️ 本早报信息来源于BlockBeats律动、吴说区块链、Foresight News，覆盖时间范围：5月12日20:00 — 5月13日09:30 北京时间。内容仅为信息整合，不构成任何投资建议。
-    </div>
-    <div class="compiled">COMPILED BY CLAUDE · 2026/05/13</div>
+    <div class="disclaimer">⚠️ 本早报由程序自动抓取公开信息整合生成，不构成任何投资建议。加密资产具有高度波动性，投资须谨慎。</div>
+    <div class="compiled">AUTO GENERATED · 20260513 · POWERED BY GITHUB ACTIONS</div>
   </div>
-
 </div>
 </body>
 </html>
