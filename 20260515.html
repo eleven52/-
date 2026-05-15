@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加密行业热点早报 · 2026年5月15日</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #000000; --card: #111111; --white: #FFFFFF; --neon: #BCFF2F;
+    --gray-2: #1c1c1c; --text-primary: #FFFFFF; --text-secondary: #999999;
+    --text-dim: #666666; --text-hint: #3a3a3a;
+    --border: rgba(255,255,255,0.07); --border-light: rgba(255,255,255,0.04);
+    --border-hover: rgba(188,255,47,0.20);
+    --red: #FF4444; --green: #00CC66; --orange: #FF8800;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--black); color:var(--text-primary); font-family:'Noto Sans SC',sans-serif; font-size:14px; line-height:1.65; padding:24px 16px 56px; }
+  .container { max-width:800px; margin:0 auto; }
+
+  .header { text-align:center; padding:32px 0 26px; }
+  .date-pill { display:inline-flex; align-items:center; gap:8px; background:var(--gray-2); border:1px solid var(--border); border-radius:20px; padding:5px 18px; font-size:12px; color:var(--text-secondary); letter-spacing:0.14em; margin-bottom:14px; }
+  .date-pill .dot { width:6px; height:6px; background:var(--neon); border-radius:50%; animation:blink 2s infinite; }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.35} }
+  .header h1 { font-family:'Noto Serif SC',serif; font-size:34px; font-weight:700; color:var(--white); margin-bottom:7px; }
+  .header h1 .accent { color:var(--neon); }
+  .time-range { font-size:12px; color:var(--text-dim); letter-spacing:0.07em; margin-bottom:16px; }
+  .source-bar { display:flex; flex-wrap:wrap; gap:7px; justify-content:center; }
+  .source-tag { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.10); color:var(--text-secondary); border-radius:20px; padding:3px 13px; font-size:11px; }
+
+  .mkt-section { margin:22px 0; }
+  .mkt-label { display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700; color:var(--text-primary); letter-spacing:0.05em; margin-bottom:11px; }
+  .mkt-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:9px; }
+  .mkt-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:13px 15px; }
+  .mkt-name { font-size:11px; color:var(--text-dim); letter-spacing:0.06em; margin-bottom:5px; }
+  .mkt-price { font-size:21px; font-weight:700; color:var(--white); letter-spacing:-0.01em; line-height:1.2; margin-bottom:4px; }
+  .mkt-change { font-size:11px; }
+  .up { color:var(--green); } .down { color:var(--red); } .warn { color:var(--orange); }
+
+  .sec-head { display:flex; align-items:center; gap:9px; padding:13px 0 11px; border-bottom:1px solid var(--border); margin-bottom:11px; }
+  .sec-icon { font-size:15px; }
+  .sec-name { font-size:14px; font-weight:700; color:var(--white); letter-spacing:0.03em; flex:1; }
+  .cnt-badge { background:rgba(188,255,47,0.10); border:1px solid rgba(188,255,47,0.25); color:#BCFF2F; border-radius:10px; padding:2px 9px; font-size:11px; font-weight:700; }
+
+  .news-card { background:var(--card); border:1px solid var(--border); border-radius:8px; padding:14px 15px; margin-bottom:8px; transition:border-color .18s; }
+  .news-card:hover { border-color:var(--border-hover); }
+  .card-top { display:flex; align-items:center; gap:8px; margin-bottom:8px; }
+  .prio { display:inline-block; border-radius:3px; padding:2px 9px; font-size:10px; font-weight:900; letter-spacing:0.1em; }
+  .prio.high { background:rgba(255,68,68,0.18); color:#FF4444; border:1px solid rgba(255,68,68,0.40); }
+  .prio.mid  { background:rgba(255,136,0,0.15); color:#FF8800; border:1px solid rgba(255,136,0,0.35); }
+  .prio.low  { background:rgba(255,255,255,0.02); color:#555; border:1px solid rgba(255,255,255,0.04); }
+  .ts { font-size:11px; color:var(--text-dim); font-variant-numeric:tabular-nums; }
+  .news-title { font-size:14px; font-weight:700; color:var(--white); line-height:1.5; margin-bottom:8px; }
+  .news-body  { font-size:12.5px; color:var(--text-secondary); line-height:1.72; margin-bottom:10px; }
+  .tags { display:flex; flex-wrap:wrap; gap:5px; margin-bottom:9px; }
+  .tag { background:rgba(188,255,47,0.10); border:1px solid rgba(188,255,47,0.25); color:#BCFF2F; border-radius:3px; padding:2px 7px; font-size:10px; font-weight:700; }
+  .news-src { font-size:11px; color:var(--text-hint); padding-top:8px; border-top:1px solid var(--border-light); }
+  .news-src a { color:rgba(188,255,47,0.65); text-decoration:none; }
+  .news-src a:hover { color:var(--neon); text-decoration:underline; }
+  .sec-block { margin-bottom:26px; }
+
+  .divider { height:1px; background:linear-gradient(to right,transparent,rgba(188,255,47,0.14),transparent); margin:30px 0; }
+  .footer { text-align:center; }
+  .kw { font-size:13px; color:var(--text-secondary); margin-bottom:11px; line-height:1.8; }
+  .kw strong { color:var(--neon); font-weight:700; }
+  .disc { font-size:11px; color:var(--text-hint); line-height:1.7; max-width:580px; margin:0 auto 10px; }
+  .compiled { font-size:10px; color:var(--text-hint); letter-spacing:0.15em; opacity:.4; }
+
+  @media (max-width:540px) { .mkt-grid{grid-template-columns:repeat(2,1fr);} .header h1{font-size:26px;} .mkt-price{font-size:18px;} }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="date-pill"><span class="dot"></span>2026 · 05 · 15 · 早报</div>
+    <h1>加密行业热点<span class="accent">早报</span></h1>
+    <div class="time-range">5月14日 20:00 — 5月15日 09:30 · 北京时间</div>
+    <div class="source-bar">
+      <span class="source-tag">Odaily</span>
+      <span class="source-tag">BlockBeats</span>
+      <span class="source-tag">Foresight News</span>
+      <span class="source-tag">ChainCatcher</span>
+      <span class="source-tag">吴说区块链</span>
+      <span class="source-tag">金十数据</span>
+    </div>
+  </div>
+
+  <!-- 市场行情 -->
+  <div class="mkt-section">
+    <div class="mkt-label"><span>📊</span> 市场行情</div>
+    <div class="mkt-grid">
+      <div class="mkt-card">
+        <div class="mkt-name">BTC</div>
+        <div class="mkt-price">$79,802</div>
+        <div class="mkt-change down">▼ -2.3% · 跌破$80K</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-name">ETH</div>
+        <div class="mkt-price">$2,287</div>
+        <div class="mkt-change down">▼ 周跌约-3%</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-name">恐惧贪婪</div>
+        <div class="mkt-price" style="font-size:19px;color:var(--red)">34</div>
+        <div class="mkt-change down">▼ 恐惧（前日42）</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-name">WTI 原油</div>
+        <div class="mkt-price">$101.14</div>
+        <div class="mkt-change warn">▲ +0.07%</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-name">黄金</div>
+        <div class="mkt-price">$4,696</div>
+        <div class="mkt-change down">▼ -0.2%（通胀压制）</div>
+      </div>
+      <div class="mkt-card">
+        <div class="mkt-name">纳斯达克</div>
+        <div class="mkt-price">26,402</div>
+        <div class="mkt-change up">▲ +1.20%（历史新高）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 全球监管 -->
+  <div class="sec-block">
+    <div class="sec-head">
+      <span class="sec-icon">⚖️</span>
+      <span class="sec-name">全球监管</span>
+      <span class="cnt-badge">2 条</span>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top"><span class="prio high">HIGH</span><span class="ts">05-15 凌晨（美东5/14晚）</span></div>
+      <div class="news-title">《CLARITY法案》15:9获参议院银行委员会通过，进入国会最终审议阶段</div>
+      <div class="news-body">据Bitcoin News最新报道，美国参议院银行委员会以15票赞成、9票反对的两党投票结果，正式通过《数字资产市场透明度法案》（CLARITY Act，H.R.3633）。法案主要条款：禁止对稳定币静态余额支付利息、违规处罚最高500万美元、将美国财政部列为SEC和CFTC之外的关键规则制定机构。法案现进入参议院全院及众议院阶段寻求最终通过。CoinDesk同日报道，BTC期权市场对此反应平淡，隐含波动率处于历史低位，市场将CLARITY推进视为「非事件」，技术面风险仍指向75,000美元。</div>
+      <div class="tags">
+        <span class="tag">影响周期：季度级</span>
+        <span class="tag">CLARITY法案</span>
+        <span class="tag">两党通过</span>
+        <span class="tag">加密立法里程碑</span>
+      </div>
+      <div class="news-src">来源：<a href="https://news.bitcoin.com/zh/zhi-chi-jia-mi-huo-bi-de-clarity-fa-an-hr-3633-yi-15-piao-zan-cheng-9-piao-fan-dui-de-jie-guo-huo-de-can-yi-yuan-yin-xing-wei-yuan-hui-tong-guo/" target="_blank">Bitcoin News（5/15凌晨）</a></div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top"><span class="prio high">HIGH</span><span class="ts">05-14</span></div>
+      <div class="news-title">Aave创始人：CLARITY法案对DeFi至关重要；Bitwise CIO：或成下一关键催化剂</div>
+      <div class="news-body">据BlockBeats 5月14日消息，Aave协议创始人Stani Kulechov发文表示，《CLARITY法案》对整个DeFi生态至关重要，若通过将为开发者提供监管确定性和法律保护，有望推动机构资金流向去中心化协议。Bitwise首席投资官Matt Hougan同日表示，《GENIUS法案》已推动加密融资活跃度提升，《CLARITY法案》一旦落地将成为下一个关键行业催化剂，尤其利好以太坊和Solana生态。</div>
+      <div class="tags">
+        <span class="tag">影响周期：季度级</span>
+        <span class="tag">DeFi监管</span>
+        <span class="tag">Aave</span>
+        <span class="tag">Bitwise观点</span>
+      </div>
+      <div class="news-src">来源：<a href="https://www.cryptotimes.io/2026/05/13/aave-ceo-backs-clarity-act-ahead-of-senate-banking-committee-markup/" target="_blank">The Crypto Times（Stani原推5/13）</a> · <a href="https://www.fx.co/en/analysis/446054" target="_blank">FX.co（Bitwise CIO观点）</a></div>
+    </div>
+
+  </div>
+
+  <!-- 货币政策 -->
+  <div class="sec-block">
+    <div class="sec-head">
+      <span class="sec-icon">🏛️</span>
+      <span class="sec-name">货币政策</span>
+      <span class="cnt-badge">1 条</span>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top"><span class="prio high">HIGH</span><span class="ts">05-15 今日</span></div>
+      <div class="news-title">沃什今日正式接棒鲍威尔就任美联储第17任主席，市场面临货币政策新时代考验</div>
+      <div class="news-body">鲍威尔任期今日届满，凯文·沃什正式履职美联储主席，于5月13日获参议院54:45批准。沃什呼吁废除「点阵图」、高度评价区块链技术，被视为加密产业友好信号。但其鹰派底色在CPI 3.8%+PPI 6.0%双超预期背景下令市场对流动性收紧保持警惕——恐惧贪婪指数今日骤降至34（恐惧），为本轮下跌最低水平。鲍威尔将留任美联储理事至2028年，美联储内部或现政策分歧张力。</div>
+      <div class="tags">
+        <span class="tag">影响周期：年级</span>
+        <span class="tag">沃什就任</span>
+        <span class="tag">美联储新时代</span>
+        <span class="tag">货币政策走向</span>
+      </div>
+      <div class="news-src">来源：<a href="https://www.foxnews.com/politics/senate-confirms-kevin-warsh-fed-chair-trumps-economic-vision-comes-focus" target="_blank">Fox News（沃什获确认5/13）</a> · <a href="https://wublockchain123.substack.com" target="_blank">吴说区块链</a></div>
+    </div>
+  </div>
+
+  <!-- 链上数据 -->
+  <div class="sec-block">
+    <div class="sec-head">
+      <span class="sec-icon">⛓️</span>
+      <span class="sec-name">链上数据</span>
+      <span class="cnt-badge">2 条</span>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top"><span class="prio high">HIGH</span><span class="ts">05-12（事件发生）· 05-14 窗口内持续跟进报道</span></div>
+      <div class="news-title">CryptoQuant：BTC牛熊周期指标自2023年来首次转绿，分析师称或进入「早期牛市阶段」</div>
+      <div class="news-body">据CoinDesk（05-12 15:31）及多家媒体5月14日跟进报道，CryptoQuant的比特币牛熊周期指标（Bull-Bear Market Cycle Indicator）于5月12日（周二）首次转为绿色，为2023年3月以来第一次。CryptoQuant分析师Julio Moreno表示，这是一个重要的政权转变信号，历史上2019年和2023年初的绿色信号均先于持续牛市行情出现。但Moreno同时警告：2022年3月曾出现过假信号——指标转绿后市场继续下跌。当前BTC在$82,000阻力位下方反复受阻，需价格确认突破才能验证信号有效性。</div>
+      <div class="tags">
+        <span class="tag">影响周期：月级</span>
+        <span class="tag">CryptoQuant</span>
+        <span class="tag">链上指标</span>
+        <span class="tag">早期牛市信号</span>
+      </div>
+      <div class="news-src">来源：<a href="https://www.coindesk.com/markets/2026/05/12/bitcoin-s-bull-bear-cycle-turns-green-for-first-time-since-march-2023" target="_blank">CoinDesk（05-12 15:31）</a> · <a href="https://news.bitcoin.com/bitcoin-bull-bear-cycle-indicator-green-2026/" target="_blank">Bitcoin News（5/14跟进分析）</a></div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-14</span></div>
+      <div class="news-title">Jane Street Q1大幅调整加密持仓：减持BTC ETF与Strategy，增持ETH ETF及Galaxy Digital</div>
+      <div class="news-body">据BlockBeats 5月14日消息，顶级量化交易机构Jane Street一季度持仓报告显示，公司大幅调整加密相关持仓：减持比特币现货ETF（IBIT等）及Strategy（MSTR），同时增持以太坊现货ETF及Galaxy Digital股票。Jane Street是美国最大的ETF做市商之一，其持仓调整被市场解读为机构层面对ETH相对看好的信号，引发市场对BTC短期资金流向的关注。</div>
+      <div class="tags">
+        <span class="tag">影响周期：月级</span>
+        <span class="tag">Jane Street</span>
+        <span class="tag">机构持仓调整</span>
+        <span class="tag">ETH相对强势</span>
+      </div>
+      <div class="news-src">来源：<a href="https://crypto.news/jane-street-cuts-bitcoin-etf-holdings-while-boosting-ether-exposure/" target="_blank">Crypto.news（5/14）</a></div>
+    </div>
+  </div>
+
+  <!-- 传统金融 -->
+  <div class="sec-block">
+    <div class="sec-head">
+      <span class="sec-icon">🏦</span>
+      <span class="sec-name">传统金融</span>
+      <span class="cnt-badge">1 条</span>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-14</span></div>
+      <div class="news-title">纳斯达克创历史新高26,402点（+1.20%）；Cerebras AI IPO首日涨100%，算力主题持续发酵</div>
+      <div class="news-body">纳斯达克指数5月14日收涨1.20%至26,402点，再创历史新高。同日，AI芯片公司Cerebras Systems完成55亿美元IPO，上市首日涨幅100%，AI算力叙事持续燃烧。值得关注的是，美股科技股的强劲表现与加密市场形成鲜明分化：BTC同期跌破80,000美元，恐惧贪婪指数降至34（恐惧）。分析师认为分化原因在于：AI叙事集中拉动科技股，而通胀高企（CPI 3.8%+PPI 6.0%）对依赖流动性的加密资产构成更大压制。</div>
+      <div class="tags">
+        <span class="tag">影响周期：周级</span>
+        <span class="tag">纳指历史新高</span>
+        <span class="tag">Cerebras IPO</span>
+        <span class="tag">加密美股分化</span>
+      </div>
+      <div class="news-src">来源：<a href="https://www.coindesk.com/business/2026/05/14/cerebras-shares-skyrocket-100-after-5-5-billion-ipo-amid-ai-stock-frenzy" target="_blank">CoinDesk（Cerebras IPO 5/14）</a> · <a href="https://foresightnews.pro/news" target="_blank">Foresight News（5/14）</a></div>
+    </div>
+  </div>
+
+  <!-- 观点研报 -->
+  <div class="sec-block">
+    <div class="sec-head">
+      <span class="sec-icon">🧠</span>
+      <span class="sec-name">观点研报</span>
+      <span class="cnt-badge">1 条</span>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top"><span class="prio mid">MID</span><span class="ts">05-14 23:26（北京时间）</span></div>
+      <div class="news-title">CoinDesk Daybook：CLARITY审议市场视为「非事件」，动量卖压或将BTC推向$75,000</div>
+      <div class="news-body">据CoinDesk 5月14日北京时间23:26 Daybook分析，尽管《CLARITY法案》参议院委员会审议是本周最重大加密监管事件，BTC期权市场隐含波动率却处于历史低位，几乎没有对事件风险定价，市场将此视为「非事件」。技术面显示，比特币的反弹已在4月上升趋势线（约200日均线水平）结束，动量驱动的卖压可能将BTC推向75,000美元。与恐惧贪婪指数跌至34的情绪面信号相互印证，市场短期处于多空角力关键位置。</div>
+      <div class="tags">
+        <span class="tag">影响周期：周级</span>
+        <span class="tag">BTC技术分析</span>
+        <span class="tag">期权市场</span>
+        <span class="tag">下行风险$75K</span>
+      </div>
+      <div class="news-src">来源：<a href="https://www.coindesk.com/daybook-us/2026/05/14/clarity-act-markup-leaves-bitcoin-unstirred" target="_blank">CoinDesk Daybook（5/14 23:26）</a> · <a href="https://foresightnews.pro/news" target="_blank">Foresight News（5/14）</a></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+  <div class="footer">
+    <div class="kw">
+      📌 今日关键词：<strong>CLARITY法案15:9委员会通过</strong> · <strong>沃什正式就任美联储</strong> · <strong>CryptoQuant牛市信号转绿</strong> · <strong>恐惧指数34</strong> · <strong>纳指+Cerebras历史新高</strong>
+    </div>
+    <div class="disc">
+      ⚠️ 本早报信息来源于BlockBeats律动、Foresight News、吴说区块链、金十数据及Bitcoin News，覆盖时间范围：5月14日20:00 — 5月15日09:30 北京时间。内容仅为信息整合，不构成任何投资建议。
+    </div>
+    <div class="compiled">COMPILED BY CLAUDE · 2026/05/15</div>
+  </div>
+
+</div>
+</body>
+</html>
