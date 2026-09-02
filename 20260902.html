@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>加密行业热点早报 · 2026年9月2日</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&family=Noto+Serif+SC:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--black:#000;--neo:#191919;--white:#fff;--neon:#BCFF2F;--neon-dim:rgba(188,255,47,.10);--neon-mid:rgba(188,255,47,.20);--g1:#111;--g2:#1a1a1a;--ts:#999;--td:#666;--th:#444;--brd:rgba(255,255,255,.06);--bhv:rgba(188,255,47,.18);--red:#FF4D4D;--green:#2ECC71;}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{background:var(--black);color:#fff;font-family:'Noto Sans SC',sans-serif;font-size:14px;line-height:1.7;padding:20px 14px;}
+    .container{max-width:780px;margin:0 auto;}
+    .header{text-align:center;padding:36px 0 28px;border-bottom:1px solid var(--brd);margin-bottom:24px;}
+    .date-badge{display:inline-flex;align-items:center;gap:8px;background:var(--neo);border:1px solid var(--brd);border-radius:20px;padding:4px 14px;font-size:11px;color:var(--ts);margin-bottom:14px;letter-spacing:.05em;}
+    .dot{width:6px;height:6px;border-radius:50%;background:var(--neon);animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+    h1{font-family:'Noto Serif SC',serif;font-size:30px;font-weight:700;margin-bottom:6px;letter-spacing:-.02em;}
+    .accent{color:var(--neon);}
+    .sub{font-size:11px;color:var(--td);margin-bottom:14px;letter-spacing:.1em;}
+    .source-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;}
+    .source-tag{background:var(--g1);border:1px solid var(--brd);border-radius:4px;padding:3px 10px;font-size:10px;color:var(--ts);}
+    .market{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:20px;overflow:hidden;}
+    .market-header{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--brd);}
+    .market-title{font-size:12px;font-weight:700;color:var(--ts);}
+    .market-time{font-size:10px;color:var(--td);}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--brd);}
+    .ci{background:var(--g1);padding:14px 16px;}
+    .cl{display:flex;align-items:center;gap:8px;margin-bottom:6px;}
+    .ico{width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;}
+    .btc{background:#F7931A;color:#fff;}.eth{background:#627EEA;color:#fff;}.sol{background:#9945FF;color:#fff;}.xrp{background:#346AA9;color:#fff;}
+    .cn{font-size:11px;color:var(--ts);}
+    .cp{font-size:20px;font-weight:700;}
+    .coin-change{font-size:11px;font-weight:600;margin-top:2px;}
+    .up{color:var(--green);}.down{color:var(--red);}
+    .fng-bar{display:grid;grid-template-columns:repeat(3,1fr);background:var(--g2);border-top:1px solid var(--brd);}
+    .fi{padding:10px;text-align:center;border-right:1px solid var(--brd);}
+    .fi:last-child{border-right:none;}
+    .fl{font-size:9px;color:var(--td);margin-bottom:4px;}
+    .fv{font-size:12px;font-weight:700;}
+    .section{background:var(--neo);border:1px solid var(--brd);border-radius:12px;margin-bottom:14px;overflow:hidden;}
+    .section-header{display:flex;align-items:center;gap:10px;padding:13px 18px;background:var(--g2);border-bottom:1px solid var(--brd);}
+    .section-icon{font-size:17px;}
+    .section-title{font-size:13px;font-weight:700;flex:1;letter-spacing:.02em;}
+    .section-count{background:var(--neon-dim);border:1px solid var(--bhv);color:var(--neon);font-size:10px;font-weight:700;padding:2px 9px;border-radius:10px;}
+    .news-item{padding:14px 18px;border-bottom:1px solid var(--brd);}
+    .news-item:last-child{border-bottom:none;}
+    .priority{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;margin-bottom:7px;letter-spacing:.04em;}
+    .priority.high{background:var(--neon);color:#000;}
+    .priority.mid{background:rgba(255,255,255,.07);color:var(--ts);border:1px solid rgba(255,255,255,.1);}
+    .priority.low{background:rgba(255,255,255,.03);color:var(--th);border:1px solid rgba(255,255,255,.05);}
+    .news-title{font-size:13px;font-weight:700;margin-bottom:5px;line-height:1.5;}
+    .news-detail{font-size:12px;color:var(--ts);line-height:1.7;margin-bottom:8px;}
+    .news-source{font-size:11px;color:var(--th);}
+    .news-source a{color:var(--neon);text-decoration:none;opacity:.8;}
+    .news-source a:hover{opacity:1;}
+    .divider{height:1px;background:var(--brd);margin:24px 0;}
+    .footer{text-align:center;padding:20px 0 12px;}
+    .disclaimer{font-size:10px;color:var(--th);line-height:1.7;max-width:520px;margin:0 auto 10px;}
+    .compiled{font-size:10px;color:var(--th);letter-spacing:.15em;}
+    .empty{text-align:center;padding:32px;color:var(--td);font-size:13px;}
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <div class="date-badge"><span class="dot"></span> 2026年9月2日 · 周三</div>
+    <h1>加密行业热点<span class="accent">早报</span></h1>
+    <div class="sub">多源去重 · 分类评级 · 自动生成</div>
+    <div class="source-bar">
+      <span class="source-tag">Odaily星球日报</span>
+      <span class="source-tag">CoinDesk</span>
+      <span class="source-tag">CoinGecko</span>
+      <span class="source-tag">Alternative.me</span>
+    </div>
+  </div>
+
+  <div class="market">
+    <div class="market-header">
+      <span class="market-title">📊 实时行情</span>
+      <span class="market-time">14:09 UTC+8</span>
+    </div>
+    <div class="grid">
+      <div class="ci"><div class="cl"><div class="ico btc">₿</div><span class="cn">Bitcoin</span></div><div class="cp">$77,639</div><div class="coin-change down">▼ 1.76% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico eth">Ξ</div><span class="cn">Ethereum</span></div><div class="cp">$2,419</div><div class="coin-change down">▼ 2.48% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico sol">◎</div><span class="cn">Solana</span></div><div class="cp">$100</div><div class="coin-change down">▼ 3.88% 24H</div></div>
+      <div class="ci"><div class="cl"><div class="ico xrp">✕</div><span class="cn">XRP</span></div><div class="cp">$1.350</div><div class="coin-change down">▼ 3.05% 24H</div></div>
+    </div>
+    <div class="fng-bar">
+      <div class="fi"><div class="fl">恐慌贪婪指数</div><div class="fv" style="color:#BCFF2F">63 · 贪婪</div></div>
+      <div class="fi"><div class="fl">BTC主导率</div><div class="fv">~57%</div></div>
+      <div class="fi"><div class="fl">更新时间</div><div class="fv" style="font-size:11px">14:09</div></div>
+    </div>
+  </div>
+
+  
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">⚖️</span>
+        <span class="section-title">全球监管</span>
+        <span class="section-count">3 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Solana, ether, xrp lead majors slide as Iran strikes drive a broad risk selloff</div>
+          <div class="news-detail">Astra is the first OpenAI model to reach its “Critical” cybersecurity threshold, meaning it can find previously unknown vulnerabilities and develop ways to exploit them across hard</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/tech/2026/09/02/openai-says-its-new-astra-ai-can-build-attacks-without-human-help" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority high">高价值</div>
+          <div class="news-title">SEC proposes transfer agent rule, sets event to figure out round-the-clock U.S. trading</div>
+          <div class="news-detail">BTC trades choppy as $90 oil and rising bond yields weigh on stocks and gold.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/09/02/bitcoin-withstands-usd90-oil-and-rising-yields-as-gold-slides-a-firm-dollar-is-the-catch" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Citi, Goldman, other global banks and asset managers team up on stablecoin venture</div>
+          <div class="news-detail">The U.S. Securities and Exchange Commission issued an agenda for its 24-trading roundtable and proposed a new transfer-agent rule with blockchain implications.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/policy/2026/09/01/sec-proposes-transfer-agent-rule-sets-event-to-figure-out-round-the-clock-u-s-trading" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">📋</span>
+        <span class="section-title">行业动态</span>
+        <span class="section-count">1 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Bitcoin withstands $90 oil and rising yields while gold slides. A firm dollar is the catch</div>
+          <div class="news-detail">Every large-cap token fell over the past 24 hours, and the high-beta majors gave up roughly triple what bitcoin did.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/09/02/solana-ether-xrp-lead-majors-slide-as-iran-strikes-drive-a-broad-risk-selloff" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+    <div class="section">
+      <div class="section-header">
+        <span class="section-icon">🚀</span>
+        <span class="section-title">行业趋势</span>
+        <span class="section-count">2 条</span>
+      </div>
+      
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Robinhood's new crypto network is printing cash, and it's sending Arbitrum's token soaring</div>
+          <div class="news-detail">The group will focus first on a U.S. dollar stablecoin for payments and digital asset settlement, with a euro token a priority for expansion.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/business/2026/09/01/citi-goldman-other-global-banks-and-asset-managers-team-up-on-stablecoin-venture" target="_blank">CoinDesk</a></div>
+        </div>
+        <div class="news-item">
+          <div class="priority mid">中优级</div>
+          <div class="news-title">Musk’s X hit by wave of unsolicited password reset emails</div>
+          <div class="news-detail">Revenue on Robinhood Chain hit a 24-hour record of $1.9 million, driving a 30% rally in ARB as traders chased downstream gains.</div>
+          <div class="news-source">来源：<a href="https://www.coindesk.com/markets/2026/09/01/robinhood-s-new-crypto-network-is-printing-cash-and-it-s-sending-arbitrum-s-token-soaring" target="_blank">CoinDesk</a></div>
+        </div>
+    </div>
+
+  <div class="divider"></div>
+  <div class="footer">
+    <div class="disclaimer">⚠️ 本早报由程序自动抓取公开信息整合生成，不构成任何投资建议。加密资产具有高度波动性，投资须谨慎。</div>
+    <div class="compiled">AUTO GENERATED · 20260902 · POWERED BY GITHUB ACTIONS</div>
+  </div>
+</div>
+</body>
+</html>
